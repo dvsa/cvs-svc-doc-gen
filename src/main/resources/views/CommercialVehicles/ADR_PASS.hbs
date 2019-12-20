@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>MOT test certificate ({{testType}})</title>
+    <style type="text/css" media="print, screen">
+            {{~> assets/stylesheets/adr this}}
+    </style>
+</head>
+<body>
+<div class="header">
+    <p>                            <span id="make">{{adrData.make}}</span>           <span id="chassisNumber">{{adrData.chassisNumber}}</span>          <span id="registrationNumber">{{adrData.registrationNumber}}</span></p>
+</div>
+<div class = "applicantDetails">
+    <h3>5 Name and business address of carrier, owner or operator</h3>
+    <p><span id="applicantDetailsName">{{adrData.applicantDetails.name}}</span> <span id="applicantDetailsStreet">{{adrData.applicantDetails.street}}</span> <span id="applicantDetailsTown">{{adrData.applicantDetails.town}}</span> <span id="applicantDetailsCity">{{adrData.applicantDetails.city}}</span> <span id="applicantDetailsPostCode">{{adrData.applicantDetails.postcode}}</span></p>
+</div>
+<div class="vehicleType">
+    <h3>6 Description of vehicle</h3>
+    <p><span id="vehicleType">{{adrData.vehicleType}}</span></p>
+</div>
+<div class="permittedDangerousGoods">
+    <h3>7 Vehicle designation(s) according to 9.1.1.2 of ADR</h3>
+    <p><span id="formattedPermittedDangerousGoods">{{adrData.formattedPermittedDangerousGoods}}</span></p>
+</div>
+<div class = "brakeEndurance">
+    <h3>8 Endurance braking system</h3>
+    {{#if adrData.brakeEndurance}}
+        <p>( )Not applicable (<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)The effectiveness according to 9.2.3.1.2 of ADR is sufficient for a total mass of transport unit of (<span id="weight">{{adrData.weight}}</span>)t</p>
+    {{else}}
+        <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)Not applicable ( )The effectiveness according to 9.2.3.1.2 of ADR is sufficient for a total mass of transport unit of (XX)t</p>
+    {{/if}}
+</div>
+<div class = "tank">
+    <h3>9 Description of the fixed tank(s)/battery-vehicle (if any)</h3>
+    <div>
+        <div class = "float" id="tankDescription">
+            <p>9.1 Manufacturer of the tank</p>
+            <p>9.2 Approval number of the tank/battery vehicle</p>
+            <p>9.3 Tank manufacturer’s serial number/</p>
+            <p>Identification of elements of battery vehicle</p>
+            <p>9.4 Year of manufacture</p>
+            <p>9.5 Tank code according to 4.3.3.1 or 4.3.4.1 of ADR</p>
+            <p>9.6 Special provisions according to 6.8.4 of ADR (if applicable)</p>
+        </div>
+        <div class="floatValues">
+            <p><strong>9.1</strong><span id="tankManufacturer">{{adrData.tankManufacturer}}</span></p>
+            <p><strong>9.2</strong><span id="tc2IntermediateApprovalNo">{{adrData.tc2InitApprovalNo}}</span></p>
+            <p><strong>9.3</strong><span id="tankManufactureSerialNo">{{adrData.tankManufactureSerialNo}}</span></p><br/>
+            <p><strong>9.4</strong><span id="yearOfManufacture">{{adrData.yearOfManufacture}}</span></p>
+            <p><strong>9.5</strong><span id="specialProvisions">{{adrData.specialProvisions}}</span></p>
+            <p><strong>9.6</strong><span id="tankCode">{{adrData.tankCode}}</span></p>
+        </div>
+    </div>
+</div>
+<div class = "dangerousGoods">
+    <h3>10 Dangerous goods authorised for carriage</h3>
+    <p>The vehicle fulfils the conditions required for the carriage of dangerous goods assigned to the vehicle designation(s) in no.7</p>
+    <div>
+        <div class= "float" id="dangerousGoodsDescription">
+            <p>10.1 In the case of an EX/II or EX/III</p>
+            <br/>
+            <p>10.2 In the case of a tank-vehicle/battery vehicle</p>
+            <p>
+                {{#if adrData.formattedSubstancesPermitted}}
+                    <span id="statement">{{adrData.tankStatement.statement}}</span>
+                {{else}}
+                    <span id="productList">{{adrData.tankStatement.productList}}</span>
+                {{/if}}
+            </p>
+        </div>
+        <div class= "floatValues">
+            {{#if adrData.isExplosivesType2}}
+                <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)goods of Class 1 including compatibility group J</p>
+            {{else}}
+                <p>( )goods of Class 1 including compatibility group J</p>
+            {{/if}}
+            {{#if adrData.isExplosivesType3}}
+                <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)goods of Class 1 excluding compatibility group J</p>
+            {{else}}
+                <p>( ) goods of Class 1 excluding compatibility group J</p>
+            {{/if}}
+
+            {{#if adrData.formattedSubstancesPermitted}}
+                <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>)only the substances permitted under the tank code and</p>
+                <p>any special provisions in no.9 may be carried</p>
+                <p>or</p>
+                <p>( )only the following substances (Class, UN number and if</p>
+                <p>necessary packing group and proper shipping name) may</p>
+                <p>be carried</p>
+            {{else}}
+                <p>( )only the substances permitted under the tank code and</p><br/>
+                <p>any special provisions in no.9 may be carried</p><br/>
+                <p>or</p><br/>
+                <p>(<img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/>) only the following substances (Class, UN number and if</p><br/>
+                <p>necessary packing group and proper shipping name) may</p><br/>
+                <p>be carried</p>
+            {{/if}}
+        </div>
+    </div>
+    <div class = "footer">
+        <h3>AS PER INSURERS PRODUCT LIST NO ATTACHED</h3>
+        <p>Only substances which are not liable to react dangerously with the materials of the shell, gaskets, equipment and protective linings (if applicable) may be carried</p>
+    </div>
+</div>
+</body>
+</html>

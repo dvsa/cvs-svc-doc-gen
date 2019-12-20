@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>MOT test certificate ({{testType}})</title>
+    <style type="text/css" media="print, screen">
+            {{~> assets/stylesheets/lec this}}
+    </style>
+</head>
+<body>
+    <div class="header-block">
+        <div class="header-left">
+            <h2 class="tfl-title">Transport for London</h2>
+            <h3 class="serial-number">Serial number: <span id="serialNumber">{{lecData.serialNumber}}</span></h3>
+        </div>
+        <div class="header-right">
+            <div class="tfl-logo-container"><img class="tfl-logo" src="{{root}}/assets/images/TfL-roundel.png"/></div>
+            <p class="header-date"><strong>LEC1 OCTOBER 2019</strong></p>
+        </div>
+    </div>
+
+    <div class="title-block">
+        <h2 class="no-margin">London Low Emission Zone</h2>
+        <p class="no-margin">Low Emissions Certificate</p>
+    </div>
+
+    <div class="cert-details">
+        <p>Expiry date: <span id="expiry-date" class="underline tight">{{lecData.expiryDate}}</span></p>
+        <p>Vehicle Registration Mark: &nbsp;<span id="vrm"> {{#each lecData.vrmArray}}
+            <span class="box">{{letter}}</span>
+        {{/each}}</span></p>
+        <p>Make/Model: <span id="make-model" class="underline tight">{{lecData.make}} / {{lecData.model}}</span></p>
+        <p>Chassis number/VIN: &nbsp; {{#each lecData.vinArray}}
+            <span class="box">{{letter}}</span>
+        {{/each}} </p>
+
+        <p><strong>The Vehicle displaying the above registration mark or chassis number or VIN has been examined in accordance with the Transport for London Low Emission Zone emissions standards.</strong></p>
+
+        <p>Prescribed Emission Standard: <span class="underline">{{lecData.prescribedEmissionStandard}}</span></p>
+        <p>Particulate trap fitted or modification type used: <span id="trapOrMod" class="underline">{{lecData.particulateTrapFittedOrModificationTypeUsed}}</span></p>
+        <p>Particulate trap serial number: <span class="underline">{{lecData.particulateTrapSerialNumber}}</span></p>
+        <div class="trap-block">
+            <div class="trap-left">
+                {{#if lecData.modificationTypeP}}
+                    <div  id="tickedBox" class="inline modType">P  &nbsp;<div class="tick-box"><img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/></div></div>
+                {{else}}
+                    <div class="inline modType">P  &nbsp;<div class="tick-box tick"></div></div>
+                {{/if}}
+                {{#if lecData.modificationTypeM}}
+                    <div id="tickedBox" class="inline modType">M  &nbsp;<div class="tick-box"><img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/></div></div>
+                {{else}}
+                    <div class="inline modType">M  &nbsp;<div class="tick-box tick"></div></div>
+                {{/if}}
+                {{#if lecData.modificationTypeG}}
+                    <div id="tickedBox" class="inline modType">G  &nbsp;<div class="tick-box"><img src="{{root}}/assets/images/tick.png" alt="tick" class="tick" id="tick"/></div></div>
+                {{else}}
+                    <div class="inline modType">G  &nbsp;<div class="tick-box tick"></div></div>
+                {{/if}}
+            </div>
+            <div class="trap-right">
+                <div class="inline">Smoke test "K" limit applied = <span id="smokeTestLimit" class="underline tight">{{lecData.smokeTestLimit}}</span> m<sup>-1</sup></div>
+            </div>
+        </div>
+
+        <p>Signature of tester: <img class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/></p>
+
+        <p>Date of issue: <span class="underline tight">{{lecData.testDate}}</span></p>
+        <p>Vehicle testing station name: <span class="underline wide">{{lecData.testStationName}}</span></p>
+        <p>Vehicle testing station number or manufacturer reference number: <span class="underline">{{lecData.testStationPNumber}}</span></p>
+
+        <p><strong>Warning: certificates showing alterations should not be issued or accepted. <br/>
+            Note: please read the notes accompanying this certificate as soon as you receive it.</strong></p>
+    </div>
+
+    <div class="footer-page1">
+        <div class="header-left"><img class="mol-logo" src="{{root}}/assets/images/mayor-of-london-logo.png"/></div>
+        <div class="header-right"><img class="dvsa-logo" src="{{root}}/assets/images/dvsa-crest.png"/></div>
+    </div>
+
+    <div class="page-break"></div>
+    <div id="notes" class="notes">
+        <h2>Notes</h2>
+        <h4>1. London Low Emission Zone – Low Emissions Certificates </h4>
+        <p>This <strong>Low Emissions Certificate (LEC)</strong> is confirmation that the vehicle has been examined on the
+            date specified overleaf and found to have been constructed or adapted so as to satisfy the London
+            LEZ emissions standards specified by the Transport for London in the <strong>LEZ Scheme Order.</strong> The LEC
+            does not entitle you to claim for a reduced level of Vehicle Excise Duty.</p>
+        <p>The certificate provides evidence of the emissions of the vehicle which meet the LEZ emissions
+            standards that are in force at the time and as specified in the LEZ Scheme Order, details of which
+            can be found at <strong>lezlondon.tfl.gov.uk</strong></p>
+        <p>Vehicles which do not meet the required emissions level are subject to a daily charge to drive within
+            the zone. From 26 September 2020 vehicles raised to the Euro IV PM standard by fitment of an
+            approved particulate trap will pay a reduced daily charge provided a valid LEC is in force.</p>
+        <p>If at any time the vehicle fails to satisfy the LEZ emissions standards, this certificate will not guarantee
+            or entitle the vehicle to drive within the LEZ without being subject to a daily charge.</p>
+        <p>This certificate must be surrendered on demand. This certificate may be revoked at any time by DVSA
+            if the vehicle is subsequently found not or comply with the prescribed emission standard indicated
+            overleaf or should the London LEX emissions standards change. This certificate remains the property
+            of TfL and is issued by DVSA on behalf of TfL.</p>
+
+        <h4>2. Renewal of Low Emissions Certificates</h4>
+        <p>The Low Emissions Certificate is valid until the expiry date specified overleaf and must be renewed
+            before that date. Vehicles with and expired certificate that do not meet the required emissions
+            standards would be subject to a charge to drive within the London Low Emission Zone.</p>
+        <p>The original certificate must be furnished when a vehicle is presented for a renewal test.</p>
+
+        <h4>3. Retention and production of the certificate</h4>
+        <p>You are advised to keep this certificate readily available. Transport for London will be informed within
+            3 working days of issue or withdrawal of this certificate by DVSA.<br/>
+            There is no need for you to register or send this certificate to TfL to drive within the London Low
+            Emission Zone.</p>
+        <p>You can check your vehicle’s status using the vehicle compliance checker at <strong>lezlondon.tfl.gov.uk</strong></p>
+
+        <h4>4. Replacement certificates</h4>
+        <p>Duplicates will not be issued for this certificate. If a certificate is lost or defaced then arrangements
+           must be made of a Low Emissions Certificate test to be carried out and the appropriate fee paid so
+           that a new certificate can be issued.</p>
+        <p>If however, a certificate has been damaged and you have its identifiable remains, or if any of the
+           particulars on the certificate are or have become incorrect, e.g. because of a Registration Mark
+           change, the original certificate may be surrendered and replaced by an amend copy at the issuing
+           Goods Vehicle Testing Station. There is no fee for a replacement certificate.</p>
+    </div>
+</body>
+</html>

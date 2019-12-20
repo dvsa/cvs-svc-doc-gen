@@ -26,6 +26,28 @@ public enum CertificatePageSelector {
     WATERMARK_SELECTOR("span.running-header__text"),
     DEFECTS_ID("defects"),
 
+    CHASSIS_NUMBER_ID("chassisNumber"),
+    APPLICANT_DETAILS_NAME_ID("applicantDetailsName"),
+    APPLICANT_DETAILS_STREET_ID("applicantDetailsStreet"),
+    VEHICLE_TYPE_ID("vehicleType"),
+    FORMATTED_PERMITTED_DANGEROUS_GOODS_ID("formattedPermittedDangerousGoods"),
+    WEIGHT_ID("weight"),
+    TANK_MANUFACTURER_ID("tankManufacturer"),
+    TC2_INIT_APPROVAL_NO_ID("tc2IntermediateApprovalNo"),
+    TANK_MANUFACTURE_SERIAL_NO_ID("tankManufactureSerialNo"),
+    YEAR_OF_MANUFACTURE_ID("yearOfManufacture"),
+    SPECIAL_PROVISIONS_ID("specialProvisions"),
+    TANK_CODE_ID("tankCode"),
+    STATEMENT_ID("statement"),
+    PRODUCT_LIST_ID("productList"),
+
+    SERIAL_NUMBER_ID("serialNumber"),
+    TRAP_OR_MOD_ID("trapOrMod"),
+    TICKED_MODIFICATION_TYPE("tickedBox"),
+    SMOKE_TEST_LIMIT_ID("smokeTestLimit"),
+    VRM_ID("vrm"),
+    ADDITIONAL_NOTES_ID("additionalNotes"),
+
     CVS_SIGNATURE_FIRST_PAGE("signature-first-page"),
     CVS_SIGNATURE_SECOND_PAGE("signature-second-page");
 

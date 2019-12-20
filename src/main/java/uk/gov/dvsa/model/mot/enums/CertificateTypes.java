@@ -33,6 +33,9 @@ public enum CertificateTypes {
     CVS_HGV_TRL_FAIL("CVS/VTG30"),
     CVS_HGV_PRS("CVS/HGV_PRS"),
     CVS_TRL_PRS("CVS/TRL_PRS"),
+    ADR_PASS("CVS/ADR_PASS"),
+    LEC_PASS("CVS/LEC_PASS"),
+    LEC_FAIL("CVS/LEC_FAIL"),
 
     INSPECTION_CHECKLIST("MOT/InspectionChecklist");
 

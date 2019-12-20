@@ -1,0 +1,192 @@
+@font-face {
+    font-family: arial-mt-regular;
+    font-weight: 100;
+    src: url({{root}}/assets/fonts/arial-mt-regular.ttf);
+    -fs-pdf-font-embed: embed;
+    -fs-pdf-font-encoding: Identity-H
+}
+
+@font-face {
+    font-family: arial-mt-bold;
+    font-weight: 100;
+    src: url({{root}}/assets/fonts/arial-mt-bold.ttf);
+    -fs-pdf-font-embed: embed;
+    -fs-pdf-font-encoding: Identity-H
+}
+
+@page {
+     size: A4;
+     margin: 1cm 1.5cm 80px 1.5cm;
+     @top-center {
+         content: element(header)
+     }
+     @bottom-center {
+         content: element(footer)
+     }
+ }
+
+body {
+    color: Navy;
+    font-family: arial-mt-regular;
+}
+
+div {
+    margin: 0;
+}
+
+strong, h4 {
+    font-family: arial-mt-bold;
+}
+
+.no-margin {
+    margin: 0;
+    padding: 0;
+}
+
+.header-block {
+    width:  100%;
+}
+
+.header-left {
+    display: inline-block;
+}
+
+.header-right {
+    display: inline-block;
+    float: right;
+}
+
+.notes {
+    font-size: 14px;
+}
+
+.tfl-logo-container {
+    margin-left: 45px;
+}
+.tfl-logo {
+    height: 2.3cm;
+    width: 2.9cm;
+}
+
+.title-block {
+    color: white;
+    background-color: green;
+    padding: 15px 10px;
+}
+
+.title-block-fail {
+    background-color: blue;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.tick {
+    width: 15pt
+}
+
+.tick-box {
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.trap-block {
+    display: inline-block;
+    width: 100%;
+}
+
+.trap-left {
+    display: inline-block;
+    float: left;
+}
+
+.trap-right {
+    display: inline-block;
+    float: right;
+}
+.modType {
+    margin-right: 10px;
+}
+.additional-notes {
+    min-height: 100px;
+    margin-bottom: 25px;
+}
+
+.signature-image {
+    display: inline-block;
+    height: 30px;
+    vertical-align: text-top;
+}
+
+.footer-page1 {
+    display: inline-block;
+    width: 100%;
+    height: 140px;
+    position: relative;
+}
+
+.fail-footer {
+    height: 210px;
+}
+
+.page-break {
+    page-break-after: always;
+}
+
+.tfl-title {
+    margin-bottom: 50px;
+}
+
+.mol-logo {
+    position: absolute;
+    bottom: 0;
+    width: 6cm;
+    height: 1.2cm;
+}
+
+.dvsa-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3.7cm;
+    height:2.5cm;
+}
+
+.box {
+    text-align: center;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border: 1px solid black;
+    margin: -3px;
+    padding-top: 8px;
+}
+
+.underline {
+    display: inline-block;
+    min-width: 150px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.wide {
+    min-width: 250px;
+}
+
+.tight {
+    min-width: 0;
+}
+
+.note-line {
+    vertical-align: text-top;
+    text-align: left;
+    min-height: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}

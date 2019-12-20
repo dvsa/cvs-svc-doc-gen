@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>MOT test certificate ({{testType}})</title>
+    <style type="text/css" media="print, screen">
+            {{~> assets/stylesheets/lec this}}
+    </style>
+</head>
+<body>
+    <div class="header-block">
+        <div class="header-left">
+            <h2 class="tfl-title">Transport for London</h2>
+            <h3 class="serial-number">Serial number LF: <span id="serialNumber">{{lecData.serialNumber}}</span></h3>
+        </div>
+        <div class="header-right">
+            <div class="tfl-logo-container"><img class="tfl-logo" src="{{root}}/assets/images/TfL-roundel.png"/></div>
+            <p class="header-date"><strong>LEC1 OCTOBER 2019</strong></p>
+        </div>
+    </div>
+
+    <div class="title-block title-block-fail">
+        <h2 class="no-margin">London Low Emission Zone</h2>
+        <p class="no-margin">Notification of refusal to issue a Low Emissions Certificate</p>
+    </div>
+
+    <div class="cert-details">
+        <p>Vehicle Registration Mark: &nbsp;<span id="vrm"> {{#each lecData.vrmArray}}
+            <span class="box">{{letter}}</span>
+        {{/each}}</span></p>
+        <p>Chassis number/VIN: &nbsp; {{#each lecData.vinArray}}
+            <span class="box">{{letter}}</span>
+        {{/each}} </p>
+        <p><strong>The above vehicle has been tested today in accordance with the requirements
+            of the London Low Emissions Zone emissions standards and has been found not to
+            comply with the appropriate technical standard and a Low Emissions Certificate
+            has not been issued for the following reasons:</strong></p>
+        <p id="additionalNotes" class="additional-notes">{{#each lecData.additionalNotesLines}}
+            <span class="underline note-line">{{line}}</span>
+        {{/each}}</p>
+
+        <p>Signature of tester: <img class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/></p>
+
+        <p>Date of issue: <span class="underline tight">{{lecData.testDate}}</span></p>
+        <p>Vehicle testing station number or manufacturer reference number: <span class="underline">{{lecData.testStationPNumber}}</span></p>
+
+        <p><strong>Note: please read the notes on the back of this Notification of refusal as soon as you receive it.</strong></p>
+    </div>
+
+    <div class="footer-page1 fail-footer">
+        <div class="header-left"><img class="mol-logo" src="{{root}}/assets/images/mayor-of-london-logo.png"/></div>
+        <div class="header-right"><img class="dvsa-logo" src="{{root}}/assets/images/dvsa-crest.png"/></div>
+    </div>
+
+    <div class="page-break"></div>
+    <div id="notes" class="notes">
+        <h2>Notes</h2>
+        <h3>1. Notification of refusal to issue a Low Emissions Certificate</h3>
+        <p> In order for vehicles to drive within the London Low Emission Zone (LEZ),
+            vehicles must satisfy the London LEZ emissions standards. The LEZ emissions
+            standards can be found on the Transport for London website:
+            <strong>www.tfl.gov.uk/lezlondon</strong></p>
+        <h3>Vehicles with a current Low Emissions Certificate</h3>
+        <p> If this Notification of refusal has been issued in respect of a vehicle that has a current
+            Low Emissions Certificate, you must take action within 14 days to rectify the technical
+            deficiencies identified overleaf and obtain a new Low Emissions Certificate. If the vehicle
+            does not meet the LEZ emissions standards and a Low Emissions Certificate is not issued
+            within 14 days, your certificate will be revoked and the vehicle will be subject to a
+            daily charge to drive within the LEZ.</p>
+        <h3>Vehicles without a current Low Emissions Certificate</h3>
+        <p> If this Notification of refusal has been issued in respect of a vehicle which does not
+            meet the London LEZ emissions standards and a Low Emissions Certificate has not been
+            issued, then the vehicle will be subject to a daily charge to drive within the LEZ. If
+            however, the technical deficiencies listed overleaf are rectified and the vehicle meets
+            the LEZ emissions standards and a Low Emissions Certificate is issued, then the test
+            results will be transferred to TfL within 3 days and the vehicle will be able to drive
+            within the LEZ without being subject to the daily charge.</p>
+
+        <h3>2. Obtaining a new Low Emissions Certificate test</h3>
+        <p>To book a new Low Emissions Certificate test at a DVSA test centre you should apply by
+            telephone on <strong>0300 123 9000</strong>.</p>
+
+        <h3>3. Retention and production of this document</h3>
+        <p> You are advised to keep this refusal notification readily available. You must present it when you take the vehicle to be re-inspected.</p>
+        <p> Transport for London will be informed within 3 days of issue or withdrawal of this notification by DVSA. <br/>
+            <strong>There is no need for you to register or send this notification to TfL.</strong></p>
+
+        <p>You can check your vehicle’s status using the vehicle compliance checker at <strong>www.tfl.gov.uk/lezlondon</strong>
+            or by calling <strong>0845 607 0009</strong>.<br/>
+            Textphone users <strong>020 7310 8999</strong>.</p>
+    </div>
+</body>
+</html>

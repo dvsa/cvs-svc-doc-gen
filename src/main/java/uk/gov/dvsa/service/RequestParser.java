@@ -57,6 +57,7 @@ public class RequestParser {
             document.setDocumentName(documentName);
             return document;
         } catch (IOException e) {
+            System.out.println("input event: " + input.toString());
             throw new HttpException.BadRequestException("Error parsing parameters", e);
         }
     }
