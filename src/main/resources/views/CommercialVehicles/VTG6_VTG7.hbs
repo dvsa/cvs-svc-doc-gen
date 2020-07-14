@@ -812,6 +812,619 @@
         <li style="list-style-type: none;">(Rev April 2014)</li>
     </ol>
 </div>
+
+<div class="separatePage">
+    <table class="vtg6">
+        <tbody>
+        <tr>
+            <td colspan="4" rowspan="2" class="logo">
+                <img src="{{root}}/assets/images/dvsa-crest-1.1.png" alt="DVSA" width="110"/>
+            </td>
+            <td colspan="4" rowspan="2" class="plating_certificate">
+                <p class="department_for_transport">
+                    <strong>Department For Transport</strong></p>
+                <p class="road_traffic">
+                    ROAD TRAFFIC ACT 1988 SECTIONS 41, 49, 57 &amp; 58 EXAMINATION OF GOODS VEHICLE
+                </p>
+                <p class="proof_of_compliance">
+                    This is issued as proof of compliance with the weights and dimensions directive 85/3/EEC
+                </p>
+                <div class="inline_elem">
+                    <div class="inline_elem_child">
+                        <p class="plating_cert">
+                            Plate
+                        </p>
+                    </div>
+                    <div class="inline_elem_child vtg6a">
+                        <p>
+                            VTG6A
+                        </p>
+                    </div>
+                </div>
+            </td>
+            <td colspan="5" class="plating_certificate">
+                <p class="serial_dtp"> Serial No.&nbsp;</p>
+                <p class="serial_value" id="plateSerialNumber">{{plateData.plateSerialNumber}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" class="dtp_data">
+                <p class="serial_dtp"> DTp Ref. No.&nbsp;</p>
+                <p class="dtp_value" id="dtpNumber">{{plateData.dtpNumber}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="no_border_top align_top">
+                <p class="vehicle_identifier">Reg./ Ident Mark</p>
+                <p class="vehicle_identifier_data" id="primaryVrm">{{plateData.primaryVrm}}</p>
+            </td>
+            <td colspan="5" class="no_border_left_top align_top">
+                <p class="vehicle_identifier">Vehicle Identification No.</p>
+                <p class="vehicle_identifier_data" id="vin">{{plateData.vin}}</p>
+            </td>
+            <td colspan="5" class="no_border_left_top align_top">
+                <p class="vehicle_identifier">Variant</p>
+                <p class="vehicle_identifier_data" id="variantNumber">{{plateData.variantNumber}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="13" class="no_border_top align_top">
+                <p class="tyre_approval">Tyre Approval No. &nbsp; <strong
+                        id="approvalTypeNumber">{{plateData.approvalTypeNumber}}</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8" class="no_border_top align_top manufacturer">
+                <div class="inline_elem">
+                    <div class="inline_elem_child manufacturer_model_container">
+                        <p>
+                            <span>Manufacturer/</span>
+                        </p>
+                        <p>
+                            <span>Model</span>
+                        </p>
+                    </div>
+                    <div class="inline_elem_child">
+                        <p class="make_model_container">
+                            <span class="manufacturer_data" id="make-model">{{plateData.make}}/{{plateData.model}}</span>
+                        </p>
+                    </div>
+                </div>
+            </td>
+            <td colspan="5" class="no_border_left_top align_top speed_limiter">
+                <p>
+                    <span>Speed</span>
+                </p>
+                <p>
+                    <span>Limiter</span>
+                    <span class="speed_limiter_data" id="speedLimiterMrk">{{plateData.speedLimiterMrk}}</span>
+                </p>
+                <p>
+                    <span>Exempt</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="no_border_top function_code">
+                <div class="inline_elem_child">
+                    <p>
+                        <span>Function</span>
+                    </p>
+                    <p>
+                        <span>(See note 3)</span>
+                    </p>
+                </div>
+                <div class="inline_elem_child align_middle">
+                    <span class="function_code_data" id="functionCode">{{plateData.functionCode}}</span>
+                </div>
+            </td>
+            <td colspan="4" class="no_border_left_top regn_date">
+                <div class="inline_elem_child">
+                    <p>
+                        <span>Year of Original</span>
+                    </p>
+                    <p> Registration </p>
+                </div>
+                <div class="inline_elem_child align_middle">
+                    <span class="regn_date_data" id="regnDate">{{plateData.regnDate}}</span>
+                </div>
+            </td>
+            <td colspan="5" class="no_border_left_top manufacture_year">
+                <div class="inline_elem_child">
+                    <p>
+                        <span>Year of</span>
+                    </p>
+                    <p>
+                        <span>Manufacture</span>
+                    </p>
+                </div>
+                <div class="inline_elem_child align_middle">
+                    <span class="manufacture_year_data" id="manufactureYear">{{plateData.manufactureYear}}</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="2" class="weights_description width_25">
+                <div class="inline_elem description_of_weights">
+                    <span class="inline_elem_child weight_numbering"> (1) </span>
+                    <span class="inline_elem_child weight_title">Description of Weights Applicable to vehicle</span>
+                </div>
+            </td>
+            <td colspan="2" rowspan="2" class="no_border_left_top align_top width_25">
+                <div class="inline_elem">
+                    <span class="inline_elem_child weight_numbering"> (2) </span>
+                    <span class="inline_elem_child weight_title">Weights not to be exceeded in Gt. Britain</span>
+                </div>
+            </td>
+            <td rowspan="2" class="no_border_left_top align_top width_25">
+                <div class="inline_elem">
+                    <span class="inline_elem_child weight_numbering"> (3) </span>
+                    <span class="inline_elem_child weight_title">EEC Maximum permitted weights</span>
+                </div>
+                <p class="weight_notes">(See note 8)</p>
+            </td>
+            <td colspan="2" rowspan="2" class="no_border_left_top align_top width_25">
+                <div class="inline_elem">
+                    <span class="inline_elem_child weight_numbering"> (4) </span>
+                    <span class="inline_elem_child weight_title">Design Weights</span>
+                </div>
+                <p class="weight_notes">(if higher than shown in column 2)</p>
+            </td>
+            <td colspan="2" class="no_border_left_top length_width">
+                <p class="centered_data"><strong>Length</strong></p>
+            </td>
+            <td colspan="4" class="no_border_left_top length_width">
+                <p class="centered_data"><strong>Width</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="dimensionLength">{{plateData.dimensionLength}}</strong>
+                </p>
+            </td>
+            <td colspan="4" class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="dimensionWidth">{{plateData.dimensionWidth}}</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="no_border_top align_middle">
+                <p class="centered_title">
+                    <strong class="weight_titles">Gross Weight</strong>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weight_notes">(See notes 1 &amp; 4)</span>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="grossGbWeight">{{plateData.grossGbWeight}}</strong>
+                </p>
+            </td>
+            <td class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="grossEecWeight">{{plateData.grossEecWeight}}</strong>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="grossDesignWeight">{{plateData.grossDesignWeight}}</strong>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <div class="coupling_foremost">
+                    <span>a. Coupling centre to vehicle foremost part (See note 6)</span>
+                </div>
+            </td>
+            <td colspan="2" class="no_border_left_top align_top">
+                <div class="centered_title coupling_max_min">
+                    <strong>Max</strong>
+                    <p class="centered_data">
+                        <strong id="frontAxleTo5thWheelCouplingMax">{{plateData.frontAxleTo5thWheelCouplingMax}}</strong>
+                    </p>
+                </div>
+            </td>
+            <td colspan="2" class="no_border_left_top align_top">
+                <div class="centered_title coupling_max_min">
+                    <strong>Min</strong>
+                    <p class="centered_data">
+                        <strong id="frontAxleTo5thWheelCouplingMin">{{plateData.frontAxleTo5thWheelCouplingMin}}</strong>
+                    </p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="no_border_top align_middle">
+                <p class="centered_title">
+                    <strong class="weight_titles">Train Weight</strong>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weight_notes">(See note 2)</span>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="trainGbWeight">{{plateData.trainGbWeight}}</strong>
+                </p>
+            </td>
+            <td class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="trainEecWeight">{{plateData.trainEecWeight}}</strong>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="trainDesignWeight">{{plateData.trainDesignWeight}}</strong>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <div class="coupling_rearmost">
+                    <span>b. Coupling centre to vehicle rearmost part (See note 7)</span>
+                </div>
+            </td>
+            <td colspan="2" class="no_border_left_top align_top">
+                <div class="centered_title coupling_max_min">
+                    <strong>Max</strong>
+                    <p class="centered_data">
+                        <strong id="couplingCenterToRearTrlMax">{{plateData.couplingCenterToRearTrlMax}}</strong>
+                    </p>
+                </div>
+            </td>
+            <td colspan="2" class="no_border_left_top align_top">
+                <div class="centered_title coupling_max_min">
+                    <strong>Min</strong>
+                    <p class="centered_data">
+                        <strong id="couplingCenterToRearTrlMin">{{plateData.couplingCenterToRearTrlMin}}</strong>
+                    </p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="no_border_top align_middle">
+                <p class="centered_title">
+                    <strong class="weight_titles">Max. Train Weight</strong>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weight_notes">(See note 5)</span>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="maxTrainGbWeight">{{plateData.maxTrainGbWeight}}</strong>
+                </p>
+            </td>
+            <td class="no_border_left_top align_middle">
+                <p class="centered_data">
+                    <strong id="maxTrainEecWeight">{{plateData.maxTrainEecWeight}}</strong>
+                </p>
+            </td>
+            <td colspan="2" class="no_border_left_top gray_box">
+            </td>
+            <td colspan="6" rowspan="5" class="middle_right_section">
+                <div class="department_box">
+                    <div>
+                        <p class="centered_title middle_date_of_issue">
+                            <strong>Date of Issue</strong>
+                        </p>
+                    </div>
+                    <div class="department">
+                        <p class="department_for">
+                            DEPARTMENT FOR
+                        </p>
+                        <p class="department_data">
+                            [{{plateData.plateIssueDate}}]
+                        </p>
+                        <p class="department_for">
+                            TRANSPORT
+                        </p>
+                        <p class="department_for">
+                            GREAT BRITAIN
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="4" class="no_border_top align_top">
+                <p class="centered_title">
+                    <strong class="axle_weights">Axle</strong>
+                </p>
+                <p class="centered_title">
+                    <strong class="axle_weights">Weights</strong>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weights_notes">(Axle</span>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weights_notes">numbered</span>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weights_notes">from front</span>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weights_notes">to rear)</span>
+                </p>
+                <p class="centered_title">
+                    <span class="axle_weights_notes">(See note 1)</span>
+                </p>
+            </td>
+            <td class="no_border_left_top">
+                <p class="axle_number"> Axle 1 </p>
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle1.weights.gbWeight}}
+                    <p class="centered_data">
+                        <strong id="axle1_gbWeight">{{plateData.axles.axle1.weights.gbWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle1.weights.eecWeight}}
+                    <p class="centered_data">
+                        <strong id="axle1_eecWeight">{{plateData.axles.axle1.weights.eecWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle1.weights.designWeight}}
+                    <p class="centered_data">
+                        <strong id="axle1_designWeight">{{plateData.axles.axle1.weights.designWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+        </tr>
+        <tr>
+            <td class="no_border_left_top axle_data">
+                <p class="axle_number"> Axle 2 </p>
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle2.weights.gbWeight}}
+                    <p class="centered_data">
+                        <strong id="axle2_gbWeight">{{plateData.axles.axle2.weights.gbWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle2.weights.eecWeight}}
+                    <p class="centered_data">
+                        <strong id="axle2_eecWeight">{{plateData.axles.axle2.weights.eecWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle2.weights.designWeight}}
+                    <p class="centered_data">
+                        <strong id="axle2_designWeight">{{plateData.axles.axle2.weights.designWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+        </tr>
+        <tr>
+            <td class="no_border_left_top align_middle">
+                <p class="axle_number"> Axle 3 </p>
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle3.weights.gbWeight}}
+                    <p class="centered_data">
+                        <strong id="axle3_gbWeight">{{plateData.axles.axle3.weights.gbWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle3.weights.eecWeight}}
+                    <p class="centered_data">
+                        <strong id="axle3_eecWeight">{{plateData.axles.axle3.weights.eecWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle3.weights.designWeight}}
+                    <p class="centered_data">
+                        <strong id="axle3_designWeight">{{plateData.axles.axle3.weights.designWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+        </tr>
+        <tr>
+            <td class="no_border_left_top axle_data">
+                <p class="axle_number">Axle 4</p>
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle4.weights.gbWeight}}
+                    <p class="centered_data">
+                        <strong id="axle4_gbWeight">{{plateData.axles.axle4.weights.gbWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle4.weights.eecWeight}}
+                    <p class="centered_data">
+                        <strong id="axle4_eecWeight">{{plateData.axles.axle4.weights.eecWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+            <td colspan="2" class="no_border_left_top axle_data">
+                {{#if plateData.axles.axle4.weights.designWeight}}
+                    <p class="centered_data">
+                        <strong id="axle4_designWeight">{{plateData.axles.axle4.weights.designWeight}}</strong>
+                    </p>
+                {{else}}
+                    <br/>
+                {{/if}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="no_border_top max_kingpin">
+                <p class="max_kingpin_title">
+                    <strong>Maximum Kingpin</strong>
+                </p>
+                <p class="max_kingpin_title">
+                    <strong>Load</strong>
+                </p>
+                <p class="max_kingpin_note">
+                    <span>(Semi-Trailers Only)</span>
+                </p>
+            </td>
+            <td colspan="3" class="no_border_left_top align_top gray_box">
+            </td>
+            <td colspan="2" class="no_border_left_top align_middle">
+                <p class="max_load">
+                    <strong id="maxLoadOnCoupling">{{plateData.maxLoadOnCoupling}}</strong>
+                </p>
+            </td>
+            <td colspan="6" class="no_border_left align_top">
+                <div class="inline_elem">
+                    <div class="inline_elem_child vtg6_tyre_condition">
+                        <p>
+                            Tyre use conditions
+                        </p>
+                        <p>
+                            applicable to vehicle
+                        </p>
+                        <p>
+                            (See note 12)
+                        </p>
+                    </div>
+                    <div class="inline_elem_child vtg6_tyre_data">
+                        <p>
+                            {{plateData.tyreUseCode}}
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8" class="no_border_top align_top vtg6_notes">
+                <p class="vtg6_notes_title">
+                    <strong>NOTES</strong>
+                </p>
+                <ol class="notes_list">
+                    <li>
+                        A reduced gross weight and/or axle weight may apply in
+                        certain cases to a vehicle towing or being towed by
+                        another.
+                    </li>
+                    <li>
+                        The MAXIMUM permissible train weight can vary depending
+                        on the type of suspension and trailer drawn
+                    </li>
+                    <li>
+                        If the last letter in the function box is ‘R’ road
+                        friendly suspension is fitted
+                    </li>
+                    <li>
+                        All weights shown are subject to fitting of correct
+                        tyres
+                    </li>
+                    <li>
+                        The weight applies to combined transport operations
+                    </li>
+                    <li>
+                        This dimension only applies to drawn vehicles of
+                        trailers and semi - trailers
+                    </li>
+                </ol>
+            </td>
+            <td colspan="5" class="no_border_top align_top notes_cont">
+                <p class="notes_cont_title">
+                    <strong>NOTES (Cont’d)</strong>
+                </p>
+                <ol start="7">
+                    <li>
+                        This dimension only applies to trailer and semi-
+                        trailers
+                    </li>
+                    <li>
+                        Where there is no weight shown in the EEC maximum
+                        permitted weights column this is because there is no EEC
+                        standard relating to that weight.
+                    </li>
+                </ol>
+                <p class="notes_nb">
+                    N.B All weights in Kilograms – all dimensions in
+                    Millimetres
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="vtg6_secondPage">
+    <p class="vtg6_display">
+        DISPLAY OF MINISTRY PLATE
+    </p>
+    <ol>
+        <li>
+            <p class="vtg6_securely_affixed">
+                This plate must be securely affixed:-
+            </p>
+            <ol class="securely_affixed_options">
+                <li>
+                    In the cab of the vehicle; or
+                </li>
+                <li>
+                    elsewhere on the vehicle if it is constructed without a cab (e.g. a trailer) in a conspicuous
+                    and readily accessible position and must be legible at all times (Regulation 70 of the Road
+                    Vehicle Construction and Use Regulations 1986).
+                </li>
+            </ol>
+        </li>
+    </ol>
+    <p class="vtg6_loss">
+        LOSS
+    </p>
+    <ol start="2">
+        <li>
+            If this plate is lost or defaced, an application for a replacement may be made to:
+        </li>
+    </ol>
+    <div class="vtg6_dvsa">
+        <p>
+            Driver and Vehicle Standards Agency (DVSA)
+        </p>
+        <p>
+            Replacements Section
+        </p>
+        <p>
+            Ellipse
+        </p>
+        <p>
+            Padley Road
+        </p>
+        <p>
+            Swansea, SA1 8AN
+        </p>
+        <p>
+            A fee will be charged.
+        </p>
+    </div>
+</div>
+
 </body>
 
 </html>
