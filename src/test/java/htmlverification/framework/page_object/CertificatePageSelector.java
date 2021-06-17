@@ -60,6 +60,8 @@ public enum CertificatePageSelector {
     RWT_DOC_NUMBER("doc-number"),
     RWT_DOC_VERSION("doc-version"),
     // end of Roadworthisness test selectors
+    // Trailer Registration Selector
+    TRN("trn"),
     CVS_SIGNATURE_FIRST_PAGE("signature-first-page"),
     CVS_SIGNATURE_SECOND_PAGE("signature-second-page");
 
