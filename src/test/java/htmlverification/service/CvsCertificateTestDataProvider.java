@@ -285,7 +285,8 @@ public class CvsCertificateTestDataProvider {
                 .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_TEXT)
                 .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
 
-                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1));
+                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1))
+                .setIsTrailer(true);
 
         vtg30.setFailData(vtg30Data);
 

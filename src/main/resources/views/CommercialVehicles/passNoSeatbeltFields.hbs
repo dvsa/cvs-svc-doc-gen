@@ -105,8 +105,8 @@
                 </div>
                 <!-- /heading-info -->
                 <!-- header__three-columns -->
-                <div class="header__three-columns">
-                    <div class="header__three-columns-one">
+                <div {{#if PresentedDocumentNamePass="VTG5A"}}class="header__three-columns" {{else}} class="header__two-columns" {{/if}}>
+                    <div {{#if PresentedDocumentNamePass="VTG5A"}} class="header__three-columns-one" {{else}} class="header__two-columns-one" {{/if}}>
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -127,7 +127,7 @@
                         </div>
                         <!-- /heading-info -->
                     </div>
-                    <div class="header__three-columns-two">
+                    <div {{#if PresentedDocumentNamePass="VTG5A"}} class="header__three-columns-two" {{else}} class="header__two-columns-two" {{/if}}>
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -148,6 +148,7 @@
                         </div>
                         <!-- /heading-info -->
                     </div>
+                    {{#if PresentedDocumentNamePass="VTG5A"}} 
                     <div class="header__three-columns-three">
                         <!-- heading-info -->
                         <div class="heading-info">
@@ -169,6 +170,7 @@
                         </div>
                         <!-- /heading-info -->
                     </div>
+                    {{/if}}
                 </div>
                 <!-- /header__two-columns -->
                 <!-- heading-info -->
