@@ -104,9 +104,9 @@
                      </span>
                 </div>
                 <!-- /heading-info -->
-                <!-- header__two-columns -->
-                <div class="header__two-columns">
-                    <div class="header__two-columns-one">
+                <!-- header__three-columns -->
+                <div {{#if PresentedDocumentNamePass="VTG5A"}}class="header__three-columns" {{else}} class="header__two-columns" {{/if}}>
+                    <div {{#if PresentedDocumentNamePass="VTG5A"}} class="header__three-columns-one" {{else}} class="header__two-columns-one" {{/if}}>
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -127,7 +127,7 @@
                         </div>
                         <!-- /heading-info -->
                     </div>
-                    <div class="header__two-columns-two">
+                    <div {{#if PresentedDocumentNamePass="VTG5A"}} class="header__three-columns-two" {{else}} class="header__two-columns-two" {{/if}}>
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -148,6 +148,29 @@
                         </div>
                         <!-- /heading-info -->
                     </div>
+                    {{#if PresentedDocumentNamePass="VTG5A"}} 
+                    <div class="header__three-columns-three">
+                        <!-- heading-info -->
+                        <div class="heading-info">
+                            <h2 class="heading-info__title">
+                              <span class="heading-info__title-left">
+                              <span class="circle-text">
+                              <span class="circle-text__number">(2c)</span>
+                              </span>
+                              </span>
+                                <span class="heading-info__title-right">
+                              <span class="heading-info__title-message">
+                              Registration Number
+                              </span>
+                              </span>
+                            </h2>
+                            <span class="heading-info__content" id="trn">
+                                {{data.trn}}
+                            </span>
+                        </div>
+                        <!-- /heading-info -->
+                    </div>
+                    {{/if}}
                 </div>
                 <!-- /header__two-columns -->
                 <!-- heading-info -->

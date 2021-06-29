@@ -30,6 +30,9 @@ public class CvsMotFailCertificateData extends CvsMotCertificateData {
     @JsonProperty("PRSDefects")
     private List<String> prsDefects;
 
+    @JsonProperty("IsTrailer")
+    private boolean isTrailer;
+
     public CvsMotFailCertificateData setDangerousDefects(List<String> dangerousDefects) {
         this.dangerousDefects = dangerousDefects;
         return this;
@@ -86,5 +89,14 @@ public class CvsMotFailCertificateData extends CvsMotCertificateData {
 
     public Summary getSummary() {
         return new Summary(FAILED_SUMMARY_HEADER);
+    }
+
+    public boolean getIsTrailer(){
+        return this.isTrailer;
+    }
+
+    public CvsMotFailCertificateData setIsTrailer(boolean isTrailerValue) {
+        this.isTrailer = isTrailerValue;
+        return this;
     }
 }
