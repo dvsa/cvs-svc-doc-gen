@@ -1,5 +1,7 @@
 package uk.gov.dvsa.model.cvs.certificateData;
 
+import uk.gov.dvsa.model.mot.enums.SkeletalVehicleTypes;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -87,6 +89,13 @@ public class AdrPassCertificateData {
     
     @JsonProperty("TestTypeDate")
     private String testTypeDate;
+
+    @JsonProperty("AdrCertificateNotes")
+    private String adrCertificateNotes;
+
+    @JsonProperty("BatteryListNumber")
+    private String batteryListNumber;
+
 
     public String getChasisNumber() {
         return chasisNumber;
@@ -291,6 +300,23 @@ public class AdrPassCertificateData {
         return this;
     }
 
+    public AdrPassCertificateData setAdrCertificateNotes(String adrCertificateNotes) {
+        this.adrCertificateNotes = adrCertificateNotes;
+        return this;
+    }
+    public String getAdrCertificateNotes() {
+        return this.adrCertificateNotes;
+    }
+
+    public AdrPassCertificateData setBatteryListNumber(String batteryListNumber) {
+        this.batteryListNumber = batteryListNumber;
+        return this;
+    }
+
+    public String getBatteryListNumber() {
+        return this.batteryListNumber;
+    }
+
     public String getFormattedPermittedDangerousGoods() {
         StringBuilder formattedPermittedDangerousGoods =  new StringBuilder("");
         if(this.permittedDangerousGoods == null)
@@ -342,6 +368,19 @@ public class AdrPassCertificateData {
                 return true;
             }
 
+        }
+        return false;
+    }
+
+    public boolean getShouldDisplayDangerousGoodsMessage() {
+        return isSkeletalVehicleType() && (getIsExplosivesType2() || getIsExplosivesType3());
+    }
+
+    private boolean isSkeletalVehicleType(){
+        for (SkeletalVehicleTypes type : SkeletalVehicleTypes.values()) {
+            if (type.getVehicleType().equals(this.vehicleType)) {
+                return true;
+            }
         }
         return false;
     }

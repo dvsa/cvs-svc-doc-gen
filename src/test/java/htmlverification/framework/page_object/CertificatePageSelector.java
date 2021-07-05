@@ -43,6 +43,7 @@ public enum CertificatePageSelector {
     NOTES_ID("notes"),
     TEST_TYPE_DATE_ID("testTypeDate"),
     ATF_NAME_ATF_P_NUMBER_ID("atfNameAtfPNumber"),
+    ADR_DANGEROUS_GOODS_FOOTER(".dangerousGoodsFooter"),
 
     // Roadworthiness Test Selectors
     CERT_TITLE("certTitle"),

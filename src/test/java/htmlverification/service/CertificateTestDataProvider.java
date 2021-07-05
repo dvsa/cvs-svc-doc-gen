@@ -152,12 +152,28 @@ public class CertificateTestDataProvider {
         adrPassCertificate.setDocumentName(CertificateTypes.ADR_PASS.getType());
         AdrPassCertificateData adrPassCertificateData = new AdrPassCertificateData();
 
-        adrPassCertificateData.setApplicantDetails( new ApplicantDetails("applicantDetailsName", "applicantDetailsStreet", "applicantDetailsTown", "applicantDetailsCity", "applicantDetailsPostCode"))
-                .setMake("demoMake").setModel("demoModel").setAtfNameAtfPNumber("demoAtfNameAtfPnumber").setBrakeEndurance(true).setChasisNumber("demoChassisNumber")
-                .setExpiryDate("10-12-2011").setPermittedDangerousGoods(new String[]{"\"FP <61 (FL)\"", "Explosives (type 2)", "Explosives (type 3)"})
-                .setRegistrationNumber("demoRegistrationNumber").setSpecialProvisions("demoSpecialProvisions").setTankCode("demoTankCode").setTankManufacturer("demoTankManufacturer")
-                .setTankManufactureSerialNo("demoTankManufacturerSerialNo").setTankStatement(new TankStatement("Substances permitted under the tank code and any special provisions specified in 9 may be carried", "demoStatement", null))
-                .setTc2InitApprovalNo("demoTc2InitApprovalNo").setVehicleType("demoVehicleType").setWeight("demoWeight").setYearOfManufacture("1950").setAtfNameAtfPNumber("demoAtf demoAtfPNumber").setTestTypeDate("12019-11-06T15:37:32.917Z").setNotes("demoNotes");
+        adrPassCertificateData
+                .setApplicantDetails( new ApplicantDetails("applicantDetailsName", "applicantDetailsStreet", "applicantDetailsTown", "applicantDetailsCity", "applicantDetailsPostCode"))
+                .setMake("demoMake")
+                .setModel("demoModel")
+                .setAtfNameAtfPNumber("demoAtfNameAtfPnumber")
+                .setBrakeEndurance(true)
+                .setChasisNumber("demoChassisNumber")
+                .setRegistrationNumber("123")
+                .setSpecialProvisions("demoSpecialProvisions").setTankCode("demoTankCode").setTankManufacturer("demoTankManufacturer")
+                .setTankManufactureSerialNo("demoTankManufacturerSerialNo")
+                .setTc2InitApprovalNo("demoTc2InitApprovalNo")
+                .setVehicleType("Centre axle skeletal")
+                .setWeight("demoWeight").setYearOfManufacture("1950").setAtfNameAtfPNumber("demoAtf demoAtfPNumber")
+                .setExpiryDate("2019-11-06T15:37:32.917Z")
+                .setTestTypeDate("2019-11-06T15:37:32.917Z")
+
+                .setAdrCertificateNotes("Medium length string.")
+                .setTankStatement(new TankStatement("Substances permitted under the tank code and any special provisions specified in 9 may be carried", "demoStatement", "Test product list", new String[]{ "UN7269", "UN26289" }))
+                .setBatteryListNumber("1")
+                .setPermittedDangerousGoods(new String[]{"\"FP <61 (FL)\"", "Explosives (type 2)", "Explosives (type 3)"})
+                .setNotes("demoNotes");
+
         adrPassCertificate.setAdrData(adrPassCertificateData);
         return adrPassCertificate;
     }
