@@ -2,6 +2,7 @@ package htmlverification.service;
 
 import htmlverification.framework.component.DefectSummaryComponent;
 import uk.gov.dvsa.model.cvs.AdrPassCertificate;
+import uk.gov.dvsa.model.cvs.MinistryPlate;
 import uk.gov.dvsa.model.cvs.certificateData.AdrPassCertificateData;
 import uk.gov.dvsa.model.cvs.certificateData.ApplicantDetails;
 import uk.gov.dvsa.model.cvs.certificateData.TankStatement;
@@ -160,6 +161,29 @@ public class CertificateTestDataProvider {
                 .setTc2InitApprovalNo("demoTc2InitApprovalNo").setVehicleType("demoVehicleType").setWeight("demoWeight").setYearOfManufacture("1950").setAtfNameAtfPNumber("demoAtf demoAtfPNumber").setTestTypeDate("12019-11-06T15:37:32.917Z").setNotes("demoNotes");
         adrPassCertificate.setAdrData(adrPassCertificateData);
         return adrPassCertificate;
+    }
+
+    public static MinistryPlate getMinistryPlate() {
+        MinistryPlate ministryPlateCertificate = new MinistryPlate();
+        ministryPlateCertificate.setDocumentName(CertificateTypes.VTG6_VTG7.getType());
+        MinistryPlateData ministryPlateCertificateData = new MinistryPlateData();
+
+        ministryPlateCertificateData.setPlateSerialNumber("12345")
+                .setDtpNumber("DTPNUM").setPrimaryVrm("BBB333").setVin("ABCDEFGH444444").setVariantNumber("22").setApprovalTypeNumber("12345")
+                .setMake("Ford").setModel("Focus").setSpeedLimiterMrk("Yes").setFunctionCode("A").setRegnDate("2019-12-12").setManufactureYear("2018")
+                .setGrossGbWeight("2556").setGrossEecWeight("1245").setGrossDesignWeight("2345").setTrainGbWeight("3500").setTrainEecWeight("2466")
+                .setTrainDesignWeight("4452").setMaxTrainGbWeight("2233").setMaxTrainEecWeight("1234").setMaxLoadOnCoupling("2500")
+                .setDimensionLength("5600").setDimensionWidth("8700").setFrontAxleTo5thWheelCouplingMax("9845").setFrontAxleTo5thWheelCouplingMin("4567")
+                .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12").setTyreUseCode("2B")
+                .setAxles(
+                    new Axles(
+                        new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
+                        new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
+                        new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")),
+                        new Axle(new Weight("1230", "5522", "1245"), new Tyre("205/45/R17", "152/148", "single")))
+                );
+        ministryPlateCertificate.setPlateData(ministryPlateCertificateData);
+        return ministryPlateCertificate;
     }
 
     public static VT20 getMultiPageVt20WithHiddenIssuerInfo() {

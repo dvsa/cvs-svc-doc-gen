@@ -35,6 +35,7 @@ public enum CertificateTypes {
     CVS_TRL_PRS("CVS/TRL_PRS"),
     RWT_DATA("CVS/RWT"),
     ADR_PASS("CVS/ADR_PASS"),
+    VTG6_VTG7("CVS/VTG6_VTG7"),
 
     INSPECTION_CHECKLIST("MOT/InspectionChecklist");
 

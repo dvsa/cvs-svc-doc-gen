@@ -26,6 +26,7 @@ public enum CertificateTemplates {
     VTG5A("CommercialVehicles/passNoSeatbeltFields"),
     VTG30("CommercialVehicles/VTG30"),
     ADR_PASS("CommercialVehicles/ADR_PASS"),
+    VTG6_VTG7("CommercialVehicles/VTG6_VTG7"),
     RWT_DATA("CommercialVehicles/RWT_DATA"),
 
     INSPECTION_CHECKLIST("MOT/Inspection_Checklist");
