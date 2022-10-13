@@ -118,4 +118,33 @@ public class AdrPassTest {
         String atfNameAtfPNumber = certificatePageObject.getAtfNameAtfPNumber();
         assertEquals(testCertificate.getAdrData().getAtfNameAtfPNumber(), atfNameAtfPNumber);
     }
+
+    @Test
+    public void verifyAdrCertificateNotes() {
+        String dangerousGoodsFooter = certificatePageObject.getDangerousGoodsFooter();
+        String adrCertificateNotes = testCertificate.getAdrData().getAdrCertificateNotes();
+        assertTrue(dangerousGoodsFooter.contains(adrCertificateNotes));
+    }
+
+    @Test
+    public void verifyProductListUnNo() {
+        String dangerousGoodsFooter = certificatePageObject.getDangerousGoodsFooter();
+        String productListUnNo = testCertificate.getAdrData().getTankStatement().getProductListUnNo();
+        assertTrue(dangerousGoodsFooter.contains(productListUnNo));
+    }
+
+    @Test
+    public void verifyBatteryListNumber() {
+        String dangerousGoodsFooter = certificatePageObject.getDangerousGoodsFooter();
+        String batteryListNumber = testCertificate.getAdrData().getBatteryListNumber();
+        assertTrue(dangerousGoodsFooter.contains("AS PER BATTERY-ELEMENT LIST NO " + batteryListNumber + " ATTACHED"));
+    }
+
+    @Test
+    public void verifyPermittedDangerousGoodsMessage() {
+        String dangerousGoodsFooter = certificatePageObject.getDangerousGoodsFooter();
+        assertTrue(dangerousGoodsFooter.contains("THIS VEHICLE IS CERTIFIED FOR THE CARRIAGE OF DANGEROUS GOODS IN CONJUNCTION "
+            +"WITH SUITABLY CERTIFIED TANK OR BATTERY CONTAINERS OR SUITABLY CONSTRUCTED EXPLOSIVE CONTAINERS AS APPROPRIATE"));
+    }
+
 }

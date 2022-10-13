@@ -17,15 +17,19 @@ public class TankStatement {
     @JsonProperty
     private String productList;
 
+    @JsonProperty
+    private String[] productListUnNo;
+
 
     public TankStatement() {
     }
 
-    public TankStatement(String substancesPermitted, String statement, String productList) {
+    public TankStatement(String substancesPermitted, String statement, String productList, String[] productListUnNo) {
         this.substancesPermitted = substancesPermitted;
         this.statement = statement;
         this.town = town;
         this.productList = productList;
+        this.productListUnNo = productListUnNo;
     }
 
     public String getSubstancesPermitted() {
@@ -58,5 +62,14 @@ public class TankStatement {
 
     public void setProductList(String productList) {
         this.productList = productList;
+    }
+
+    public void setProductListUnNo(String[] productListUnNo) {
+        this.productListUnNo = productListUnNo;
+    }
+
+    public String getProductListUnNo() {
+        if(this.productListUnNo == null) return "";
+        return String.join(", ", this.productListUnNo);
     }
 }

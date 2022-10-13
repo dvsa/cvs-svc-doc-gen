@@ -125,7 +125,10 @@
             </div>
         </div>
         <div class = "dangerousGoodsFooter">
-            <h3>AS PER INSURERS PRODUCT LIST NO ATTACHED</h3>
+            {{#if adrData.adrCertificateNotes}}<h5>{{adrData.adrCertificateNotes}}</h5>{{/if}}
+            {{#if adrData.tankStatement.productList}}<h5>{{adrData.tankStatement.productListUnNo}}</h5>{{/if}}
+            {{#if adrData.batteryListNumber}}<h3>AS PER BATTERY-ELEMENT LIST NO {{adrData.batteryListNumber}} ATTACHED</h3>{{/if}}
+            {{#if adrData.shouldDisplayDangerousGoodsMessage}}<h5>THIS VEHICLE IS CERTIFIED FOR THE CARRIAGE OF DANGEROUS GOODS IN CONJUNCTION WITH SUITABLY CERTIFIED TANK OR BATTERY CONTAINERS OR SUITABLY CONSTRUCTED EXPLOSIVE CONTAINERS AS APPROPRIATE</h5>{{/if}}
             <p>Only substances which are not liable to react dangerously with the materials of the shell, gaskets, equipment and protective linings (if applicable) may be carried</p>
         </div>
     </div>
