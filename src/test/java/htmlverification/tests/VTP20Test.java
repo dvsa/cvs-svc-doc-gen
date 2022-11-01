@@ -3,7 +3,6 @@ package htmlverification.tests;
 import com.github.jknack.handlebars.Handlebars;
 import htmlverification.framework.page_object.CertificatePageObject;
 import htmlverification.service.CvsCertificateTestDataProvider;
-import org.jsoup.nodes.Element;
 import org.junit.Before;
 import org.junit.Test;
 import uk.gov.dvsa.model.cvs.VTP20;
@@ -139,6 +138,24 @@ public class VTP20Test {
     public void verifyCurrentOdomoter() {
         String actual = certificatePageObject.getElement("#mileage").text();
         String expected = "22,341 miles";
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void verifyOdomoterHistory() {
+        String actual = certificatePageObject.getElement("#mileage-history").text();
+        String expected = "120 km 01.02.2016 330 km 30.01.2017";
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void verifyOdometerHistoryMessageWhenNoHistoryExists() {
+        testCertificate = CvsCertificateTestDataProvider.getVtp20WithNoOdometerHistory();
+        String certHtml = htmlGenerator.generate(testCertificate).get(0);
+        certificatePageObject = new CertificatePageObject(certHtml);
+
+        String actual = certificatePageObject.getElement("#no_data_message").text();
+        String expected = "No data available";
         assertEquals(expected, actual);
     }
 }

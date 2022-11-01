@@ -177,6 +177,7 @@ public class CertificatePageObject extends BasePageObject {
                 throw new IllegalStateException("Unexpected value: " + id);
         }
     }
+    public String getTrn() { return getElementById(TRN.getSelector()).text();}
 
     public String getPlateSerialNumber() {
         return getElementById(PLATE_SERIAL_NUMBER.getSelector()).text();

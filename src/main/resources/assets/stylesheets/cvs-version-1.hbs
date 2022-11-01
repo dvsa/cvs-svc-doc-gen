@@ -184,7 +184,8 @@ vertical-align: top
 }
 
 .header__three-columns {
-display: table
+display: table;
+width: 100%;
 }
 
 .header__three-columns--welsh:before {
@@ -200,13 +201,21 @@ vertical-align: top
 }
 
 .header__three-columns-two {
-width: 120.3333pt;
+min-width: 120.3333pt;
+max-width: 300pt;
 display: table-cell;
 vertical-align: top
 }
 
 .header__three-columns-three {
 width: 163.3333pt;
+display: table-cell;
+vertical-align: top
+}
+
+.header__three-columns-three-wide {
+min-width: 183.3333pt;
+max-width: 250pt;
 display: table-cell;
 vertical-align: top
 }
@@ -247,6 +256,12 @@ float: left;
 width: 90pt
 }
 
+.header__history-left-wide {
+float: left;
+min-width: 150pt;
+max-width: 300pt
+}
+
 .header__three-columns--welsh .header__history-left {
 width: 120pt
 }
@@ -264,8 +279,8 @@ font-weight: 700
 
 .header__history-date {
 display: block;
-font-family: nta;
-font-weight: 100
+font-family: nta-bold;
+font-weight: 700
 }
 
 .results__wrapper {

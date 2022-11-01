@@ -23,4 +23,6 @@ public class VTG5A extends CvsMotCertificate {
     }
 
     public String getRegOrIdHeading() { return "Identification number";  }
+
+    
 }

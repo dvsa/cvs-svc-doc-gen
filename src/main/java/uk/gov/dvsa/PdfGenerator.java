@@ -48,7 +48,6 @@ public class PdfGenerator implements RequestHandler<Map<String, Object>, ApiGate
         eventLogger.logEvent(EventType.CERT_REQUEST_RECEIVED);
 
         try {
-            System.out.println("TEST TEST TEST TEST TEST TEST TEST");
             if (input.containsKey(requestParser.REQUEST_HEADERS)) {
             // Trace headers only they are provided in the input request, else ignore.
                 Map<String, String> requestHeaders = requestParser.getTracingHeaders(input);

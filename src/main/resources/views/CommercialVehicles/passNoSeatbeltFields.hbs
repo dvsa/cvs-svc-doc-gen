@@ -104,9 +104,9 @@
                      </span>
                 </div>
                 <!-- /heading-info -->
-                <!-- header__two-columns -->
-                <div class="header__two-columns">
-                    <div class="header__two-columns-one">
+                <!-- header__three-columns -->
+                <div {{#if data.isTrailer}}class="header__three-columns" {{else}} class="header__two-columns" {{/if}}>
+                    <div {{#if data.isTrailer}} class="header__three-columns-one" {{else}} class="header__two-columns-one" {{/if}}>
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -127,7 +127,7 @@
                         </div>
                         <!-- /heading-info -->
                     </div>
-                    <div class="header__two-columns-two">
+                    <div {{#if data.isTrailer}} class="header__three-columns-two" {{else}} class="header__two-columns-two" {{/if}}>
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -148,6 +148,29 @@
                         </div>
                         <!-- /heading-info -->
                     </div>
+                    {{#if data.isTrailer}} 
+                    <div class="header__three-columns-three">
+                        <!-- heading-info -->
+                        <div class="heading-info">
+                            <h2 class="heading-info__title">
+                              <span class="heading-info__title-left">
+                              <span class="circle-text">
+                              <span class="circle-text__number">(2c)</span>
+                              </span>
+                              </span>
+                                <span class="heading-info__title-right">
+                              <span class="heading-info__title-message">
+                              Registration Number
+                              </span>
+                              </span>
+                            </h2>
+                            <span class="heading-info__content" id="trn">
+                                {{data.trn}}
+                            </span>
+                        </div>
+                        <!-- /heading-info -->
+                    </div>
+                    {{/if}}
                 </div>
                 <!-- /header__two-columns -->
                 <!-- heading-info -->
@@ -213,8 +236,7 @@
                     <!-- /heading-info -->
                 </div>
                 {{/if}}
-                    {{#if data.odometerHistoryList}}
-                    <div class="header__three-columns-three">
+                    <div class="header__three-columns-three-wide">
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -224,10 +246,11 @@
                             </h2>
                             <div class="heading-info__content" id="mileage-history">
                                 <!-- header__histories -->
+                                {{#if data.odometerHistoryList}}
                                 <ul class="header__histories">
                                     {{#each data.mileageHistory}}
                                         <li class="header__history">
-                                            <div class="header__history-left">
+                                            <div class="header__history-left-wide">
                                     <span class="header__history-mileage">
                                         {{this.value}}
                                     </span>
@@ -240,12 +263,16 @@
                                         </li>
                                     {{/each}}
                                 </ul>
+                                {{else}}
+                                    <span class="heading-info__content" id="no_data_message">
+                                        No data available
+                                    </span>
+                                {{/if}}
                                 <!-- /header__histories -->
                             </div>
                         </div>
                         <!-- /heading-info -->
                     </div>
-                {{/if}}
             </div>
             <!-- header__three-columns -->
         </div>

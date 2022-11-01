@@ -92,6 +92,12 @@ public class CvsMotCertificateData  {
     @JsonProperty("MinorDefects")
     private List<String> minorDefects;
 
+    @JsonProperty("Trn")
+    private  String trn;
+
+    @JsonProperty("IsTrailer")
+    private boolean isTrailer;
+
     public String getSeatBeltTested() {
         return seatBeltTested;
     }
@@ -355,5 +361,21 @@ public class CvsMotCertificateData  {
 
     public boolean hasMinorDefects(List<String> minorDefects) {
         return minorDefects != null && !minorDefects.isEmpty();
+    }
+
+    public  String getTrn() { return  trn; }
+
+    public CvsMotCertificateData setTrn(String trnValue) {
+        this.trn = trnValue;
+        return  this;
+    }
+
+    public boolean getIsTrailer(){
+        return this.isTrailer;
+    }
+
+    public CvsMotCertificateData setIsTrailer(boolean isTrailerValue) {
+        this.isTrailer = isTrailerValue;
+        return this;
     }
 }

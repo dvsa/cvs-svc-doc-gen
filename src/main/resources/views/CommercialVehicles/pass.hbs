@@ -213,8 +213,7 @@
                     <!-- /heading-info -->
                 </div>
                 {{/if}}
-                    {{#if data.odometerHistoryList}}
-                    <div class="header__three-columns-three">
+                    <div class="header__three-columns-three-wide">
                         <!-- heading-info -->
                         <div class="heading-info">
                             <h2 class="heading-info__title">
@@ -224,10 +223,11 @@
                             </h2>
                             <div class="heading-info__content" id="mileage-history">
                                 <!-- header__histories -->
+                                {{#if data.odometerHistoryList}}
                                 <ul class="header__histories">
                                     {{#each data.mileageHistory}}
                                         <li class="header__history">
-                                            <div class="header__history-left">
+                                            <div class="header__history-left-wide">
                                     <span class="header__history-mileage">
                                         {{this.value}}
                                     </span>
@@ -240,12 +240,16 @@
                                         </li>
                                     {{/each}}
                                 </ul>
+                                {{else}}
+                                    <span class="heading-info__content" id="no_data_message">
+                                        No data available
+                                    </span>
+                                {{/if}}
                                 <!-- /header__histories -->
                             </div>
                         </div>
                         <!-- /heading-info -->
                     </div>
-                {{/if}}
             </div>
             <!-- header__three-columns -->
         </div>

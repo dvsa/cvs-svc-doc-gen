@@ -5,6 +5,7 @@ import uk.gov.dvsa.model.cvs.VTG30;
 import uk.gov.dvsa.model.cvs.VTP20;
 import uk.gov.dvsa.model.cvs.VTP30;
 import uk.gov.dvsa.model.cvs.VTG5;
+import uk.gov.dvsa.model.cvs.VTG5A;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateData;
 import uk.gov.dvsa.model.cvs.certificateData.CvsOdometerReading;
@@ -31,6 +32,15 @@ public class CvsCertificateTestDataProvider {
 
         CvsMotCertificateData data = document.getData();
         data.setAdvisoryDefects(generateRFRs(INVALID_XML_RFR_TEXT, 3));
+
+        return document;
+    }
+
+    public static VTP20 getVtp20WithNoOdometerHistory() {
+        VTP20 document = getVtp20();
+
+        CvsMotCertificateData data = document.getData();
+        data.setOdometerHistoryList(null);
 
         return document;
     }
@@ -192,6 +202,44 @@ public class CvsCertificateTestDataProvider {
         return vtg5;
     }
 
+    public static VTG5A getVtg5a() {
+        VTG5A vtg5a = new VTG5A();
+        vtg5a.setDocumentName(CertificateTypes.CVS_TRL_PASS.getType());
+        CvsMotCertificateData vtg5aData = new CvsMotCertificateData();
+        vtg5aData
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT)
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT)
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setCountryOfRegistrationCode("GB")
+                .setRawVin(VIN)
+                .setDateOfTheTest("12.11.2018")
+                .setExpiryDate("12.10.2018")
+                .setTestStationPNumber("P12345")
+                .setTestStationName("TEST STATION NAME")
+                .setMake("Aston Martin")
+                .setModel("DB11")
+                .setIssuersName("R.DREWNO")
+                .setTestStationName("POPULAR GARAGES")
+                .setTestNumber("1806 8140 0628")
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setTrn("ABC1234")
+                .setIsTrailer(true);
+
+        vtg5a.setData(vtg5aData);
+
+        Signature signature = new Signature();
+        signature
+                .setImageData("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==")
+                .setImageType("png");
+
+        vtg5a.setSignature(signature);
+
+        return vtg5a;
+    }
+
+
     public static VTG5 getVtg5HavingInvalidXMLCharacter() {
         VTG5 document = getVtg5();
 
@@ -237,7 +285,8 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("R.DREWNO")
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
-                .setEarliestDateOfTheNextTest("13.10.2018");
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setTrn("ABC1234");
 
         vtg30Data
                 .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT)
@@ -246,7 +295,8 @@ public class CvsCertificateTestDataProvider {
                 .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_TEXT)
                 .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
 
-                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1));
+                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1))
+                .setIsTrailer(true);
 
         vtg30.setFailData(vtg30Data);
 
