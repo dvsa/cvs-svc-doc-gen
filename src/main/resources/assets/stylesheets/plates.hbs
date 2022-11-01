@@ -1,7 +1,7 @@
-@media print {
+
 @page {
-size: A5;
-}
+size: landscape;
+margin: 0;
 }
 
 p {
@@ -14,17 +14,11 @@ div, span {
 font-family: "Calibri", sans-serif;
 }
 
-.separatePage {
-page-break-after: always;
-}
-
 body,
 html {
 line-height: 1;
 margin: 0;
 -fs-page-sequence: start;
-page-break-after: always;
-page-break-before: always;
 page-break-inside: avoid;
 }
 
@@ -35,22 +29,26 @@ box-sizing: border-box;
 line-height: 1
 }
 
+.table-half {
+    width: 47%;
+}
+
+.gap {
+    width: 5%;
+}
+
 .vtg7 {
-width: 559px;
-height: 780px;
+height: 775px;
+width: 535px;
 border-collapse:collapse;
 border:none;
-margin-left:10px;
-margin-right: 10px;
 }
 
 .vtg6 {
-width: 559px;
+width: 400px;
 height: 640px;
 border-collapse:collapse;
 border:none;
-margin-left:10px;
-margin-right: 10px;
 }
 
 .logo {
@@ -101,7 +99,7 @@ padding-top: 5px;
 
 .vtg7a {
 margin: auto;
-font-size: 9px;
+font-size: 8px;
 font-weight: bold;
 vertical-align: middle;
 padding-top: 3px;
@@ -109,24 +107,24 @@ padding-top: 3px;
 
 .vtg6a {
 margin: auto;
-font-size: 10px;
+font-size: 9px;
 font-weight: bold;
 padding-top: 3px;
 }
 
 .serial_dtp {
-font-size: 10px;
+font-size: 9px;
 }
 
 .serial_value {
-font-size: 12px;
+font-size: 10px;
 text-align:center;
 font-weight: bold;
 padding-bottom: 10px;
 }
 
 .dtp_value {
-font-size: 12px;
+font-size: 10px;
 text-align:center;
 font-weight: bold;
 }
@@ -587,7 +585,7 @@ margin: auto;
 }
 
 .secondPage {
-width: 559px;
+width: 545px;
 height: 775px;
 margin-left: 10px;
 margin-right: 10px;
@@ -723,7 +721,7 @@ width: 80%;
 }
 
 .vtg6_secondPage {
-width: 559px;
+width: 470px;
 height: 775px;
 margin-left: 10px;
 margin-right: 10px;
