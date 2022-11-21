@@ -80,7 +80,8 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("R.DREWNO")
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
-                .setEarliestDateOfTheNextTest("13.10.2018");
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setReason("REPLACEMENT");
 
         vtp20.setData(vtp20Data);
 
@@ -90,6 +91,7 @@ public class CvsCertificateTestDataProvider {
                 .setImageType("png");
 
         vtp20.setSignature(signature);
+
 
         return vtp20;
     }
@@ -139,7 +141,8 @@ public class CvsCertificateTestDataProvider {
                 .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_TEXT)
                 .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
 
-                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1));
+                .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1))
+                .setReason("REPLACEMENT");
 
         vtp30.setFailData(vtp30Data);
 
@@ -188,7 +191,8 @@ public class CvsCertificateTestDataProvider {
                 .setIssuersName("R.DREWNO")
                 .setTestStationName("POPULAR GARAGES")
                 .setTestNumber("1806 8140 0628")
-                .setEarliestDateOfTheNextTest("13.10.2018");
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setReason("REPLACEMENT");
 
         vtg5.setData(vtg5Data);
 
@@ -225,7 +229,8 @@ public class CvsCertificateTestDataProvider {
                 .setTestNumber("1806 8140 0628")
                 .setEarliestDateOfTheNextTest("13.10.2018")
                 .setTrn("ABC1234")
-                .setIsTrailer(true);
+                .setIsTrailer(true)
+                .setReason("REPLACEMENT");
 
         vtg5a.setData(vtg5aData);
 
@@ -296,7 +301,8 @@ public class CvsCertificateTestDataProvider {
                 .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
 
                 .setPrsDefects(generateRFRs(PRS_RFR_TEXT, 1))
-                .setIsTrailer(true);
+                .setIsTrailer(true)
+                .setReason("REPLACEMENT");
 
         vtg30.setFailData(vtg30Data);
 

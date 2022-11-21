@@ -1,5 +1,6 @@
 package uk.gov.dvsa.model.cvs;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData;
 import uk.gov.dvsa.model.mot.MotCertificate;
