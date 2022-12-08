@@ -98,7 +98,7 @@ public class CvsMotCertificateData  {
     @JsonProperty("IsTrailer")
     private boolean isTrailer;
 
-    @JsonProperty("certReason")
+    @JsonProperty("certIssueReason")
     private String reason = "";
 
     public String getSeatBeltTested() {
