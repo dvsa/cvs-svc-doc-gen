@@ -38,17 +38,17 @@ public class HtmlGenerator {
             () -> getTemplates(context.getDocumentName()),
             EventType.CERT_TEMPLATES_COMPILATION
         );
-        List<String> htmlDocuments = executor.timed(
+        return executor.timed(
             () -> processTemplates(context, templates),
             EventType.CERT_HTML_GENERATION
         );
-        return htmlDocuments;
     }
 
     private List<Template> getTemplates(String documentName) {
         List<Template> templates = new ArrayList<>();
         String[] templateNames = DocumentsConfig.fromDocumentName(documentName).getTemplateNames();
         for (String templateName: templateNames) {
+            logger.info("Compiling {} template", templateName);
             templates.add(compileTemplate(templateName));
         }
         return templates;

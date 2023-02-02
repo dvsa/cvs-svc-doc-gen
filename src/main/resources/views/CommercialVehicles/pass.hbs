@@ -83,6 +83,9 @@
         <div class="header">
             <div class="header__left">
                 <h1 class="header__title">
+                    {{#if reissue}}
+                    <p class="heading-info--no-margin">{{reissue.reason}}</p>
+                    {{/if}}
                     MOT test certificate ({{testType}})
                 </h1>
                 <!-- heading-info -->
@@ -387,6 +390,13 @@
                         </div>
                     </div>
                 </div>
+                {{#if reissue}}
+                <div class="util-avoid-page-break-inside" id="reissueInfo">
+                    <p class="test-information__message">
+                        {{reissue.reason}} certificate issued by {{reissue.issuer}} on {{reissue.date}}
+                    </p>
+                </div>
+                {{/if}}
                 <div class="util-avoid-page-break-inside">
                     <p class="test-information__message">
                         Check that this document is genuine by visiting <a class="test-information__message-link"

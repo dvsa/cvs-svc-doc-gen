@@ -1,0 +1,19 @@
+ignore:
+    'snyk:lic:maven:com.itextpdf:itextpdf:AGPL-3.0':
+        - '*':
+            reason: 'No fix available'
+    'snyk:lic:maven:org.xhtmlrenderer:flying-saucer-pdf-openpdf:LGPL-2.1':
+        - '*':
+            reason: 'No fix available'
+    'snyk:lic:maven:org.xhtmlrenderer:flying-saucer-core:LGPL-2.1':
+        - '*':
+            reason: 'No fix available'
+    'snyk:lic:maven:junit:junit:EPL-1.0':
+        - '*':
+            reason: 'No fix available'
+    'snyk:lic:maven:com.github.librepdf:openpdf:LGPL-2.1_OR_MPL-2.0':
+        - '*':
+            reason: 'No fix available'
+    'snyk:lic:maven:com.github.albfernandez:juniversalchardet:(GPL-3.0_OR_MPL-1.1)':
+        - '*':
+            reason: 'No fix available'

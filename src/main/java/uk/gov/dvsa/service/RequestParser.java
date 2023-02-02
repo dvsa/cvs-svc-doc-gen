@@ -84,6 +84,8 @@ public class RequestParser {
         String documentName = pathParameters.get(DOCUMENT_NAME_PARAMETER);
         String documentDirectory = pathParameters.get(DOCUMENT_DIRECTORY_PARAMETER);
 
+        logger.info("documentName received: {}", documentName);
+        logger.info("documentDirectory received: {}", documentDirectory);
         return trimFileExtension(documentDirectory + "/" + documentName);
     }
 
@@ -95,7 +97,6 @@ public class RequestParser {
         }
         return documentPath;
     }
-
 
     private static String readRequestBody(Map<String, Object> input) {
         if (!input.containsKey(REQUEST_BODY)) {

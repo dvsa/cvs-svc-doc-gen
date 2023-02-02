@@ -1,6 +1,8 @@
 package htmlverification.tests;
 
 import com.github.jknack.handlebars.Handlebars;
+
+import htmlverification.framework.exception.HtmlElementNotFoundException;
 import htmlverification.framework.page_object.CertificatePageObject;
 import htmlverification.service.CvsCertificateTestDataProvider;
 import org.junit.Before;
@@ -124,6 +126,36 @@ public class VTP20Test {
     public void verifyTitle() {
         String titleText = certificatePageObject.getElement(".header__title").text();
         String expected = "MOT test certificate (" + testCertificate.getTestType() + ")";
+        assertEquals(expected, titleText);
+    }
+    
+    @Test(expected = HtmlElementNotFoundException.class)
+    public void verifyReplacementInfoNotPresent() {
+        certificatePageObject.getElementById("reissueInfo");
+    }
+
+    @Test
+    public void verifyReplacementTitle() {
+        testCertificate = CvsCertificateTestDataProvider.getReplacementVtp20();
+        String certHtml = htmlGenerator.generate(testCertificate).get(0);
+        certificatePageObject = new CertificatePageObject(certHtml);
+
+        String titleText = certificatePageObject.getElement(".header__title").text();
+        String expected = "Replacement MOT test certificate (" + testCertificate.getTestType() + ")";
+        assertEquals(expected, titleText);
+    }
+
+    @Test
+    public void verifyReplacementInfo() {
+        testCertificate = CvsCertificateTestDataProvider.getReplacementVtp20();
+        String certHtml = htmlGenerator.generate(testCertificate).get(0);
+        certificatePageObject = new CertificatePageObject(certHtml);
+
+        String titleText = certificatePageObject.getElementById("reissueInfo").text();
+        String expected = String.format("%s certificate issued by %s on %s",
+            testCertificate.getReissue().getReason(),
+            testCertificate.getReissue().getIssuer(),
+            testCertificate.getReissue().getDate());
         assertEquals(expected, titleText);
     }
 

@@ -2,9 +2,6 @@ package uk.gov.dvsa.logging;
 
 import org.apache.logging.log4j.ThreadContext;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 public class LogContextWrapper {
 
     public static final String CONTEXT_EVENT_KEY = "event";
@@ -15,8 +12,6 @@ public class LogContextWrapper {
     private static final String CONTEXT_SPAN_ID_KEY = "spanId";
     private static final String CONTEXT_PARENT_SPAN_ID_KEY = "parentSpanId";
 
-    private static final NumberFormat formatter = new DecimalFormat("#0.000000");
-
     public static void setEvent(EventType event) {
         ThreadContext.put(CONTEXT_EVENT_KEY, event.getName());
     }
@@ -25,9 +20,9 @@ public class LogContextWrapper {
         ThreadContext.remove(CONTEXT_EVENT_KEY);
     }
 
-    public static void setDuration(Long durationNanos) {
-        ThreadContext.put(CONTEXT_DURATION_KEY, formatter.format(durationNanos / 10e9));
-        ThreadContext.put(CONTEXT_FORMATTED_DURATION_KEY, formatter.format(durationNanos / 10e9) + " seconds");
+    public static void setDuration(String duration) {
+        ThreadContext.put(CONTEXT_DURATION_KEY, duration);
+        ThreadContext.put(CONTEXT_FORMATTED_DURATION_KEY, duration + " seconds");
     }
 
     public static void cleanupDuration() {

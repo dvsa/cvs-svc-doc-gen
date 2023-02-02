@@ -1,6 +1,7 @@
 package uk.gov.dvsa.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import uk.gov.dvsa.model.cvs.certificateData.Reissue;
 
 public abstract class Document {
 
@@ -8,6 +9,9 @@ public abstract class Document {
 
     @JsonProperty("Watermark")
     private String watermark;
+
+    @JsonProperty("Reissue")
+    private Reissue reissue;
 
     public String getWatermark() {
         return watermark;
@@ -25,6 +29,14 @@ public abstract class Document {
     public Document setDocumentName(String documentName) {
         this.documentName = documentName;
         return this;
+    }
+
+    public Reissue getReissue() {
+        return reissue;
+    }
+
+    public void setReissue(Reissue reissue) {
+        this.reissue = reissue;
     }
 
     public String getRoot() {
