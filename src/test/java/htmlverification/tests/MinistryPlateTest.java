@@ -164,15 +164,15 @@ public class MinistryPlateTest {
     }
 
     @Test
-    public void verifyFrontAxleTo5thWheelCouplingMin() {
-        String frontAxleTo5thWheelCouplingMin = certificatePageObject.getFrontAxleTo5thWheelCouplingMin();
-        assertEquals(testCertificate.getPlateData().getFrontAxleTo5thWheelCouplingMin(), frontAxleTo5thWheelCouplingMin);
+    public void verifyFrontVehicleTo5thWheelCouplingMin() {
+        String frontVehicleTo5thWheelCouplingMin = certificatePageObject.getFrontVehicleTo5thWheelCouplingMin();
+        assertEquals(testCertificate.getPlateData().getFrontVehicleTo5thWheelCouplingMin(), frontVehicleTo5thWheelCouplingMin);
     }
 
     @Test
-    public void verifyFrontAxleTo5thWheelCouplingMax() {
-        String frontAxleTo5thWheelCouplingMax = certificatePageObject.getFrontAxleTo5thWheelCouplingMax();
-        assertEquals(testCertificate.getPlateData().getFrontAxleTo5thWheelCouplingMax(), frontAxleTo5thWheelCouplingMax);
+    public void verifyFrontVehicleTo5thWheelCouplingMax() {
+        String frontVehicleTo5thWheelCouplingMax = certificatePageObject.getFrontVehicleTo5thWheelCouplingMax();
+        assertEquals(testCertificate.getPlateData().getFrontVehicleTo5thWheelCouplingMax(), frontVehicleTo5thWheelCouplingMax);
     }
 
     @Test

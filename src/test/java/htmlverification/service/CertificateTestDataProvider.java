@@ -177,7 +177,7 @@ public class CertificateTestDataProvider {
                 .setMake("Ford").setModel("Focus").setSpeedLimiterMrk("Yes").setFunctionCode("A").setRegnDate("2019-12-12").setManufactureYear("2018")
                 .setGrossGbWeight("2556").setGrossEecWeight("1245").setGrossDesignWeight("2345").setTrainGbWeight("3500").setTrainEecWeight("2466")
                 .setTrainDesignWeight("4452").setMaxTrainGbWeight("2233").setMaxTrainEecWeight("1234").setMaxLoadOnCoupling("2500")
-                .setDimensionLength("5600").setDimensionWidth("8700").setFrontAxleTo5thWheelCouplingMax("9845").setFrontAxleTo5thWheelCouplingMin("4567")
+                .setDimensionLength("5600").setDimensionWidth("8700").setFrontVehicleTo5thWheelCouplingMax("9845").setFrontVehicleTo5thWheelCouplingMin("4567")
                 .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12T16:46:09.060Z").setTyreUseCode("2B")
                 .setAxles(
                     new Axles(
@@ -203,7 +203,7 @@ public class CertificateTestDataProvider {
                 .setMake("Ford").setModel("Focus").setSpeedLimiterMrk("Yes").setFunctionCode("A").setRegnDate("2019-12-12").setManufactureYear("2018")
                 .setGrossGbWeight("2556").setGrossEecWeight("1245").setGrossDesignWeight("2345").setTrainGbWeight("3500").setTrainEecWeight("2466")
                 .setTrainDesignWeight("4452").setMaxTrainGbWeight("2233").setMaxTrainEecWeight("1234").setMaxLoadOnCoupling("2500")
-                .setDimensionLength("5600").setDimensionWidth("8700").setFrontAxleTo5thWheelCouplingMax("9845").setFrontAxleTo5thWheelCouplingMin("4567")
+                .setDimensionLength("5600").setDimensionWidth("8700").setFrontVehicleTo5thWheelCouplingMax("9845").setFrontVehicleTo5thWheelCouplingMin("4567")
                 .setCouplingCenterToRearTrlMax("1234").setCouplingCenterToRearTrlMin("1111").setPlateIssueDate("2020-06-12T16:46:09.060Z").setTyreUseCode("2B")
                 .setAxles(
                         new Axles(

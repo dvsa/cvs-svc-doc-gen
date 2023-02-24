@@ -263,11 +263,11 @@ public class CertificatePageObject extends BasePageObject {
         return getElementById(DIMENSION_WIDTH.getSelector()).text();
     }
 
-    public String getFrontAxleTo5thWheelCouplingMin() {
+    public String getFrontVehicleTo5thWheelCouplingMin() {
         return getElementById(FRONT_AXLE_TO_5TH_COUPLING_MIN.getSelector()).text();
     }
 
-    public String getFrontAxleTo5thWheelCouplingMax() {
+    public String getFrontVehicleTo5thWheelCouplingMax() {
         return getElementById(FRONT_AXLE_TO_5TH_COUPLING_MAX.getSelector()).text();
     }
 
