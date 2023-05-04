@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>MOT test certificate ({{testType}})</title>
+    <style type="text/css" media="print, screen">
+            {{~> assets/stylesheets/cvs-version-1 this}}
+    </style>
+</head>
+<body>
+{{~> views/component/watermarkComponent watermark=watermark}}
+<div class="footer footer--first-page">
+    <div class="signature-image__wrapper">
+        <img id="signature-first-page" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/>
+    </div>
+    <div class="footer__wrapper">
+        <div class="footer__bottom">
+            <div class="footer__bottom-one">
+            </div>
+            <div class="footer__bottom-two">
+                <div class="footer__bottom-page-counter">
+                     <span class="footer__bottom-page-counter-text">
+                     Page
+                     </span>
+                    <span class="footer__bottom-page-counter-text footer__bottom-page-counter-text--page-number"></span>
+                    <span class="footer__bottom-page-counter-text">of</span>
+                    <span class="footer__bottom-page-counter-text footer__bottom-page-counter-text--pages-count"></span>
+                </div>
+            </div>
+            <div class="footer__bottom-three">
+                <div class="footer__top-signature-line"></div>
+                <div class="issuer-signature-text">Issuer signature</div>
+            </div>
+        </div>
+        <div class="footer__certificate-tag">
+               <span class="footer__certificate-tag-text">
+                {{presentedDocumentNamePass}}/{{versionNumberPass}}
+               </span>
+        </div>
+    </div>
+</div>
+<!-- /footer -->
+<!-- footer -->
+<div class="footer">
+    <div class="signature-image__wrapper">
+        <img id="signature-second-page" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/>
+    </div>
+    <div class="footer__wrapper">
+        <div class="footer__bottom">
+            <div class="footer__bottom-one">
+                  <span class="footer__bottom-light-text footer__bottom-light-text--vin">
+                  VIN: {{data.rawVin}}
+                  </span>
+            </div>
+            <div class="footer__bottom-two">
+                <div class="footer__bottom-page-counter">
+                     <span class="footer__bottom-page-counter-text">
+                     Page
+                     </span>
+                    <span class="footer__bottom-page-counter-text footer__bottom-page-counter-text--page-number"></span>
+                     <span class="footer__bottom-page-counter-text">
+                     of
+                     </span>
+                    <span class="footer__bottom-page-counter-text footer__bottom-page-counter-text--pages-count"></span>
+                </div>
+            </div>
+            <div class="footer__bottom-three">
+                <div class="footer__top-signature-line"></div>
+                <div class="issuer-signature-text">Issuer signature</div>
+            </div>
+        </div>
+        <div class="footer__certificate-tag">
+               <span class="footer__certificate-tag-text">
+                {{presentedDocumentNamePass}}/{{versionNumberPass}}
+               </span>
+        </div>
+    </div>
+</div>
+<!-- /footer -->
+<!-- certificate -->
+<div class="certificate">
+    <div class="certificate__wrapper">
+        <!-- header -->
+        <div class="header">
+            <div class="header__left">
+                <h1 class="header__title">
+                    {{#if reissue}}
+                    <p class="heading-info--no-margin">{{reissue.reason}}</p>
+                    {{/if}}
+                    MOT test certificate ({{testType}})
+                </h1>
+                <!-- heading-info -->
+                <div class="heading-info">
+                    <h2 class="heading-info__title">
+                        <span class="heading-info__title-left">
+                        <span class="circle-text">
+                        <span class="circle-text__number">(1)</span>
+                        </span>
+                        </span>
+                        <span class="heading-info__title-right">
+                        <span class="heading-info__title-message">
+                        Vehicle identification number
+                        </span>
+                        </span>
+                    </h2>
+                     <span class="heading-info__content" id="vin">
+                         {{data.rawVin}}
+                     </span>
+                </div>
+                <!-- /heading-info -->
+                <!-- header__two-columns -->
+                <div class="header__two-columns">
+                    <div class="header__two-columns-one">
+                        <!-- heading-info -->
+                        <div class="heading-info">
+                            <h2 class="heading-info__title">
+                              <span class="heading-info__title-left">
+                              <span class="circle-text">
+                              <span class="circle-text__number">(2a)</span>
+                              </span>
+                              </span>
+                              <span class="heading-info__title-right">
+                              <span class="heading-info__title-message">
+                                  {{regOrIdHeading}}
+                              </span>
+                              </span>
+                            </h2>
+                           <span class="heading-info__content" id="reg-number">
+                               {{data.rawVrm}}
+                           </span>
+                        </div>
+                        <!-- /heading-info -->
+                    </div>
+                    <div class="header__two-columns-two">
+                        <!-- heading-info -->
+                        <div class="heading-info">
+                            <h2 class="heading-info__title">
+                              <span class="heading-info__title-left">
+                              <span class="circle-text">
+                              <span class="circle-text__number">(2b)</span>
+                              </span>
+                              </span>
+                              <span class="heading-info__title-right">
+                              <span class="heading-info__title-message">
+                              Country of registration
+                              </span>
+                              </span>
+                            </h2>
+                           <span class="heading-info__content" id="country">
+                               {{data.countryOfRegistrationCodeFormatted}}
+                           </span>
+                        </div>
+                        <!-- /heading-info -->
+                    </div>
+                </div>
+                <!-- /header__two-columns -->
+                <!-- heading-info -->
+                <div class="heading-info">
+                    <h2 class="heading-info__title">
+                        <span class="heading-info__title-message">
+                        Make and model
+                        </span>
+                    </h2>
+                     <span class="heading-info__content" id="make-model">
+                     {{data.make}}, {{data.model}}
+                     </span>
+                </div>
+                <!-- /heading-info -->
+            </div>
+            <div class="header__right">
+                <img src="{{root}}/assets/images/dvsa_crest.png" alt="DVSA Crown" class="header__logo" id="logo"/>
+            </div>
+            <div class="clearfix"></div>
+            <!-- header__three-columns -->
+            <div class="header__three-columns">
+                <div class="header__three-columns-one">
+                    <!-- heading-info -->
+                    <div class="heading-info">
+                        <h2 class="heading-info__title">
+                           <span class="heading-info__title-left">
+                           <span class="circle-text">
+                           <span class="circle-text__number">(5)</span>
+                           </span>
+                           </span>
+                           <span class="heading-info__title-right">
+                           <span class="heading-info__title-message">
+                           Vehicle category
+                           </span>
+                           </span>
+                        </h2>
+                        <span class="heading-info__content" id="vehicle-category">
+                            {{data.vehicleEuClassification}}
+                        </span>
+                    </div>
+                    <!-- /heading-info -->
+                </div>
+                {{#if data.formattedCurrentOdometer}}
+                <div class="header__three-columns-two">
+                    <!-- heading-info -->
+                    <div class="heading-info">
+                        <h2 class="heading-info__title">
+                           <span class="heading-info__title-left">
+                           <span class="circle-text">
+                           <span class="circle-text__number">(4)</span>
+                           </span>
+                           </span>
+                           <span class="heading-info__title-right">
+                           <span class="heading-info__title-message">
+                           Odometer
+                           </span>
+                           </span>
+                        </h2>
+                        <span class="heading-info__content" id="mileage">
+                            {{data.formattedCurrentOdometer}}
+                        </span>
+                    </div>
+                    <!-- /heading-info -->
+                </div>
+                {{/if}}
+                    <div class="header__three-columns-three-wide">
+                        <!-- heading-info -->
+                        <div class="heading-info">
+                            <h2 class="heading-info__title">
+                           <span class="heading-info__title-message">
+                           Odometer history
+                           </span>
+                            </h2>
+                            <div class="heading-info__content" id="mileage-history">
+                                <!-- header__histories -->
+                                {{#if data.odometerHistoryList}}
+                                <ul class="header__histories">
+                                    {{#each data.mileageHistory}}
+                                        <li class="header__history">
+                                            <div class="header__history-left-wide">
+                                    <span class="header__history-mileage">
+                                        {{this.value}}
+                                    </span>
+                                            </div>
+                                            <div class="header__history-right">
+                                    <span class="header__history-date">
+                                        {{this.date}}
+                                    </span>
+                                            </div>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                                {{else}}
+                                    <span class="heading-info__content" id="no_data_message">
+                                        No data available
+                                    </span>
+                                {{/if}}
+                                <!-- /header__histories -->
+                            </div>
+                        </div>
+                        <!-- /heading-info -->
+                    </div>
+            </div>
+            <!-- header__three-columns -->
+        </div>
+        <!-- /header -->
+        <!-- results -->
+        <div class="results">
+            <div class="results__wrapper">
+                {{~> views/CommercialVehicles/reasonsForRejection data.summary}}
+                {{#if data.minor.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection data.minor}}
+                {{/if}}
+                {{#if data.advisory.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection data.advisory}}
+                {{/if}}
+            </div>
+        </div>
+        <!-- /results -->
+        <!-- test-information -->
+        <div class="test-information">
+            <div class="test-information__wrapper">
+                <!-- test-information__two-columns -->
+                <div class="test-information__two-columns heading-info util-avoid-page-break-inside">
+                    <div class="test-information__two-columns-one">
+                        <!-- heading-info -->
+                        <div class="heading-info heading-info--no-margin">
+                            <h2 class="heading-info__title">
+                              <span class="heading-info__title-left">
+                              <span class="circle-text">
+                              <span class="circle-text__number">(3b)</span>
+                              </span>
+                              </span>
+                              <span class="heading-info__title-right">
+                              <span class="heading-info__title-message">
+                              Date of the test
+                              </span>
+                              </span>
+                            </h2>
+                           <span class="heading-info__content" id="date-of-test">
+                               {{data.dateOfTheTest}}
+                           </span>
+                        </div>
+                        <!-- /heading-info -->
+                    </div>
+                    <div class="text-information__two-columns-two">
+                        <!-- heading-info -->
+                        <div class="heading-info heading-info--no-margin">
+                            <h2 class="heading-info__title">
+                              <span class="heading-info__title-left">
+                              <span class="circle-text">
+                              <span class="circle-text__number">(8)</span>
+                              </span>
+                              </span>
+                              <span class="heading-info__title-right">
+                              <span class="heading-info__title-message">
+                              Expiry date
+                              </span>
+                              </span>
+                            </h2>
+                           <span class="heading-info__content" id="expiry-date">
+                               {{data.expiryDate}}
+                           </span>
+                        </div>
+                        <!-- /heading-info -->
+                    </div>
+                </div>
+                <!-- /test-information__two-columns -->
+                <p class="test-information__message test-information__message--margin-top heading-info util-avoid-page-break-inside">
+                    To preserve the anniversary of the expiry date, the earliest you can present your vehicle for test
+                    is <span id="earliest-preserve-date">{{data.earliestDateOfTheNextTest}}</span>.
+                </p>
+                <!-- heading-info -->
+                <div class="heading-info util-avoid-page-break-inside">
+                    <h2 class="heading-info__title">
+                        <span class="heading-info__title-left">
+                        <span class="circle-text">
+                        <span class="circle-text__number">(3a)</span>
+                        </span>
+                        </span>
+                        <span class="heading-info__title-right">
+                        <span class="heading-info__title-message">
+                        Location of the test
+                        </span>
+                        </span>
+                    </h2>
+                     <span class="heading-info__content" id="location-of-test">
+                         {{data.locationOfTheTest}}
+                     </span>
+                </div>
+                <!-- /heading-info -->
+                <!-- heading-info -->
+                <div class="heading-info util-avoid-page-break-inside">
+                    <h2 class="heading-info__title">
+                        <span class="heading-info__title-left">
+                        <span class="circle-text">
+                        <span class="circle-text__number">(9)</span>
+                        </span>
+                        </span>
+                        <span class="heading-info__title-right">
+                        <span class="heading-info__title-message">
+                        Testing organisation and inspector
+                        </span>
+                        </span>
+                    </h2>
+                     <span class="heading-info__content"
+                           id="organisation-and-inspection-name">
+                     {{data.testingOrganisation}}
+                         <br/>
+                         {{data.issuersName}}
+                     </span>
+                </div>
+                <!-- /heading-info -->
+                <!-- heading-info -->
+                <div class="heading-info util-avoid-page-break-inside">
+                    <h2 class="heading-info__title">
+                        <span class="heading-info__title-message">
+                        Test number
+                        </span>
+                    </h2>
+                     <span class="heading-info__content" id="mot-test-number">
+                         {{data.testNumber}}
+                     </span>
+                </div>
+                <!-- /heading-info -->
+                <div class="util-avoid-page-break-inside">
+                    <div class="seat-belt-information__two-columns">
+                        <div class="seat-belt-information__two-columns-one">
+                            <div>Seat belt installation checked this test?</div>
+                            <div>Previous installation check date</div>
+                            <div>Number of seat belts fitted</div>
+                        </div>
+                        <div class="seat-belt-information__two-columns-two">
+                            <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltTested}}</div>
+                            <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltPreviousCheckDate}}</div>
+                            <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltNumber}}</div>
+                        </div>
+                    </div>
+                </div>
+                {{#if reissue}}
+                <div class="util-avoid-page-break-inside" id="reissueInfo">
+                    <p class="test-information__message">
+                        {{reissue.reason}} certificate issued by {{reissue.issuer}} on {{reissue.date}}
+                    </p>
+                </div>
+                {{/if}}
+                <div class="util-avoid-page-break-inside">
+                    <p class="test-information__message">
+                        Check that this WELSH doc is genuine by visiting <a class="test-information__message-link"
+                                                                           href="www.gov.uk/check-mot-history">www.gov.uk/check-mot-history</a>
+                    </p>
+                    <p class="test-information__message">
+                        If any of the details are not correct, please contact DVSA by email at <br/><a
+                            class="test-information__message-link"
+                            href="mailto:test.errors@dvsa.gov.uk">test.errors@dvsa.gov.uk</a> or by telephone on 0300 1239000.
+                    </p>
+                    <p class="test-information__message">
+                        Receive a free annual MOT reminder by subscribing<br/> at <a class="test-information__message-link"
+                                                                                     href="www.gov.uk/mot-reminder">www.gov.uk/mot-reminder</a>
+                        or by telephone on 0300 1239000.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /test-information -->
+    </div>
+</div>
+<!-- /certificate -->
+</body>
+</html>

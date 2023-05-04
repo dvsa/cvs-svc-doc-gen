@@ -46,6 +46,8 @@ public enum DocumentsConfig {
             new String[]{CertificateTemplates.VTP20.getCertificateTemplateName(), CertificateTemplates.VTP30.getCertificateTemplateName()}),
     VTP20(CertificateTypes.CVS_PASS.getCertificateType(), uk.gov.dvsa.model.cvs.VTP20.class,
             new String[]{CertificateTemplates.VTP20.getCertificateTemplateName()}),
+    VTP20W(CertificateTypes.CVS_PASSW.getCertificateType(), uk.gov.dvsa.model.cvs.VTP20W.class,
+            new String[]{CertificateTemplates.VTP20W.getCertificateTemplateName()}),
     VTP30(CertificateTypes.CVS_FAIL.getCertificateType(), uk.gov.dvsa.model.cvs.VTP30.class,
             new String[]{CertificateTemplates.VTP30.getCertificateTemplateName()}),
 
