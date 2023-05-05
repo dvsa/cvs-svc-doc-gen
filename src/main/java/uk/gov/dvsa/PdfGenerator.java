@@ -2,8 +2,6 @@ package uk.gov.dvsa;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
@@ -46,17 +44,8 @@ public class PdfGenerator implements RequestHandler<Map<String, Object>, ApiGate
 
     @Override
     public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
-        ObjectMapper mapper = new ObjectMapper();
         long start = System.nanoTime();
         eventLogger.logEvent(EventType.CERT_REQUEST_RECEIVED);
-
-        System.out.println("*** This is the input from the handleRequest method: ");
-        try {
-            System.out.println(mapper.writeValueAsString(input));
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-
         try {
             if (input.containsKey(requestParser.REQUEST_HEADERS)) {
             // Trace headers only they are provided in the input request, else ignore.
@@ -70,10 +59,6 @@ public class PdfGenerator implements RequestHandler<Map<String, Object>, ApiGate
                 eventLogger.logEventWithTraceInfo(EventType.CERT_SERVER_RECEIVE, requestTracingService.getCurrentTracingInformation());
             }
             Document document = requestParser.parseRequest(input);
-
-            System.out.println("*** This is the document from the handleRequest method: ");
-            System.out.println(mapper.writeValueAsString(document));
-
             List<String> html = htmlGeneratorFactory.create(document.getDocumentName()).generate(document);
 
             byte [] binaryBody = new PDFGenerationService(new ITextRenderer()).generate(html);
