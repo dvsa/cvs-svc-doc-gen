@@ -27,6 +27,7 @@ public enum CertificateTypes {
     CVS_PASS("CVS/VTP20"),
     CVS_PASSW("CVS/VTP20W"),
     CVS_FAIL("CVS/VTP30"),
+    CVS_FAILW("CVS/VTP30W"),
     CVS_PSV_PRS("CVS/PSV_PRS"),
 
     CVS_HGV_PASS("CVS/VTG5"),
