@@ -96,11 +96,8 @@ public enum DocumentsConfig {
     }
 
     public static DocumentsConfig fromDocumentName(String name) {
+        System.out.println("THIS IS THE NAME: " + name);
         for (DocumentsConfig document: DocumentsConfig.values()) {
-            System.out.println("THIS IS THE NAME: " + name);
-
-            System.out.println("THIS IS THE LIST OF DOCUMENTS FROM CONFIG:");
-            System.out.println(document.getDocumentName());
             if (document.getDocumentName().equals(name)) {
                 return document;
             }
