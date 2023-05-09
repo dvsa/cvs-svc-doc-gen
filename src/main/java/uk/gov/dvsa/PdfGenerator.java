@@ -46,6 +46,10 @@ public class PdfGenerator implements RequestHandler<Map<String, Object>, ApiGate
     public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
         long start = System.nanoTime();
         eventLogger.logEvent(EventType.CERT_REQUEST_RECEIVED);
+
+        System.out.println("*** This is the input from the handleRequest method: ");
+        System.out.println(input);
+
         try {
             if (input.containsKey(requestParser.REQUEST_HEADERS)) {
             // Trace headers only they are provided in the input request, else ignore.
