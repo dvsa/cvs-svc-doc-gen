@@ -28,6 +28,19 @@ public class CvsMotFailCertificateData extends CvsMotCertificateData {
     @JsonProperty("PRSDefects")
     private List<String> prsDefects;
 
+    @JsonProperty("Defect")
+    private String defect;
+
+    public String getDefect() {
+        System.out.println("Getting new defect");
+        return defect;
+    }
+
+    public void setDefect(String defect) {
+        System.out.println("Setting new defect - " + defect);
+        this.defect = defect;
+    }
+
     public CvsMotFailCertificateData setDangerousDefects(List<String> dangerousDefects) {
         this.dangerousDefects = dangerousDefects;
         return this;
