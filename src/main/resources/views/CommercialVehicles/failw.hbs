@@ -231,6 +231,7 @@
                 {{/if}}
                 {{#if failData.major.present}}
                     {{~> views/CommercialVehicles/reasonsForRejection failData.major}}
+                    {{failData.defect}}
                 {{/if}}
                 {{#if failData.minor.present}}
                     {{~> views/CommercialVehicles/reasonsForRejection failData.minor}}
@@ -241,6 +242,7 @@
                 {{#if failData.prs.present}}
                     {{~> views/CommercialVehicles/reasonsForRejection failData.prs}}
                 {{/if}}
+                {{failData.defect}}
             </div>
         </div>
         <!-- /results -->
