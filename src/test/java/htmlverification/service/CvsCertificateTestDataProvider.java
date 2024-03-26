@@ -111,7 +111,7 @@ public class CvsCertificateTestDataProvider {
         vtp20WData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
                 .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
@@ -323,7 +323,7 @@ public class CvsCertificateTestDataProvider {
         vtg5WData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
                 .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
@@ -371,7 +371,7 @@ public class CvsCertificateTestDataProvider {
         vtg5AWData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
                 .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
@@ -412,7 +412,7 @@ public class CvsCertificateTestDataProvider {
         bilingualData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
                 .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
@@ -452,7 +452,7 @@ public class CvsCertificateTestDataProvider {
         bilingualData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
                 .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
@@ -495,7 +495,7 @@ public class CvsCertificateTestDataProvider {
         bilingualData
                 .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
-                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEST_WELSH_CVS)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
                 .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
                 .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
                 .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
@@ -518,6 +518,61 @@ public class CvsCertificateTestDataProvider {
         trlPassBilingual.setData(bilingualData);
         return trlPassBilingual;
     }
+
+    public static CvsHgvTrlFailBilingual getCvsHgvTrlFailBilingual() {
+        CvsHgvTrlFailBilingual hgvFailBilingual = new CvsHgvTrlFailBilingual();
+        hgvFailBilingual.setDocumentName(CertificateTypes.CVS_HGV_TRL_FAIL_BILINGUAL.getCertificateType());
+
+        CvsMotFailCertificateDataWelsh bilingualData = new CvsMotFailCertificateDataWelsh();
+        bilingualData
+                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setDangerousDefectsWelsh(generateRFRs(DANGEROUS_RFR_TEXT, 1))
+                .setMajorDefectsWelsh(generateRFRs(MAJOR_RFR_TEXT, 1))
+                .setDangerousDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setMajorDefects(generateRFRs(MAJOR_RFR_TEXT, 1))
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+
+                .setSeatBeltNumber("10")
+                .setSeatBeltPreviousCheckDate("12.11.2018")
+                .setSeatBeltTested("Yes")
+
+                .setCountryOfRegistrationCode("GB")
+                .setRawVin(VIN)
+                .setDateOfTheTest("12.11.2018")
+                .setExpiryDate("12.10.2018")
+                .setTestStationPNumber("P12345")
+                .setTestStationName("TEST STATION NAME")
+                .setMake("Aston Martin")
+                .setModel("DB11")
+                .setVehicleEuClassification("M1")
+                .setRawVrm("KA1SAPH")
+                .setCurrentOdometer(
+                        new CvsOdometerReading("22341", "mi", "01.02.2019")
+                )
+                .setOdometerHistoryList(Arrays.asList(
+                        new CvsOdometerReading("120", "km", "01.02.2016"),
+                        new CvsOdometerReading("330", "km", "30.01.2017")
+                ))
+                .setIssuersName("TESTER NAME")
+                .setTestStationName("TEST STATION NAME")
+                .setTestNumber("X01X00001")
+                .setEarliestDateOfTheNextTest("13.10.2018")
+                .setTrn("ABC1234")
+                .setIsTrailer(true);
+
+        hgvFailBilingual.setFailData(bilingualData);
+
+        Signature signature = new Signature();
+        signature
+                .setImageData("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==")
+                .setImageType("png");
+
+        hgvFailBilingual.setSignature(signature);
+
+        return hgvFailBilingual;
+    };
 
     public static VTG5 getVtg5HavingInvalidXMLCharacter() {
         VTG5 document = getVtg5();
@@ -588,6 +643,66 @@ public class CvsCertificateTestDataProvider {
         vtg30.setReissue(generateReissuer());
 
         return vtg30;
+    }
+
+    public static VTG30W getVTG30W() {
+        VTG30W vtg30W = new VTG30W();
+        vtg30W.setDocumentName(CertificateTypes.CVS_HGV_TRL_FAIL_WELSH.getCertificateType());
+        CvsMotFailCertificateDataWelsh vtg30wData = new CvsMotFailCertificateDataWelsh();
+
+        vtg30wData
+                .setAdvisoryDefectsWelsh(generateRFRs(ADVISORY_RFR_TEXT, 1))
+                .setMinorDefectsWelsh(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setDangerousDefectsWelsh(generateRFRs(DANGEROUS_RFR_TEXT, 1))
+                .setMajorDefectsWelsh(generateRFRs(MAJOR_RFR_TEXT, 1))
+                .setDangerousDefectsHeader(DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_PARTIAL_TEXT_WELSH_CVS)
+                .setMajorDefectsHeader(DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
+                .setMinorDefectsHeader(DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT_WELSH_CVS)
+                .setAdvisoryDefectsHeader(DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH_CVS)
+                .setMinorDefects(generateRFRs(MINOR_RFR_TEXT, 1))
+                .setAdvisoryDefects(generateRFRs(ADVISORY_RFR_TEXT, 1))
+
+                .setSeatBeltNumber("10")
+                .setSeatBeltPreviousCheckDate("12.11.2018")
+                .setSeatBeltTested("Yes")
+
+                .setCountryOfRegistrationCode("GB")
+                .setRawVin(VIN)
+                .setDateOfTheTest("12.11.2018")
+                .setExpiryDate("12.10.2018")
+                .setMake("MERCEDES")
+                .setModel("Z WAGON")
+                .setVehicleEuClassification("M1")
+                .setRawVrm("KA1SAPH")
+                .setCurrentOdometer(
+                        new CvsOdometerReading("20000", "mi", "22.08.2023")
+                )
+                .setOdometerHistoryList(Arrays.asList(
+                        new CvsOdometerReading("12000", "mi", "13.08.2022"),
+                        new CvsOdometerReading("7000", "mi", "02.08.2021")
+                ))
+                .setIssuersName("TESTER NAME")
+                .setTestStationName("TEST STATION NAME")
+                .setTestStationPNumber("P12345")
+                .setTestNumber("X01X00001")
+                .setEarliestDateOfTheNextTest("01.07.2024")
+                .setTrn("ABC1234")
+                .setIsTrailer(true);
+
+        vtg30wData
+                .setDangerousDefects(generateRFRs(DANGEROUS_RFR_TEXT, 1))
+                .setMajorDefects(generateRFRs(MAJOR_RFR_TEXT, 1));
+
+        vtg30W.setFailData(vtg30wData);
+
+        Signature signature = new Signature();
+        signature
+                .setImageData("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==")
+                .setImageType("png");
+
+        vtg30W.setSignature(signature);
+
+        return vtg30W;
     }
 
     public static IVA30 getIVA30() {
@@ -672,6 +787,15 @@ public class CvsCertificateTestDataProvider {
 
     public static VTG30 getVtg30HavingInvalidXMLCharacter() {
         VTG30 document = getVtg30();
+
+        CvsMotCertificateData data = document.getFailData();
+        data.setAdvisoryDefects(generateRFRs(INVALID_XML_RFR_TEXT, 3));
+
+        return document;
+    }
+
+    public static VTG30W getVTG30WHavingInvalidXMLCharacter() {
+        VTG30W document = getVTG30W();
 
         CvsMotCertificateData data = document.getFailData();
         data.setAdvisoryDefects(generateRFRs(INVALID_XML_RFR_TEXT, 3));

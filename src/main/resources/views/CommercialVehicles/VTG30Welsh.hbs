@@ -33,7 +33,7 @@
         </div>
         <div class="footer__certificate-tag">
                <span class="footer__certificate-tag-text">
-               {{presentedDocumentNameFail}}/{{versionNumberFail}}
+               {{presentedDocumentNameFailWelsh}}/{{versionNumberFailWelsh}}
                </span>
         </div>
     </div>
@@ -70,7 +70,7 @@
         </div>
         <div class="footer__certificate-tag">
                <span class="footer__certificate-tag-text">
-                   {{presentedDocumentNameFail}}/{{versionNumberFail}}
+                   {{presentedDocumentNameFailWelsh}}/{{versionNumberFailWelsh}}
                </span>
         </div>
     </div>
@@ -120,7 +120,7 @@
                               </span>
                               <span class="heading-info__title-right">
                               <span class="heading-info__title-message">
-                                  {{regOrIdHeading}}
+                                  {{regOrIdHeadingWelsh}}
                               </span>
                               </span>
                             </h2>
@@ -190,7 +190,7 @@
                 <!-- /heading-info -->
             </div>
             <div class="header__right">
-                <img src="{{root}}/assets/images/dvsa_crest.png" alt="DVSA Crown" class="header__logo" id="logo"/>
+                <img src="{{root}}/assets/images/dvsa-crest-welsh-v2.png" alt="DVSA Crown" class="header__logo" id="logo"/>
             </div>
             <div class="clearfix"></div>
             <!-- header__three-columns -->
@@ -233,7 +233,7 @@
                            </span>
                         </h2>
                         <span class="heading-info__content" id="mileage">
-                            {{failData.formattedCurrentOdometer}}
+                            {{failData.formattedCurrentOdometerWelsh}}
                         </span>
                     </div>
                     <!-- /heading-info -->
@@ -246,20 +246,20 @@
         <!-- results -->
         <div class="results">
             <div class="results__wrapper">
-                {{#if failData.summary.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection failData.summary}}
+                {{#if failData.summaryWelsh.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection failData.summaryWelsh}}
                 {{/if}}
-                {{#if failData.dangerous.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection failData.dangerous}}
+                {{#if failData.dangerousWelsh.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection failData.dangerousWelsh}}
                 {{/if}}
-                {{#if failData.major.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection failData.major}}
+                {{#if failData.majorWelsh.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection failData.majorWelsh}}
                 {{/if}}
-                {{#if failData.minor.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection failData.minor}}
+                {{#if failData.minorWelsh.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection failData.minorWelsh}}
                 {{/if}}
-                {{#if failData.advisory.present}}
-                    {{~> views/CommercialVehicles/reasonsForRejection failData.advisory}}
+                {{#if failData.advisoryWelsh.present}}
+                    {{~> views/CommercialVehicles/reasonsForRejection failData.advisoryWelsh}}
                 {{/if}}
                 {{#if failData.prs.present}}
                     {{~> views/CommercialVehicles/reasonsForRejection failData.prs}}
@@ -284,7 +284,7 @@
                         </span>
                         </span>
                     </h2>
-                     <span class="heading-info__content" id="location-of-test">
+                     <span class="heading-info__content" id="date-of-test">
                          {{failData.dateOfTheTest}}
                      </span>
                 </div>
@@ -323,7 +323,7 @@
                     </h2>
                      <span class="heading-info__content"
                            id="organisation-and-inspection-name">
-                     {{failData.testingOrganisation}}
+                     {{failData.testingOrganisationWelsh}}
                          <br/>
                          {{failData.issuersName}}
                      </span>

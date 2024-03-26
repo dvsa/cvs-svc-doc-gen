@@ -61,6 +61,9 @@ public enum DocumentsConfig {
             new String[]{CertificateTemplates.VTG5W.getCertificateTemplateName()}),
     VTG30(CertificateTypes.CVS_HGV_TRL_FAIL.getCertificateType(), uk.gov.dvsa.model.cvs.VTG30.class,
             new String[]{CertificateTemplates.VTG30.getCertificateTemplateName()}),
+
+    VTG30W(CertificateTypes.CVS_HGV_TRL_FAIL_WELSH.getCertificateType(), uk.gov.dvsa.model.cvs.VTG30W.class,
+            new String[]{CertificateTemplates.VTG30W.getCertificateTemplateName()}),
     ADR_PASS(CertificateTypes.ADR_PASS.getCertificateType(), AdrPassCertificate.class,
             new String[]{CertificateTemplates.ADR_PASS.getCertificateTemplateName()}),
 
@@ -80,6 +83,8 @@ public enum DocumentsConfig {
             new String[]{CertificateTemplates.VTG5.getCertificateTemplateName(), CertificateTemplates.VTG5W.getCertificateTemplateName()}),
     CVS_TRL_PASS_BILINGUAL(CertificateTypes.CVS_TRL_PASS_BILINGUAL.getCertificateType(), uk.gov.dvsa.model.cvs.CvsTrlPassBilingual.class,
             new String[]{CertificateTemplates.VTG5A.getCertificateTemplateName(), CertificateTemplates.VTG5AW.getCertificateTemplateName()}),
+    CVS_HGV_TRL_FAIL_BILINGUAL(CertificateTypes.CVS_HGV_TRL_FAIL_BILINGUAL.getCertificateType(), uk.gov.dvsa.model.cvs.CvsHgvTrlFailBilingual.class,
+            new String[]{CertificateTemplates.VTG30.getCertificateTemplateName(), CertificateTemplates.VTG30W.getCertificateTemplateName()}),
     CVS_TRL_PRS(CertificateTypes.CVS_TRL_PRS.getCertificateType(), uk.gov.dvsa.model.cvs.CvsTrlPRS.class,
             new String[]{CertificateTemplates.VTG5A.getCertificateTemplateName(), CertificateTemplates.VTG30.getCertificateTemplateName()}),
 
