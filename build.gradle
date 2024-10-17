@@ -68,8 +68,8 @@ dependencies {
     compile group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.1.0'
     compile group: "com.github.jknack", name: "handlebars", version: "4.2.0"
     compile group: 'org.xhtmlrenderer', name: 'flying-saucer-pdf-openpdf', version: '9.1.20'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.4.1'
-    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.14.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.0'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.15.0'
     compile group: 'com.amazonaws', name: 'aws-lambda-java-log4j2', version: '1.5.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.22.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.22.1'
@@ -78,7 +78,7 @@ dependencies {
     compile fileTree(dir: 'jars', include: '*.jar')
     testCompile group: 'junit', name: 'junit', version: '4.13.1'
     testCompile group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
-    testCompile group: 'commons-io', name: 'commons-io', version: '2.7'
+    testCompile group: 'commons-io', name: 'commons-io', version: '2.14.0'
     testCompile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.12'
 }
 
