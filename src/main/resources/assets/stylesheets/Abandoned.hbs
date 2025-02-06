@@ -1,0 +1,212 @@
+@font-face {
+  font-family: nta;
+  font-weight: 100;
+  src: url({{root}}/assets/fonts/NTA-Light.ttf);
+  -fs-pdf-font-embed: embed;
+  -fs-pdf-font-encoding: Identity-H
+}
+
+@font-face {
+  font-family: nta-bold;
+  font-weight: 700;
+  src: url({{root}}/assets/fonts/NTA-Bold.ttf);
+  -fs-pdf-font-embed: embed;
+  -fs-pdf-font-encoding: Identity-H
+}
+
+@font-face {
+  font-family: gds-transport;
+  font-weight: 400;
+  src: url({{root}}/assets/fonts/GDSTransportWebsite.ttf);
+  -fs-pdf-font-embed: embed;
+  -fs-pdf-font-encoding: Identity-H
+}
+
+body,
+html {
+  font-family: nta;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0;
+  -fs-page-sequence: start;
+  page-break-before: always
+}
+
+.header__crest-img {
+  min-width: 180px;
+  min-height: 112px;
+  width: 180px;
+  height: 112px;
+  float: left;
+}
+
+.header {
+  border-bottom: 4px solid black;
+  padding-bottom: 24px;
+}
+
+.title-text {
+  padding-bottom: 6px;
+  margin-right: 1.8cm;
+  text-align: right;
+  margin-left: 210px;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 24px;
+}
+
+.regulation-text {
+  margin-left: 290px;
+  text-align: right;
+}
+
+.vin-wrapper {
+  padding: 10px 0 10px 0;
+}
+
+.vin-text {
+  font-size: 1.0em;
+  font-weight: bold;
+  letter-spacing: 1000px;
+  text-transform: uppercase;
+  padding: 0 5px 0 5px;
+}
+
+#sectionText {
+  padding-bottom: 24px;
+}
+
+.standard-text {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right: 2cm;
+}
+
+/* pdf Page styling */
+@page {
+  size: A4 portrait;
+  margin: 3cm 1.5cm 50px 1cm;
+  @bottom-left {
+    content: element(footer-left);
+  }
+  @bottom-right {
+    content: element(footer-right);
+  }
+  @top-left {
+    content: element(running-header);
+  }
+}
+@page :first {
+  margin: 1cm 1.5cm 50px 1cm;
+  @top-left {
+    content: normal;
+  }
+}
+
+.footer-left {
+  font-size: 1.25em;
+  position: running(footer-left);
+}
+
+.footer-right {
+  text-align: right;
+  position: running(footer-right);
+}
+
+/* the border is need to take up space so the text to the
+ right does not have the 2nd line move all the way back left */
+.header-left {
+  float: left;
+  border: 1px solid transparent;
+  width: 300px;
+  padding-top: 16px;
+  font-weight: bold;
+}
+
+.running-header {
+  position: running(running-header);
+  border-bottom: 4px solid gray;
+}
+
+.back-page {
+  page-break-before: always;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.additional-comments-header {
+  margin-bottom: 20px;
+}
+
+.additional-comments-box {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.data-protection-box {
+  background: #d2d2d2;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.data-protection-text {
+  padding-bottom: 10px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1em;
+  table-layout: auto;
+  margin-top: 30px;
+  border-collapse: separate;
+  border-spacing: 5pt;
+  page-break-inside: avoid;
+}
+
+.table-row-cell {
+  border-style: solid;
+  border-width: 1px;
+  vertical-align: middle;
+  padding: 6px 0 6px 0;
+  margin: 6px 0 6px 0;
+}
+
+.table-row-left {
+  width: 25%;
+  border: none;
+}
+
+.table-row-right {
+  width: 75%;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+.last-row-first-column {
+  width: 25%;
+  border: none;
+}
+
+.last-row-second-column {
+  width: 30%;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+.last-row-third-column {
+  width: 15%;
+  border: none;
+  text-align: center;
+}
+
+.last-row-fourth-column {
+  width: 30%;
+  border: 1px solid black;
+  padding-left: 5px;
+}

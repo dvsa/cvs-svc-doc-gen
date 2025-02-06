@@ -267,6 +267,11 @@
             </div>
         </div>
         <!-- /results -->
+        <!-- recalls -->
+        {{#if failData.recalls.hasRecall}}
+            {{~> views/CommercialVehicles/recalls manufacturer=failData.recalls.manufacturer}}
+        {{/if}}
+        <!-- /recalls -->
         <!-- test-information -->
         <div class="test-information">
             <div class="test-information__wrapper">

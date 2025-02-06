@@ -123,4 +123,12 @@ public class VTG5Test {
         String testNumber = certificatePageObject.getTestNumber();
         assertEquals(vtg5.getData().getTestNumber(), testNumber);
     }
+
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObject.getRecallsHeader();
+        String contentText = certificatePageObject.getRecallsBody();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
+    }
 }

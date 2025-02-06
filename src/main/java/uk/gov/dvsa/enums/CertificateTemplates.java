@@ -42,7 +42,11 @@ public enum CertificateTemplates {
 
     IVA30("CommercialVehicles/IVA30"),
 
-    MSVA30("CommercialVehicles/MSVA30");
+    MSVA30("CommercialVehicles/MSVA30"),
+
+    VTG12("CommercialVehicles/Abandoned"),
+
+    VTP12("CommercialVehicles/Abandoned");
 
     private final String certificateTemplateName;
 

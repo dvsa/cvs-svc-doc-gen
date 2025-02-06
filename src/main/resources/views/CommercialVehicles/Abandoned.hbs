@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title id="documentType">{{documentType}}</title>
+    <style type="text/css" media="print, screen">
+        {{~> assets/stylesheets/version-1 this}}
+        {{~> assets/stylesheets/cvs-version-1 this}}
+        {{~> assets/stylesheets/Abandoned this}}
+    </style>
+  </head>
+  <body>
+    <!-- certificate -->
+    <div class="front-page">
+      <div class="certificate">
+        <div class="certificate__wrapper">
+
+          <!-- header -->
+          <div class="header">
+            <img src="{{root}}/assets/images/dvsa_crest.png" alt="DVSA" class="header__crest-img"/>
+            <div class="title-text">
+              <div class="bold-text" id="firstPageTitle">
+                Notification of Failure to Comply with the Conditions of Acceptance of a
+                <div>
+                  {{titleTextIncludingRollingHeaders}} ({{documentType}})
+                </div>
+              </div>
+            </div>
+            <div class="standard-text regulation-text" id="regulationText">
+              {{regulationText}}
+            </div>
+          </div>
+
+          <!-- footer -->
+          <div class="footer-left">
+            <b id="footerDocumentType">{{documentType}}</b>
+            <span id="footerTestNumber"><b> (DVSA{{formNumber}})</b></span>
+          </div>
+          <div class="footer-right">
+            <p id="footerDatePopulated" class="bold-text">Jan 2025</p>
+          </div>
+          <!-- /footer -->
+
+          <div class="standard-text" id="vehicleTypeText">
+            {{vehicleTypeText}}
+          </div>
+
+          <div class="vin-wrapper">
+            {{#each data.registrationNumber}}
+              <span class="vin-text" id="reg_{{@index}}">
+                {{this}}
+              </span>
+            {{/each}}
+          </div>
+
+
+          <div id="sectionText" class="standard-text">
+            having been submitted for an examination under Section {{sectionTextRef}} of the Road Traffic Act 1988, it is hereby notified that the examination did not proceed or could not be completed because of a failure to comply with those conditions of acceptance for examination recorded below.
+          </div>
+
+          <b class="standard-text">
+            Reason(s) for refusal to accept or complete examination:
+          </b>
+
+          <!--running header -->
+          <div class="running-header">
+            <div class="header-left">
+              {{documentType}}
+            </div>
+            <span class="bold-text">
+              Notification of Failure to Comply with the Conditions of Acceptance of a {{titleTextIncludingRollingHeaders}}
+            </span>
+          </div>
+
+
+          <ul>
+            {{#each data.reasonsForRefusal}}
+              <li class="standard-text" id="reasonsForAbandonment_{{@index}}">{{this}}</li>
+            {{/each}}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="back-page">
+
+      <div class="additional-comments-header bold-text">Additional Comments</div>
+
+      <div class="additional-comments-box" id="additionalComments">
+        {{data.additionalComments}}
+      </div>
+
+      <table class="table">
+        <tr>
+          <td class="table-row-cell table-row-left"><b>Signature: </b></td>
+          <td class="table-row-cell table-row-right" colspan="3">
+            <img id="signature" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="table-row-cell table-row-left"><b>Print Name: </b></td>
+          <td class="table-row-cell table-row-right" colspan="3" id="printName">{{data.issuersName}}</td>
+        </tr>
+        <tr>
+          <td class="table-row-cell table-row-left"><b>Location: </b></td>
+          <td class="table-row-cell table-row-right" colspan="3" id="location">{{data.testStationName}}</td>
+        </tr>
+        <tr>
+          <td class="table-row-cell last-row-first-column"><b>Location Number: </b></td>
+          <td class="table-row-cell last-row-second-column" id="locationNumber">{{data.testStationPNumber}}</td>
+          <td class="table-row-cell last-row-third-column"><b>Date: </b></td>
+          <td class="table-row-cell last-row-fourth-column" id="dateOfTheTest">{{data.dateOfTheTest}}</td>
+        </tr>
+      </table>
+
+      <div class="data-protection-box">
+        <div class="data-protection-text bold-text">Data Protection</div>
+        <div class="data-protection-text" id="dataProtectionWithDocumentType">
+          We collect, use and store your personal data so that we can correctly issue your vehicle with a {{documentType}} failure notification.
+        </div>
+        <div class="data-protection-text">
+          We may share your personal data if we have a lawful reason. For example as part of a criminal investigation or to prevent fraud. Find out more at
+          <span class="blue-text">www.gov.uk/dvsa/privacy.</span>
+        </div>
+      </div>
+    </div>
+  <!-- /certificate -->
+  </body>
+</html>

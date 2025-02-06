@@ -46,7 +46,7 @@ public class MSVA30Test {
     @Test
     public void verifyVehicleZNumber() {
         String vehicleZNumber = msvaPageObject.getVehicleZNumber();
-        assertEquals("Vehicle 'Z' No.: ".concat(testCertificate.getMsvaData().getVehicleZNumber()), vehicleZNumber);
+        assertEquals("Vehicle 'Z' No: ".concat(testCertificate.getMsvaData().getVehicleZNumber()), vehicleZNumber);
     }
 
     @Test
@@ -77,9 +77,9 @@ public class MSVA30Test {
     }
 
     @Test
-    public void verifyRetestDate() {
-        String retestDate = msvaPageObject.getRetestDate();
-        assertEquals("Retest required by: ".concat(testCertificate.getMsvaData().getRetestDate()), retestDate);
+    public void verifyReapplicationDate() {
+        String retestDate = msvaPageObject.getReapplicationDate();
+        assertEquals("Reapplication required by: 27/05/2024", retestDate);
     }
 
     @Test
@@ -105,7 +105,9 @@ public class MSVA30Test {
         String rs = requiredStandardsArray[0].getRequiredStandard();
         String addNotes = requiredStandardsArray[0].getAdditionalNotes();
 
-        assertEquals(sectionNo + " - " + description + " RS" + rsNo + ": " + rs + " Additional Information: " + addNotes, requiredStandards);
+        assertEquals(sectionNo + " - " + description + " RS" + rsNo + ": " + rs + " Additional Information: " + addNotes
+                        + " " + sectionNo + " - " + description + " RS" + rsNo + ": " + rs + " (PRS)" + " Additional Information: " + addNotes
+                , requiredStandards);
     }
 
     @Test

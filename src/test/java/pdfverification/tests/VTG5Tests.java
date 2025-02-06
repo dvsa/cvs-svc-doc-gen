@@ -21,7 +21,6 @@ public class VTG5Tests {
 
     public VTG5Tests() {
         this.testCertificate = CvsCertificateTestDataProvider.getVtg5();
-
         this.htmlGenerator = new HtmlGenerator(new Handlebars());
         this.pdfGenerationService = new PDFGenerationService(new ITextRenderer());
         this.pdfParser = new PDFParser();
