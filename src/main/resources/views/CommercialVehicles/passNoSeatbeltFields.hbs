@@ -293,6 +293,11 @@
             </div>
         </div>
         <!-- /results -->
+        <!-- recalls -->
+        {{#if data.recalls.hasRecall}}
+            {{~> views/CommercialVehicles/recalls manufacturer=data.recalls.manufacturer}}
+        {{/if}}
+        <!-- /recalls -->
         <!-- test-information -->
         <div class="test-information">
             <div class="test-information__wrapper">

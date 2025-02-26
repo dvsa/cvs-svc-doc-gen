@@ -155,4 +155,12 @@ public class VTP20WTest {
         String expected = "Dim data ar gael";
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void verifyRecallsWelsh() {
+        String titleText = certificatePageObject.getRecallsHeader();
+        String contentText = certificatePageObject.getRecallsBody();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
+    }
 }
