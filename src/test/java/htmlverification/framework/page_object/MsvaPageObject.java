@@ -37,7 +37,7 @@ public class MsvaPageObject extends BasePageObject {
         return getElementById(DATE.getSelector()).text();
     }
 
-    public String getRetestDate() {
+    public String getReapplicationDate() {
         return getElementById(RE_APP_DATE.getSelector()).text();
     }
 

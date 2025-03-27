@@ -172,4 +172,20 @@ public class CvsPsvFailBilingualTest {
         assertEquals(testCertificate.getFailData().getTestNumber(), testNumber);
         assertEquals(testCertificate.getFailData().getTestNumber(), testNumber2);
     }
+
+    @Test
+    public void verifyRecallsWelsh() {
+        String titleText = certificatePageObjectVTG30W.getRecallsHeader();
+        String contentText = certificatePageObjectVTG30W.getRecallsBody();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
+    }
+
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObjectVTG30.getRecallsHeader();
+        String contentText = certificatePageObjectVTG30.getRecallsBody();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
+    }
 }

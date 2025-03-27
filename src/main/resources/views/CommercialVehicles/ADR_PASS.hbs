@@ -21,11 +21,16 @@
                 {{#if adrData.isApplicantDetailsNull}}
                     <br/>
                 {{else}}
-                    <p>{{#if adrData.applicantDetails.name}}<span id="applicantDetailsName">{{adrData.applicantDetails.name}}</span>{{/if}} </p>
-                    <p>{{#if adrData.applicantDetails.address1}}<span id="applicantDetailsStreet">{{adrData.applicantDetails.address1}}, </span>{{/if}}
-                    {{#if adrData.applicantDetails.address2}}<span id="applicantDetailsTown">{{adrData.applicantDetails.address2}}, </span>{{/if}}
-                    {{#if adrData.applicantDetails.city}}<span id="applicantDetailsCity">{{adrData.applicantDetails.city}}, </span>{{/if}}
-                    {{#if adrData.applicantDetails.postCode}}<span id="applicantDetailsPostCode">{{adrData.applicantDetails.postCode}}</span>{{/if}} </p>
+                    <p>{{#if adrData.applicantDetails.name}}
+                        <span id="applicantDetailsName">{{adrData.applicantDetails.name}}</span>{{/if}} </p>
+                    <p>{{#if adrData.applicantDetails.address1}}
+                        <span id="applicantDetailsStreet">{{adrData.applicantDetails.address1}}, </span>{{/if}}
+                        {{#if adrData.applicantDetails.postTown}}
+                            <span id="applicantDetailsTown">{{adrData.applicantDetails.postTown}}, </span>{{/if}}
+                        {{#if adrData.applicantDetails.address2}}
+                            <span id="applicantDetailsCity">{{adrData.applicantDetails.address2}}, </span>{{/if}}
+                        {{#if adrData.applicantDetails.postCode}}
+                            <span id="applicantDetailsPostCode">{{adrData.applicantDetails.postCode}}</span>{{/if}} </p>
                 {{/if}}
             </div>
             <div class="adrVehicleType">
