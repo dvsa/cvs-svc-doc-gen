@@ -10,11 +10,7 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.MSVA30;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
-
-import java.io.FileOutputStream;
 import java.io.IOException;
-
 import static org.junit.Assert.assertTrue;
 
 public class MSVA30Tests {
@@ -22,7 +18,7 @@ public class MSVA30Tests {
 
     private final String FOOTER_DOC_NAME = "MSVA30VTA (DVSA0848)";
 
-    private final String FOOTER_VERSION_DATE = "Version 1.2 July 2024";
+    private final String FOOTER_VERSION_DATE = "Version 1.3 May 2025";
 
     private PDFGenerationService pdfGenerationService;
     private HtmlGenerator htmlGenerator;

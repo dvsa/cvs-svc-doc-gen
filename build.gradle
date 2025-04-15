@@ -102,5 +102,9 @@ task buildManifest(type: Copy) {
     expand(gitCommitId: commitId, gitBranch: branchName)
 }
 
+tasks.test {
+    environment "LAMBDA_TASK_ROOT", "./src/main/resources"
+}
+
 buildZip.dependsOn buildManifest
 build.dependsOn buildZip

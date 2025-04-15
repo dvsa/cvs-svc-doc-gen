@@ -10,7 +10,6 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.mot.PRSW;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
 import static htmlverification.framework.component.DefectSummaryComponent.*;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -21,9 +20,9 @@ import static uk.gov.dvsa.model.mot.certificateData.MotFailCertificateDataWelsh.
 
 public class PRSWTests {
     private static final int FIRST_PASS_PAGE_NUMBER = 1;
-    private static final int FIRST_FAIL_PAGE_NUMBER = 2;
-    private static final int FIRST_PASS_WELSH_PAGE_NUMBER = 4;
-    private static final int FIRST_FAIL_WELSH_PAGE_NUMBER = 6;
+    private static final int FIRST_FAIL_PAGE_NUMBER = 3;
+    private static final int FIRST_PASS_WELSH_PAGE_NUMBER = 5;
+    private static final int FIRST_FAIL_WELSH_PAGE_NUMBER = 7;
 
     private HtmlGenerator htmlGenerator;
     private PDFGenerationService pdfGenerationService;
@@ -83,14 +82,15 @@ public class PRSWTests {
         boolean isVinOnFifthPage = pdfParser.getRawText(pdfReader, 5).contains(vinText);
         boolean isVinOnSixthPage = pdfParser.getRawText(pdfReader, 6).contains(vinText);
         boolean isVinOnSeventhPage = pdfParser.getRawText(pdfReader, 7).contains(vinText);
+        boolean isVinOnEighthPage = pdfParser.getRawText(pdfReader, 8).contains(vinText);
 
         assertFalse(isVinOnFirstPage);
-        assertFalse(isVinOnSecondPage);
-        assertFalse(isVinOnForthPage);
-        assertFalse(isVinOnSixthPage);
-
-        assertTrue(isVinOnThirdPage);
-        assertTrue(isVinOnFifthPage);
-        assertTrue(isVinOnSeventhPage);
+        assertTrue(isVinOnSecondPage);
+        assertFalse(isVinOnThirdPage);
+        assertTrue(isVinOnForthPage);
+        assertFalse(isVinOnFifthPage);
+        assertTrue(isVinOnSixthPage);
+        assertFalse(isVinOnSeventhPage);
+        assertTrue(isVinOnEighthPage);
     }
 }
