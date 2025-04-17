@@ -17,11 +17,11 @@ public class CvsTrlPRSBilingual extends CvsHgvTrlFailBilingual {
     }
 
     public String getVersionNumberPass() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getVersionNumberPassWelsh() {
-        return "1.0";
+        return "1.1";
     }
 
     public Document setData(CvsMotCertificateDataWelsh data) {
