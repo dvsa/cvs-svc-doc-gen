@@ -19,8 +19,8 @@ public class MsvaFailCertificateData {
     private String model;
     @JsonProperty("date")
     private String date;
-    @JsonProperty("retestDate")
-    private String retestDate;
+    @JsonProperty("reapplicationDate")
+    private String reapplicationDate;
     @JsonProperty("station")
     private String station;
     @JsonProperty("testerName")
@@ -86,12 +86,12 @@ public class MsvaFailCertificateData {
         this.date = date;
     }
 
-    public String getRetestDate() {
-        return retestDate;
+    public String getReapplicationDate() {
+        return reapplicationDate;
     }
 
-    public void setRetestDate(String retestDate) {
-        this.retestDate = retestDate;
+    public void setReapplicationDate(String reapplicationDate) {
+        this.reapplicationDate = reapplicationDate;
     }
 
     public String getStation() {

@@ -174,4 +174,12 @@ public class VTP30Test {
         String expected = "22,341 miles";
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObject.getRecallsHeader();
+        String contentText = certificatePageObject.getRecallsBody();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
+    }
 }
