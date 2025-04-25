@@ -39,9 +39,9 @@ public class Defects {
             this.defectTitleLocation = DefectTitleLocation.MajorDefects;
         } else if (this.majorDefects.length == 0) {
             this.defectTitleLocation = DefectTitleLocation.MinorDefects;
-        } else if (this.minorDefects.length == 0) {
-            this.defectTitleLocation = DefectTitleLocation.AdvisoryDefects;
         } else if (this.advisoryDefects.length == 0) {
+            this.defectTitleLocation = DefectTitleLocation.AdvisoryDefects;
+        } else if (this.pRSDefects.length == 0) {
             this.defectTitleLocation = DefectTitleLocation.PRSDefects;
         }
     }
