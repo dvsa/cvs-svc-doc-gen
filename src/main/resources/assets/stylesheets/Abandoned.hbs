@@ -88,6 +88,9 @@ html {
   @bottom-left {
     content: element(footer-left);
   }
+  @bottom-center {
+    content: element(footer-center);
+  }
   @bottom-right {
     content: element(footer-right);
   }
@@ -100,16 +103,34 @@ html {
   @top-left {
     content: normal;
   }
+  @bottom-center {
+    content: element(footer-center);
+  }
 }
 
 .footer-left {
   font-size: 1.25em;
   position: running(footer-left);
+  max-width: 200px;
 }
 
 .footer-right {
   text-align: right;
   position: running(footer-right);
+}
+
+.footer-center {
+  position: running(footer-center);
+  margin: auto;
+  text-align: center;
+}
+
+.footer__bottom--page-counter-text--page-number:before {
+  content: counter(page)
+}
+
+.footer__bottom--page-counter-text--pages-count:before {
+  content: counter(pages)
 }
 
 /* the border is need to take up space so the text to the
@@ -130,6 +151,10 @@ html {
 
 .back-page {
   page-break-before: always;
+}
+
+.one-section {
+  page-break-inside: avoid;
 }
 
 .blue-text {
@@ -214,4 +239,12 @@ html {
 .right-align {
   text-align: right;
   display: block;
+}
+.defects-header {
+  margin-top: 30px;
+  margin-bottom: 18px;
+}
+
+.defects-type-header {
+  margin-top: 12px;
 }

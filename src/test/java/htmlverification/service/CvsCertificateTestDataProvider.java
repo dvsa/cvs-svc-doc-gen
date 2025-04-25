@@ -1186,6 +1186,25 @@ public class CvsCertificateTestDataProvider {
         String[] reasonsForRefusal = { "Reason 1 exists VTG12","Reason 2 exists VTG12" };
         String additionalComments = "additional comments VTG12";
 
+        Defects defects = new Defects(
+            new String[]{"18.1.a.ii A driver’s seat: so insecure or in such a condition that it could cause the driver to lose control of the vehicle."},
+            new String[]{"3.1.a Obligatory Seat Belt: missing.",
+                    "62.1.a.ii Reflectors, conspicuity markings and/or rear markers: missing, incorrectly positioned and red colour is reflected to the front or white to the rear."},
+            new String[]{"8.1.d.i A tyre: rubbing on any part of the vehicle."},
+            new String[]{"67.2 European checked on Dipped Beam: The beam image contains"},
+            new String[]{
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                    "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+            });
+
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",
                 reasonsForRefusal,
@@ -1193,7 +1212,9 @@ public class CvsCertificateTestDataProvider {
                 "fake location",
                 "fake12312312",
                 "fake tester",
-                additionalComments);
+                additionalComments,
+                defects);
+
 
         Signature signature = new Signature();
         signature
@@ -1212,6 +1233,25 @@ public class CvsCertificateTestDataProvider {
         String[] reasonsForRefusal = { "Reason 1 exists VTP12","Reason 2 exists VTP12" };
         String additionalComments = "additional comments VTP12";
 
+        Defects defects = new Defects(
+                new String[]{"18.1.a.ii A driver’s seat: so insecure or in such a condition that it could cause the driver to lose control of the vehicle."},
+                new String[]{"3.1.a Obligatory Seat Belt: missing.",
+                        "62.1.a.ii Reflectors, conspicuity markings and/or rear markers: missing, incorrectly positioned and red colour is reflected to the front or white to the rear."},
+                new String[]{"8.1.d.i A tyre: rubbing on any part of the vehicle."},
+                new String[]{"67.2 European checked on Dipped Beam: The beam image contains"},
+                new String[]{
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                        "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a combination of tyres with structures which are not shown as acceptable in the table.",
+                });
+
         AbandonedData abandonedData = new AbandonedData(
                 "poiuytrewq01230109567891",
                 reasonsForRefusal,
@@ -1219,7 +1259,8 @@ public class CvsCertificateTestDataProvider {
                 "fake location",
                 "fake12312312",
                 "fake tester",
-                additionalComments);
+                additionalComments,
+                defects);
 
         Signature signature = new Signature();
         signature

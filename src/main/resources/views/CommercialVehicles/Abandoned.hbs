@@ -35,6 +35,12 @@
             <b id="footerDocumentType">{{documentType}}</b>
             <span id="footerTestNumber"><b> (DVSA{{formNumber}})</b></span>
           </div>
+          <div class="footer__bottom--page-counter footer-center">
+            <span class="footer__bottom--page-counter-text">Page</span>
+            <span class="footer__bottom--page-counter-text--page-number"></span>
+            <span class="footer__bottom--page-counter-text">of</span>
+            <span class="footer__bottom--page-counter-text--pages-count"></span>
+          </div>
           <div class="footer-right">
             <p id="footerDatePopulated" class="bold-text">May 2025</p>
           </div>
@@ -77,6 +83,105 @@
               <li class="standard-text" id="reasonsForAbandonment_{{@index}}">{{this}}</li>
             {{/each}}
           </ul>
+
+          {{#if data.defects.dangerousDefectsExist}}
+          <div class="one-section">
+            <div class="defects-header">
+              <b class="standard-text">
+                Defects added during test:
+              </b>
+            </div>
+            <b class="standard-text-medium defects-type-header">
+              Do not drive until repaired (dangerous defects)
+            </b>
+            <ul>
+              {{#each data.defects.dangerousDefects}}
+                <li class="standard-text">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+
+          {{#if data.defects.majorDefectsExist}}
+          <div class="one-section">
+            {{#if data.defects.majorDefectsIsFirst}}
+                <div class="defects-header">
+                  <b class="standard-text">
+                    Defects added during test:
+                  </b>
+                </div>
+              {{/if}}
+            <b class="standard-text-medium defects-type-header">
+              Repair immediately (major defects)
+            </b>
+            <ul>
+              {{#each data.defects.majorDefects}}
+                <li class="standard-text">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+
+          {{#if data.defects.minorDefectsExist}}
+          <div class="one-section">
+            {{#if data.defects.minorDefectsIsFirst}}
+              <div class="defects-header">
+                <b class="standard-text">
+                  Defects added during test:
+                </b>
+              </div>
+            {{/if}}
+            <b class="standard-text-medium defects-type-header">
+              Repair as soon as possible (minor defects)
+            </b>
+            <ul>
+              {{#each data.defects.minorDefects}}
+                <li class="standard-text">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+
+          {{#if data.defects.advisoryDefectsExist}}
+          <div class="one-section">
+            {{#if data.defects.advisoryDefectsIsFirst}}
+              <div class="defects-header">
+                <b class="standard-text">
+                  Defects added during test:
+                </b>
+              </div>
+            {{/if}}
+            <b class="standard-text-medium defects-type-header">
+              Monitor and repair if necessary (advisory defects)
+            </b>
+            <ul>
+              {{#each data.defects.advisoryDefects}}
+                <li class="standard-text">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+
+          {{#if data.defects.pRSDefectsExist}}
+            <div class="one-section">
+              {{#if data.defects.pRSDefectsIsFirst}}
+                <div class="defects-header">
+                  <b class="standard-text">
+                    Defects added during test:
+                  </b>
+                </div>
+              {{/if}}
+              <b class="standard-text-medium defects-type-header">
+                Defects rectified at time of test
+              </b>
+              <ul>
+                {{#each data.defects.pRSDefects}}
+                  <li class="standard-text">{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
 
         </div>
       </div>

@@ -17,6 +17,8 @@ public class AbandonedData {
     private String additionalComments;
     @JsonProperty("DateOfTheTest")
     private String dateOfTheTest;
+    @JsonProperty("Defects")
+    private Defects defects;
 
     public AbandonedData() {
     }
@@ -27,7 +29,8 @@ public class AbandonedData {
                          String testStationName,
                          String testStationPNumber,
                          String issuersName,
-                         String additionalComments) {
+                         String additionalComments,
+                         Defects defects) {
         this.registrationNumber = registrationNumber;
         this.reasonsForRefusal = reasonsForRefusal;
         this.dateOfTheTest = dateOfTheTest;
@@ -35,6 +38,7 @@ public class AbandonedData {
         this.testStationPNumber = testStationPNumber;
         this.issuersName = issuersName;
         this.additionalComments = additionalComments;
+        this.defects = defects;
     }
 
     public String[] getRegistrationNumber() {
@@ -65,4 +69,7 @@ public class AbandonedData {
         return dateOfTheTest;
     }
 
+    public Defects getDefects() {
+        return defects;
+    }
 }
