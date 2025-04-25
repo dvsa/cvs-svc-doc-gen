@@ -32,5 +32,20 @@ public class VTG12Tests extends AbandonedTests{
         super.LOCATION_NUMBER = "fake12312312";
         super.DATE_OF_THE_TEST = "01.02.2024";
         super.SECTION_TEXT = "having been submitted for an examination under Section 49 and 51 of the Road Traffic Act";
+        super.DEFECT_ADDED_DURING_TEST_TEXT = "Defects added during test:";
+        super.DO_NOT_DRIVE_UNTIL_REPAIRED_TEXT = "Do not drive until repaired (dangerous defects)";
+        super.DANGEROUS_DEFECTS_TEXT_LINE1 = "18.1.a.ii A driver’s seat: so insecure or in such a condition that it could cause the driver";
+        super.DANGEROUS_DEFECTS_TEXT_LINE2 = "to lose control of the vehicle.";
+        super.REPAIR_IMMEDIATELY_TEXT = "Repair immediately (major defects)";
+        super.MAJOR_DEFECTS_TEXT_LINE1_1ST = "3.1.a Obligatory Seat Belt: missing.";
+        super.MAJOR_DEFECTS_TEXT_LINE1_2ND = "62.1.a.ii Reflectors, conspicuity markings and/or rear markers: missing, incorrectly";
+        super.MAJOR_DEFECTS_TEXT_LINE2_2ND = "positioned and red colour is reflected to the front or white to the rear.";
+        super.REPAIR_AS_SOON_AS_POSSIBLE_TEXT = "Repair as soon as possible (minor defects)";
+        super.MINOR_DEFECTS_TEXT_LINE1 = "8.1.d.i A tyre: rubbing on any part of the vehicle.";
+        super.MONITOR_AND_REPAIR_IF_NECESSARY_TEXT = "Monitor and repair if necessary (advisory defects)";
+        super.ADVISORY_DEFECTS_TEXT_LINE1 = "67.2 European checked on Dipped Beam: The beam image contains";
+        super.DEFECTS_RECTIFIED_AT_TIME_OF_TEST_TEXT = "Defects rectified at time of test";
+        super.PRS_DEFECTS__TEXT_LINE1 = "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a";
+        super.PRS_DEFECTS__TEXT_LINE2 = "combination of tyres with structures which are not shown as acceptable in the table.";
     }
 }
