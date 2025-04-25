@@ -9,6 +9,8 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.AbandonedCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
+
+import java.io.FileOutputStream;
 import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 
@@ -48,6 +50,13 @@ public abstract class AbandonedTests {
     public void setup() throws Exception {
         pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
         pdfReader = pdfParser.readPdf(pdfData);
+
+        // write pdfData to file for debugging
+        try (FileOutputStream fos = new FileOutputStream("vtp12.pdf")) {
+            fos.write(pdfData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -90,7 +99,7 @@ public abstract class AbandonedTests {
 
     @Test
     public void verifyAdditionalComments() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(ADDITIONAL_COMMENTS));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(ADDITIONAL_COMMENTS));
     }
 
     @Test
@@ -105,21 +114,21 @@ public abstract class AbandonedTests {
 
     @Test
     public void verifyPrintName() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(PRINT_NAME));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(PRINT_NAME));
     }
 
     @Test
     public void verifyLocation() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(LOCATION));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(LOCATION));
     }
 
     @Test
     public void verifyLocationNumber() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(LOCATION_NUMBER));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(LOCATION_NUMBER));
     }
 
     @Test
     public void verifyDate() throws IOException {
-        assertTrue(pdfParser.getRawText(pdfReader, 2).contains(DATE_OF_THE_TEST));
+        assertTrue(pdfParser.getRawText(pdfReader, 3).contains(DATE_OF_THE_TEST));
     }
 }
