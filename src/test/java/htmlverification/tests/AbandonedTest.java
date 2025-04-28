@@ -14,6 +14,7 @@ public abstract class AbandonedTest {
     protected String VEHICLE_TYPE_TEXT_LINE;
     protected String FORM_NUMBER;
     protected String SECTION_REF_TEXT;
+    protected static String DEFECT_TITLE = "Defects added during test:";
 
 
     protected HtmlGenerator htmlGenerator;
@@ -126,5 +127,50 @@ public abstract class AbandonedTest {
     @Test
     public void verifyDateOfTheTest() {
         assertEquals(testCertificate.getData().getDateOfTheTest(), certificatePageObject.getDateOfTest());
+    }
+
+    @Test
+    public void verifyDefectsTitle() {
+        assertEquals(AbandonedTest.DEFECT_TITLE, certificatePageObject.getDefectsHeader());
+    }
+
+    @Test
+    public void verifyDefectDangerous() {
+        String[] dangerousDefects = testCertificate.getData().getDefects().getDangerousDefects();
+        for (int i = 0; i < dangerousDefects.length ; i++) {
+            assertEquals(dangerousDefects[i], certificatePageObject.getDefectDangerous(i));
+        }
+    }
+
+    @Test
+    public void verifyDefectMajor() {
+        String[] majorDefects = testCertificate.getData().getDefects().getMajorDefects();
+        for (int i = 0; i < majorDefects.length ; i++) {
+            assertEquals(majorDefects[i], certificatePageObject.getDefectMajor(i));
+        }
+    }
+
+    @Test
+    public void verifyDefectMinor() {
+        String[] minorDefects = testCertificate.getData().getDefects().getMinorDefects();
+        for (int i = 0; i < minorDefects.length ; i++) {
+            assertEquals(minorDefects[i], certificatePageObject.getDefectMinor(i));
+        }
+    }
+
+    @Test
+    public void verifyDefectAdvisory() {
+        String[] advisoryDefects = testCertificate.getData().getDefects().getAdvisoryDefects();
+        for (int i = 0; i < advisoryDefects.length ; i++) {
+            assertEquals(advisoryDefects[i], certificatePageObject.getDefectAdvisory(i));
+        }
+    }
+
+    @Test
+    public void verifyDefectPRS() {
+        String[] pRSDefects = testCertificate.getData().getDefects().getPRSDefects();
+        for (int i = 0; i < pRSDefects.length ; i++) {
+            assertEquals(pRSDefects[i], certificatePageObject.getDefectPrs(i));
+        }
     }
 }

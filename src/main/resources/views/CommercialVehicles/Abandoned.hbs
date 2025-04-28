@@ -87,7 +87,7 @@
           {{#if data.defects.dangerousDefectsExist}}
           <div class="one-section">
             <div class="defects-header">
-              <b class="standard-text">
+              <b class="standard-text" id="defectsHeader">
                 Defects added during test:
               </b>
             </div>
@@ -96,7 +96,7 @@
             </b>
             <ul>
               {{#each data.defects.dangerousDefects}}
-                <li class="standard-text">{{this}}</li>
+                <li class="standard-text" id="defectDangerous_{{@index}}">{{this}}</li>
               {{/each}}
             </ul>
           </div>
@@ -106,7 +106,7 @@
           <div class="one-section">
             {{#if data.defects.majorDefectsIsFirst}}
                 <div class="defects-header">
-                  <b class="standard-text">
+                  <b class="standard-text" id="defectsHeader">
                     Defects added during test:
                   </b>
                 </div>
@@ -116,7 +116,7 @@
             </b>
             <ul>
               {{#each data.defects.majorDefects}}
-                <li class="standard-text">{{this}}</li>
+                <li class="standard-text" id="defectMajor_{{@index}}">{{this}}</li>
               {{/each}}
             </ul>
           </div>
@@ -126,7 +126,7 @@
           <div class="one-section">
             {{#if data.defects.minorDefectsIsFirst}}
               <div class="defects-header">
-                <b class="standard-text">
+                <b class="standard-text" id="defectsHeader">
                   Defects added during test:
                 </b>
               </div>
@@ -136,7 +136,7 @@
             </b>
             <ul>
               {{#each data.defects.minorDefects}}
-                <li class="standard-text">{{this}}</li>
+                <li class="standard-text" id="defectMinor_{{@index}}">{{this}}</li>
               {{/each}}
             </ul>
           </div>
@@ -146,7 +146,7 @@
           <div class="one-section">
             {{#if data.defects.advisoryDefectsIsFirst}}
               <div class="defects-header">
-                <b class="standard-text">
+                <b class="standard-text" id="defectsHeader">
                   Defects added during test:
                 </b>
               </div>
@@ -156,7 +156,7 @@
             </b>
             <ul>
               {{#each data.defects.advisoryDefects}}
-                <li class="standard-text">{{this}}</li>
+                <li class="standard-text" id="defectAdvisory_{{@index}}">{{this}}</li>
               {{/each}}
             </ul>
           </div>
@@ -166,7 +166,7 @@
             <div class="one-section">
               {{#if data.defects.pRSDefectsIsFirst}}
                 <div class="defects-header">
-                  <b class="standard-text">
+                  <b class="standard-text" id="defectsHeader">
                     Defects added during test:
                   </b>
                 </div>
@@ -176,7 +176,7 @@
               </b>
               <ul>
                 {{#each data.defects.pRSDefects}}
-                  <li class="standard-text">{{this}}</li>
+                  <li class="standard-text"  id="defectPRS_{{@index}}">{{this}}</li>
                 {{/each}}
               </ul>
             </div>

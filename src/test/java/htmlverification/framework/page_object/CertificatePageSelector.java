@@ -139,7 +139,13 @@ public enum CertificatePageSelector {
     LOCATION("location"),
     LOCATION_NUMBER("locationNumber"),
     DATE_OF_THE_TEST("dateOfTheTest"),
-    SECTION_TEXT("sectionText");
+    SECTION_TEXT("sectionText"),
+    DEFECTS_HEADER("defectsHeader"),
+    DEFECT_DANGEROUS("defectDangerous_"),
+    DEFECT_MAJOR("defectMajor_"),
+    DEFECT_MINOR("defectMinor_"),
+    DEFECT_ADVISORY("defectAdvisory_"),
+    DEFECT_PRS("defectPRS_");
 
 
     private final String selector;

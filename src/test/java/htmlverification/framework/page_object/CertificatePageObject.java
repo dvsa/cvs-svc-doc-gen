@@ -462,4 +462,28 @@ public class CertificatePageObject extends BasePageObject {
     public String getDateOfTest() {
         return getElementById(DATE_OF_THE_TEST.getSelector()).text();
     }
+
+    public String getDefectsHeader() {
+        return getElementById(DEFECTS_HEADER.getSelector()).text();
+    }
+
+    public String getDefectDangerous(int index) {
+        return getElementById(DEFECT_DANGEROUS.getSelector() + index).text();
+    }
+
+    public String getDefectMajor(int index) {
+        return getElementById(DEFECT_MAJOR.getSelector() + index).text();
+    }
+
+    public String getDefectMinor(int index) {
+        return getElementById(DEFECT_MINOR.getSelector() + index).text();
+    }
+
+    public String getDefectAdvisory(int index) {
+        return getElementById(DEFECT_ADVISORY.getSelector() + index).text();
+    }
+
+    public String getDefectPrs(int index) {
+        return getElementById(DEFECT_PRS.getSelector() + index).text();
+    }
 }
