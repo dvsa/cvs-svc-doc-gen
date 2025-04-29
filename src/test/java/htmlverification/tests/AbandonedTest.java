@@ -136,7 +136,7 @@ public abstract class AbandonedTest {
 
     @Test
     public void verifyDefectDangerous() {
-        String[] dangerousDefects = testCertificate.getData().getDefects().getDangerousDefects();
+        String[] dangerousDefects = testCertificate.getData().getDefects().getDangerousDefects().getDefects();
         for (int i = 0; i < dangerousDefects.length ; i++) {
             assertEquals(dangerousDefects[i], certificatePageObject.getDefectDangerous(i));
         }
@@ -144,7 +144,7 @@ public abstract class AbandonedTest {
 
     @Test
     public void verifyDefectMajor() {
-        String[] majorDefects = testCertificate.getData().getDefects().getMajorDefects();
+        String[] majorDefects = testCertificate.getData().getDefects().getMajorDefects().getDefects();
         for (int i = 0; i < majorDefects.length ; i++) {
             assertEquals(majorDefects[i], certificatePageObject.getDefectMajor(i));
         }
@@ -152,7 +152,7 @@ public abstract class AbandonedTest {
 
     @Test
     public void verifyDefectMinor() {
-        String[] minorDefects = testCertificate.getData().getDefects().getMinorDefects();
+        String[] minorDefects = testCertificate.getData().getDefects().getMinorDefects().getDefects();
         for (int i = 0; i < minorDefects.length ; i++) {
             assertEquals(minorDefects[i], certificatePageObject.getDefectMinor(i));
         }
@@ -160,7 +160,7 @@ public abstract class AbandonedTest {
 
     @Test
     public void verifyDefectAdvisory() {
-        String[] advisoryDefects = testCertificate.getData().getDefects().getAdvisoryDefects();
+        String[] advisoryDefects = testCertificate.getData().getDefects().getAdvisoryDefects().getDefects();
         for (int i = 0; i < advisoryDefects.length ; i++) {
             assertEquals(advisoryDefects[i], certificatePageObject.getDefectAdvisory(i));
         }
@@ -168,7 +168,7 @@ public abstract class AbandonedTest {
 
     @Test
     public void verifyDefectPRS() {
-        String[] pRSDefects = testCertificate.getData().getDefects().getPRSDefects();
+        String[] pRSDefects = testCertificate.getData().getDefects().getPRSDefects().getDefects();
         for (int i = 0; i < pRSDefects.length ; i++) {
             assertEquals(pRSDefects[i], certificatePageObject.getDefectPrs(i));
         }

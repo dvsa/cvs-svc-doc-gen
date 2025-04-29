@@ -63,7 +63,7 @@
             having been submitted for an examination under Section {{sectionTextRef}} of the Road Traffic Act 1988, it is hereby notified that the examination did not proceed or could not be completed because of a failure to comply with those conditions of acceptance for examination recorded below.
           </div>
 
-          <b class="standard-text">
+          <b class="standard-text sub-title-text">
             Reason(s) for refusal to accept or complete examination:
           </b>
 
@@ -84,104 +84,13 @@
             {{/each}}
           </ul>
 
-          {{#if data.defects.dangerousDefectsExist}}
-          <div class="one-section">
-            <div class="defects-header">
-              <b class="standard-text" id="defectsHeader">
-                Defects added during test:
-              </b>
-            </div>
-            <b class="standard-text-medium defects-type-header">
-              Do not drive until repaired (dangerous defects)
-            </b>
-            <ul>
-              {{#each data.defects.dangerousDefects}}
-                <li class="standard-text" id="defectDangerous_{{@index}}">{{this}}</li>
-              {{/each}}
-            </ul>
-          </div>
-          {{/if}}
-
-          {{#if data.defects.majorDefectsExist}}
-          <div class="one-section">
-            {{#if data.defects.majorDefectsIsFirst}}
-                <div class="defects-header">
-                  <b class="standard-text" id="defectsHeader">
-                    Defects added during test:
-                  </b>
-                </div>
-              {{/if}}
-            <b class="standard-text-medium defects-type-header">
-              Repair immediately (major defects)
-            </b>
-            <ul>
-              {{#each data.defects.majorDefects}}
-                <li class="standard-text" id="defectMajor_{{@index}}">{{this}}</li>
-              {{/each}}
-            </ul>
-          </div>
-          {{/if}}
-
-          {{#if data.defects.minorDefectsExist}}
-          <div class="one-section">
-            {{#if data.defects.minorDefectsIsFirst}}
-              <div class="defects-header">
-                <b class="standard-text" id="defectsHeader">
-                  Defects added during test:
-                </b>
-              </div>
-            {{/if}}
-            <b class="standard-text-medium defects-type-header">
-              Repair as soon as possible (minor defects)
-            </b>
-            <ul>
-              {{#each data.defects.minorDefects}}
-                <li class="standard-text" id="defectMinor_{{@index}}">{{this}}</li>
-              {{/each}}
-            </ul>
-          </div>
-          {{/if}}
-
-          {{#if data.defects.advisoryDefectsExist}}
-          <div class="one-section">
-            {{#if data.defects.advisoryDefectsIsFirst}}
-              <div class="defects-header">
-                <b class="standard-text" id="defectsHeader">
-                  Defects added during test:
-                </b>
-              </div>
-            {{/if}}
-            <b class="standard-text-medium defects-type-header">
-              Monitor and repair if necessary (advisory defects)
-            </b>
-            <ul>
-              {{#each data.defects.advisoryDefects}}
-                <li class="standard-text" id="defectAdvisory_{{@index}}">{{this}}</li>
-              {{/each}}
-            </ul>
-          </div>
-          {{/if}}
-
-          {{#if data.defects.pRSDefectsExist}}
-            <div class="one-section">
-              {{#if data.defects.pRSDefectsIsFirst}}
-                <div class="defects-header">
-                  <b class="standard-text" id="defectsHeader">
-                    Defects added during test:
-                  </b>
-                </div>
-              {{/if}}
-              <b class="standard-text-medium defects-type-header">
-                Defects rectified at time of test
-              </b>
-              <ul>
-                {{#each data.defects.pRSDefects}}
-                  <li class="standard-text"  id="defectPRS_{{@index}}">{{this}}</li>
-                {{/each}}
-              </ul>
-            </div>
-          {{/if}}
-
+          {{~> views/CommercialVehicles/Defects
+              dangerous=data.defects.dangerousDefects
+              major=data.defects.majorDefects
+              minor=data.defects.minorDefects
+              advisory=data.defects.advisoryDefects
+              pRS=data.defects.pRSDefects
+          }}
 
         </div>
       </div>

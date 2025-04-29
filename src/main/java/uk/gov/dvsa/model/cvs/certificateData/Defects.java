@@ -1,20 +1,21 @@
 package uk.gov.dvsa.model.cvs.certificateData;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Defects {
     @JsonProperty("DangerousDefects")
-    private String[] dangerousDefects;
+    private Defect dangerousDefects;
     @JsonProperty("MajorDefects")
-    private String[] majorDefects;
+    private Defect majorDefects;
     @JsonProperty("MinorDefects")
-    private String[] minorDefects;
+    private Defect minorDefects;
     @JsonProperty("AdvisoryDefects")
-    private String[] advisoryDefects;
+    private Defect advisoryDefects;
     @JsonProperty("PRSDefects")
-    private String[] pRSDefects;
-    private DefectTitleLocation defectTitleLocation;
+    private Defect pRSDefects;
 
     public Defects() {}
 
@@ -26,89 +27,56 @@ public class Defects {
             @JsonProperty("AdvisoryDefects") String[] advisoryDefects,
             @JsonProperty("PRSDefects") String[] pRSDefects
     ) {
-        this.dangerousDefects = dangerousDefects;
-        this.majorDefects = majorDefects;
-        this.minorDefects = minorDefects;
-        this.advisoryDefects = advisoryDefects;
-        this.pRSDefects = pRSDefects;
-        this.setDefectHeading();
+        DefectTitleLocation titleLocation = this.setDefectHeading(dangerousDefects, majorDefects, minorDefects, advisoryDefects, pRSDefects);
+        this.dangerousDefects = new Defect(dangerousDefects,
+                titleLocation.equals(DefectTitleLocation.DangerousDefects));
+        this.majorDefects = new Defect(majorDefects,
+                titleLocation.equals(DefectTitleLocation.MajorDefects));
+        this.minorDefects = new Defect(minorDefects,
+                titleLocation.equals(DefectTitleLocation.MinorDefects));
+        this.advisoryDefects = new Defect(advisoryDefects,
+                titleLocation.equals(DefectTitleLocation.AdvisoryDefects));
+        this.pRSDefects = new Defect(pRSDefects,
+                titleLocation.equals(DefectTitleLocation.PRSDefects));
     }
-    public void setDefectHeading() {
-        this.defectTitleLocation = DefectTitleLocation.DangerousDefects;
-        if (this.dangerousDefects.length == 0) {
-            this.defectTitleLocation = DefectTitleLocation.MajorDefects;
-        } else if (this.majorDefects.length == 0) {
-            this.defectTitleLocation = DefectTitleLocation.MinorDefects;
-        } else if (this.advisoryDefects.length == 0) {
-            this.defectTitleLocation = DefectTitleLocation.AdvisoryDefects;
-        } else if (this.pRSDefects.length == 0) {
-            this.defectTitleLocation = DefectTitleLocation.PRSDefects;
+    public DefectTitleLocation setDefectHeading(
+            String[] dangerousDefects,
+            String[] majorDefects,
+            String[] minorDefects,
+            String[] advisoryDefects,
+            String[] pRSDefects
+    ) {
+        if (dangerousDefects.length > 0) {
+            return DefectTitleLocation.DangerousDefects;
+        } else if (majorDefects.length > 0) {
+            return DefectTitleLocation.MajorDefects;
+        } else if (minorDefects.length > 0) {
+            return DefectTitleLocation.MinorDefects;
+        } else if (advisoryDefects.length > 0) {
+            return DefectTitleLocation.AdvisoryDefects;
+        } else if (pRSDefects.length > 0) {
+            return DefectTitleLocation.PRSDefects;
         }
+        return DefectTitleLocation.DangerousDefects;
     }
 
-    public String[] getDangerousDefects() {
+    public Defect getDangerousDefects() {
         return dangerousDefects;
     }
 
-    public boolean getDangerousDefectsExist() {
-        return this.dangerousDefects.length > 0;
-    }
-
-    public String[] getMajorDefects() {
+    public Defect getMajorDefects() {
         return majorDefects;
     }
 
-    public boolean getMajorDefectsExist() {
-        return this.majorDefects.length > 0;
-    }
-
-    public boolean getMajorDefectsIsFirst() {
-        return this.defectTitleLocation == DefectTitleLocation.MajorDefects;
-    }
-
-    public String[] getMinorDefects() {
+    public Defect getMinorDefects() {
         return minorDefects;
     }
 
-    public boolean getMinorDefectsExist() {
-        return this.minorDefects.length > 0;
-    }
-
-    public boolean getMinorDefectsIsFirst() {
-        return this.defectTitleLocation == DefectTitleLocation.MinorDefects;
-    }
-
-    public  String[] getAdvisoryDefects() {
+    public Defect getAdvisoryDefects() {
         return advisoryDefects;
     }
 
-    public boolean getAdvisoryDefectsExist() {
-        return this.advisoryDefects.length > 0;
-    }
-
-    public boolean getAdvisoryDefectsIsFirst() {
-        return this.defectTitleLocation == DefectTitleLocation.AdvisoryDefects;
-    }
-
-    public String[] getPRSDefects() {
+    public Defect getPRSDefects() {
         return pRSDefects;
     }
-
-    public boolean getPRSDefectsExist() {
-        return this.pRSDefects.length > 0;
-    }
-
-    public boolean getPRSDefectsIsFirst() {
-        return this.defectTitleLocation == DefectTitleLocation.PRSDefects;
-    }
-
-    public boolean getDefectsExist() {
-        return this.dangerousDefects.length > 0 ||
-                this.majorDefects.length > 0 ||
-                this.minorDefects.length > 0 ||
-                this.advisoryDefects.length > 0 ||
-                this.pRSDefects.length > 0;
-    }
-
-
 }
