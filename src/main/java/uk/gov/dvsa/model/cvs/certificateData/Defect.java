@@ -4,7 +4,7 @@ public class Defect {
     private final String[] defects;
     private final boolean isFirst;
 
-    public Defect(String _defect[], boolean _isFirst) {
+    public Defect(String[] _defect, boolean _isFirst) {
         this.defects = _defect;
         this.isFirst = _isFirst;
     }
