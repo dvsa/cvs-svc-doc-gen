@@ -7,15 +7,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Defects {
     @JsonProperty("DangerousDefects")
-    private Defect dangerousDefects;
+    private String[] dangerousDefectsList;
     @JsonProperty("MajorDefects")
-    private Defect majorDefects;
+    private String[] majorDefectsList;
     @JsonProperty("MinorDefects")
-    private Defect minorDefects;
+    private String[] minorDefectsList;
     @JsonProperty("AdvisoryDefects")
-    private Defect advisoryDefects;
+    private String[] advisoryDefectsList;
     @JsonProperty("PRSDefects")
-    private Defect pRSDefects;
+    private String[] pRSDefectsList;
+
+    private Defect dangerousDefect;
+    private Defect majorDefect;
+    private Defect minorDefect;
+    private Defect advisoryDefect;
+    private Defect pRSDefect;
 
     public Defects() {}
 
@@ -28,15 +34,15 @@ public class Defects {
             @JsonProperty("PRSDefects") String[] pRSDefects
     ) {
         DefectTitleLocation titleLocation = this.setDefectHeading(dangerousDefects, majorDefects, minorDefects, advisoryDefects, pRSDefects);
-        this.dangerousDefects = new Defect(dangerousDefects,
+        this.dangerousDefect = new Defect(dangerousDefects,
                 titleLocation.equals(DefectTitleLocation.DangerousDefects));
-        this.majorDefects = new Defect(majorDefects,
+        this.majorDefect = new Defect(majorDefects,
                 titleLocation.equals(DefectTitleLocation.MajorDefects));
-        this.minorDefects = new Defect(minorDefects,
+        this.minorDefect = new Defect(minorDefects,
                 titleLocation.equals(DefectTitleLocation.MinorDefects));
-        this.advisoryDefects = new Defect(advisoryDefects,
+        this.advisoryDefect = new Defect(advisoryDefects,
                 titleLocation.equals(DefectTitleLocation.AdvisoryDefects));
-        this.pRSDefects = new Defect(pRSDefects,
+        this.pRSDefect = new Defect(pRSDefects,
                 titleLocation.equals(DefectTitleLocation.PRSDefects));
     }
     public DefectTitleLocation setDefectHeading(
@@ -61,22 +67,22 @@ public class Defects {
     }
 
     public Defect getDangerousDefects() {
-        return dangerousDefects;
+        return dangerousDefect;
     }
 
     public Defect getMajorDefects() {
-        return majorDefects;
+        return majorDefect;
     }
 
     public Defect getMinorDefects() {
-        return minorDefects;
+        return minorDefect;
     }
 
     public Defect getAdvisoryDefects() {
-        return advisoryDefects;
+        return advisoryDefect;
     }
 
     public Defect getPRSDefects() {
-        return pRSDefects;
+        return pRSDefect;
     }
 }
