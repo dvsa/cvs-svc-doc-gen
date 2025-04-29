@@ -34,16 +34,26 @@ public class Defects {
             @JsonProperty("PRSDefects") String[] pRSDefects
     ) {
         DefectTitleLocation titleLocation = this.setDefectHeading(dangerousDefects, majorDefects, minorDefects, advisoryDefects, pRSDefects);
-        this.dangerousDefect = new Defect(dangerousDefects,
-                titleLocation.equals(DefectTitleLocation.DangerousDefects));
-        this.majorDefect = new Defect(majorDefects,
-                titleLocation.equals(DefectTitleLocation.MajorDefects));
-        this.minorDefect = new Defect(minorDefects,
-                titleLocation.equals(DefectTitleLocation.MinorDefects));
-        this.advisoryDefect = new Defect(advisoryDefects,
-                titleLocation.equals(DefectTitleLocation.AdvisoryDefects));
-        this.pRSDefect = new Defect(pRSDefects,
-                titleLocation.equals(DefectTitleLocation.PRSDefects));
+        this.dangerousDefect = new Defect(
+                dangerousDefects != null ? dangerousDefects : new String[0],
+                titleLocation.equals(DefectTitleLocation.DangerousDefects)
+        );
+        this.majorDefect = new Defect(
+                majorDefects != null ? majorDefects : new String[0],
+                titleLocation.equals(DefectTitleLocation.MajorDefects)
+        );
+        this.minorDefect = new Defect(
+                minorDefects != null ? minorDefects : new String[0],
+                titleLocation.equals(DefectTitleLocation.MinorDefects)
+        );
+        this.advisoryDefect = new Defect(
+                advisoryDefects != null ? advisoryDefects : new String[0],
+                titleLocation.equals(DefectTitleLocation.AdvisoryDefects)
+        );
+        this.pRSDefect = new Defect(
+                pRSDefects != null ? pRSDefects : new String[0],
+                titleLocation.equals(DefectTitleLocation.PRSDefects)
+        );
     }
     public DefectTitleLocation setDefectHeading(
             String[] dangerousDefects,
@@ -52,15 +62,15 @@ public class Defects {
             String[] advisoryDefects,
             String[] pRSDefects
     ) {
-        if (dangerousDefects.length > 0) {
+        if (dangerousDefects != null && dangerousDefects.length > 0) {
             return DefectTitleLocation.DangerousDefects;
-        } else if (majorDefects.length > 0) {
+        } else if (majorDefects != null && majorDefects.length > 0) {
             return DefectTitleLocation.MajorDefects;
-        } else if (minorDefects.length > 0) {
+        } else if (minorDefects != null && minorDefects.length > 0) {
             return DefectTitleLocation.MinorDefects;
-        } else if (advisoryDefects.length > 0) {
+        } else if (advisoryDefects != null && advisoryDefects.length > 0) {
             return DefectTitleLocation.AdvisoryDefects;
-        } else if (pRSDefects.length > 0) {
+        } else if (pRSDefects != null && pRSDefects.length > 0) {
             return DefectTitleLocation.PRSDefects;
         }
         return DefectTitleLocation.DangerousDefects;
