@@ -42,7 +42,7 @@ public class VTP12Tests extends AbandonedTests {
         super.MAJOR_DEFECTS_TEXT_LINE2_2ND = "positioned and red colour is reflected to the front or white to the rear.";
         super.REPAIR_AS_SOON_AS_POSSIBLE_TEXT = "Repair as soon as possible (minor defects)";
         super.MINOR_DEFECTS_TEXT_LINE1 = "8.1.d.i A tyre: rubbing on any part of the vehicle.";
-        super.MONITOR_AND_REPAIR_IF_NECESSARY_TEXT = "Monitor and repair if necessary (advisory defects)";
+        super.MONITOR_AND_REPAIR_IF_NECESSARY_TEXT = "Monitor and repair if necessary (advisories)";
         super.ADVISORY_DEFECTS_TEXT_LINE1 = "67.2 European checked on Dipped Beam: The beam image contains";
         super.DEFECTS_RECTIFIED_AT_TIME_OF_TEST_TEXT = "Defects rectified at time of test";
         super.PRS_DEFECTS__TEXT_LINE1 = "7.2 A Tyre: On a two axle motor vehicle fitted with single tyres on both axles a";
