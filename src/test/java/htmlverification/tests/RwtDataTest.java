@@ -104,6 +104,6 @@ public class RwtDataTest {
     @Test
     public void verifyDocVersion() {
         String rwtDocVersion = certificatePageObject.getRwtDocVersion();
-        assertEquals("v 1.1 Dec 2019", rwtDocVersion);
+        assertEquals("v 1.2 May 2025", rwtDocVersion);
     }
 }
