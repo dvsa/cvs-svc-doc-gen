@@ -1,7 +1,7 @@
 package uk.gov.dvsa.logging;
 
 import org.apache.logging.log4j.Logger;
-import uk.gov.dvsa.model.mot.CurrentTracingInformation;
+import uk.gov.dvsa.model.CurrentTracingInformation;
 
 import java.text.NumberFormat;
 import java.text.DecimalFormat;

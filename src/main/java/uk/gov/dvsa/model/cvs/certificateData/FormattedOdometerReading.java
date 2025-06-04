@@ -1,4 +1,4 @@
-package uk.gov.dvsa.model.mot.certificateData;
+package uk.gov.dvsa.model.cvs.certificateData;
 
 public class FormattedOdometerReading {
     private final String value;

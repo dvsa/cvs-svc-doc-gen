@@ -2,7 +2,7 @@ package htmlverification.tests;
 
 import com.github.jknack.handlebars.Handlebars;
 import htmlverification.framework.page_object.CertificatePageObject;
-import htmlverification.service.CertificateTestDataProvider;
+import htmlverification.service.CvsCertificateTestDataProvider;
 import org.junit.Before;
 import org.junit.Test;
 import uk.gov.dvsa.model.cvs.MinistryPlate;
@@ -24,7 +24,7 @@ public class MinistryPlateTest {
 
     @Before
     public void setup() throws IOException {
-        testCertificate = CertificateTestDataProvider.getMinistryPlate();
+        testCertificate = CvsCertificateTestDataProvider.getMinistryPlate();
         String certHtml = htmlGenerator.generate(testCertificate).get(0);
         certificatePageObject = new CertificatePageObject(certHtml);
     }

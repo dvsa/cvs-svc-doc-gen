@@ -1,4 +1,4 @@
-package uk.gov.dvsa.view.cvs;
+package uk.gov.dvsa.view;
 
 import org.apache.commons.lang3.StringUtils;
 import uk.gov.dvsa.model.cvs.certificateData.CvsOdometerReading;

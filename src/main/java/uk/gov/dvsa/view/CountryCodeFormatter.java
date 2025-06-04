@@ -1,4 +1,4 @@
-package uk.gov.dvsa.view.mot;
+package uk.gov.dvsa.view;
 
 public class CountryCodeFormatter {
 

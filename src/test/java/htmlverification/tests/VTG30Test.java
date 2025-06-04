@@ -12,13 +12,13 @@ import uk.gov.dvsa.service.HtmlGenerator;
 import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 
-public class Vtg30Test {
+public class VTG30Test {
 
     protected HtmlGenerator htmlGenerator;
     protected VTG30 vtg30;
     protected CertificatePageObject certificatePageObject;
 
-    public Vtg30Test() {
+    public VTG30Test() {
         this.htmlGenerator = new HtmlGenerator(new Handlebars());
     }
 

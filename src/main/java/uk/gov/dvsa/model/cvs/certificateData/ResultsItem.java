@@ -1,4 +1,4 @@
-package uk.gov.dvsa.model.mot.results;
+package uk.gov.dvsa.model.cvs.certificateData;
 
 public abstract class ResultsItem {
 

@@ -1,4 +1,4 @@
-package uk.gov.dvsa.model.mot;
+package uk.gov.dvsa.model;
 
 public class CurrentTracingInformation {
 

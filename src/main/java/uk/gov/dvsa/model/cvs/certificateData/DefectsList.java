@@ -1,4 +1,4 @@
-package uk.gov.dvsa.model.mot.results;
+package uk.gov.dvsa.model.cvs.certificateData;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static uk.gov.dvsa.model.mot.certificateData.MotCertificateData.PASS_WITH_DEFECTS_HEADER;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData.PASS_WITH_DEFECTS_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 public class VTP20Test {
 
@@ -128,7 +128,7 @@ public class VTP20Test {
         String expected = "MOT test certificate (" + testCertificate.getTestType() + ")";
         assertEquals(expected, titleText);
     }
-    
+
     @Test(expected = HtmlElementNotFoundException.class)
     public void verifyReplacementInfoNotPresent() {
         certificatePageObject.getElementById("reissueInfo");

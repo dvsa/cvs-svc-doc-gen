@@ -1,28 +1,6 @@
 package uk.gov.dvsa.enums;
 
 public enum CertificateTypes {
-
-    PASS("MOT/VT20"),
-    FAIL("MOT/VT30"),
-    WELSH_PASS("MOT/VT20W"),
-    WELSH_FAIL("MOT/VT30W"),
-    PRS("MOT/PRS"),
-    WELSH_PRS("MOT/PRSW"),
-
-    EU_CONTINGENCY_PASS("MOT/EU_CT20"),
-    EU_CONTINGENCY_FAIL("MOT/EU_CT30"),
-
-    CONTINGENCY_PASS("MOT/CT20"),
-    CONTINGENCY_FAIL("MOT/CT30"),
-    CONTINGENCY_ADVISORY_NOTICE("MOT/CT32"),
-
-    ADVISORY_NOTICE("MOT/VT32VE"),
-    WELSH_ADVISORY_NOTICE("MOT/VT32VEW"),
-    COMPLIANCE_ADVISORY_NOTICE("MOT/EU_VT32VE"),
-    COMPLIANCE_WELSH_ADVISORY_NOTICE("MOT/EU_VT32VEW"),
-
-    VT29("MOT/VT29"),
-
     CVS_PASS("CVS/VTP20"),
     CVS_PASS_WELSH("CVS/VTP20W"),
     CVS_PASS_BILINGUAL("CVS/VTP20_BILINGUAL"),
@@ -47,17 +25,15 @@ public enum CertificateTypes {
     CVS_TRL_PRS_BILINGUAL("CVS/TRL_PRS_BILINGUAL"),
     RWT_DATA("CVS/RWT"),
     ADR_PASS("CVS/ADR_PASS"),
-    VTG6_VTG7("CVS/VTG6_VTG7"),
+    VTG6_VTG7("CVS/VTG6_VTG7"), // plates
 
     TRAILER_INTO_SERVICE("CVS/TrailerIntoService"),
 
-    INSPECTION_CHECKLIST("MOT/InspectionChecklist"),
+    IVA30("CVS/IVA30"), // IVA Fail
+    MSVA30("CVS/MSVA30"), // MSVA Fail
 
-    IVA30("CVS/IVA30"),
-
-    MSVA30("CVS/MSVA30"),
-    VTG12("CVS/VTG12"),
-    VTP12("CVS/VTP12");
+    VTG12("CVS/VTG12"), // abandoned HGV or Trailer
+    VTP12("CVS/VTP12"); // abandoned PSV
 
     private final String certificateType;
 

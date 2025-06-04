@@ -10,7 +10,7 @@ import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh;
 import uk.gov.dvsa.service.HtmlGenerator;
 
 import static org.junit.Assert.assertEquals;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 import java.io.IOException;
 import java.util.List;
