@@ -141,14 +141,6 @@ text-align: center-left;
 width:100%;
 }
 
-.separate-page{
-page-break-after: always;
-}
-
-#back-page{
-page-break-after: avoid;
-}
-
 .section-border {
 border-style: solid;
 border-color: black;
@@ -165,6 +157,10 @@ text-align: center;
 margin-top: -1px;
 margin-left: -1px;
 width: 100.3%;
+}
+
+#defect-section {
+page-break-inside: auto;
 }
 
 #cert-subtitle{
@@ -226,6 +222,11 @@ text-transform:uppercase;
 
 .required-standard-list {
 list-style-type: none;
+}
+
+.required-standard-list-item {
+page-break-inside: avoid;
+margin-bottom: 20px;
 }
 
 .required-standard-section {

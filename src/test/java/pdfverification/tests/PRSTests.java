@@ -10,7 +10,6 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.mot.PRS;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
 import static htmlverification.framework.component.DefectSummaryComponent.ADVISORIES_HEADER_TEXT;
 import static htmlverification.framework.component.DefectSummaryComponent.DANGEROUS_DEFECTS_HEADER_TEXT;
 import static htmlverification.framework.component.DefectSummaryComponent.MAJOR_DEFECTS_HEADER_TEXT;
@@ -22,7 +21,7 @@ import static uk.gov.dvsa.model.mot.certificateData.MotFailCertificateData.FAILE
 
 public class PRSTests {
     private static final int FIRST_PASS_PAGE_NUMBER = 1;
-    private static final int FIRST_FAIL_PAGE_NUMBER = 2;
+    private static final int FIRST_FAIL_PAGE_NUMBER = 3;
 
     private HtmlGenerator htmlGenerator;
     private PDFGenerationService pdfGenerationService;
@@ -70,9 +69,11 @@ public class PRSTests {
         boolean isVinOnFirstPage = pdfParser.getRawText(pdfReader, 1).contains(vinText);
         boolean isVinOnSecondPage = pdfParser.getRawText(pdfReader, 2).contains(vinText);
         boolean isVinOnThirdPage = pdfParser.getRawText(pdfReader, 3).contains(vinText);
+        boolean isVinOnForthPage = pdfParser.getRawText(pdfReader, 4).contains(vinText);
 
         assertFalse(isVinOnFirstPage);
-        assertFalse(isVinOnSecondPage);
-        assertTrue(isVinOnThirdPage);
+        assertTrue(isVinOnSecondPage);
+        assertFalse(isVinOnThirdPage);
+        assertTrue(isVinOnForthPage);
     }
 }

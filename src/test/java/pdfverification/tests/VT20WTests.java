@@ -10,9 +10,7 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.mot.MotCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
 import java.io.IOException;
-
 import static htmlverification.framework.component.DefectSummaryComponent.ADVISORIES_HEADER_TEXT;
 import static htmlverification.framework.component.DefectSummaryComponent.ADVISORIES_HEADER_TEXT_WELSH;
 import static htmlverification.framework.component.DefectSummaryComponent.MINOR_DEFECTS_HEADER_TEXT;
@@ -23,7 +21,7 @@ import static uk.gov.dvsa.model.mot.certificateData.MotCertificateData.PASS_WITH
 import static uk.gov.dvsa.model.mot.certificateData.MotCertificateDataWelsh.PASS_WITH_DEFECTS_HEADER_WELSH;
 
 public class VT20WTests {
-    private static final int FIRST_WELSH_PAGE_NUMBER = 2;
+    private static final int FIRST_WELSH_PAGE_NUMBER = 3;
     private static final int FIRST_ENGLISH_PAGE_NUMBER = 1;
 
     private static final String ISSUER_SIGNATURE = "Issuer signature";
@@ -73,10 +71,12 @@ public class VT20WTests {
         boolean isVinOnFirstPage = pdfParser.getRawText(pdfReader, 1).contains(vinText);
         boolean isVinOnSecondPage = pdfParser.getRawText(pdfReader, 2).contains(vinText);
         boolean isVinOnThirdPage = pdfParser.getRawText(pdfReader, 3).contains(vinText);
+        boolean isVinOnForthPage = pdfParser.getRawText(pdfReader, 4).contains(vinText);
 
         assertFalse(isVinOnFirstPage);
-        assertFalse(isVinOnSecondPage);
-        assertTrue(isVinOnThirdPage);
+        assertTrue(isVinOnSecondPage);
+        assertFalse(isVinOnThirdPage);
+        assertTrue(isVinOnForthPage);
     }
 
     @Test
