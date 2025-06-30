@@ -211,18 +211,18 @@ public class MinistryPlateTest {
         assertEquals(testCertificate.getPlateData().getAxles().getAxle2().getWeights().getGbWeight(), axle2GbWeight);
     }
 
-//    @Test
-//    public void verifyAxle3GbWeight() {
-//        String axle3GbWeight = certificatePageObject.getAxle3GbWeight();
-//        System.out.println(testCertificate);
-//        assertEquals(testCertificate.getPlateData().getAxles().getAxle3().getWeights().getGbWeight(), axle3GbWeight);
-//    }
+    @Test
+    public void verifyAxle3GbWeight() {
+        String axle3GbWeight = certificatePageObject.getAxle3GbWeight();
+        System.out.println(testCertificate);
+        assertEquals(testCertificate.getPlateData().getAxles().getAxle3().getWeights().getGbWeight(), axle3GbWeight);
+    }
 
-//    @Test
-//    public void verifyAxle4GbWeight() {
-//        String axle4GbWeight = certificatePageObject.getAxle4GbWeight();
-//        assertEquals(testCertificate.getPlateData().getAxles().getAxle4().getWeights().getGbWeight(), axle4GbWeight);
-//    }
+    @Test
+    public void verifyAxle4GbWeight() {
+        String axle4GbWeight = certificatePageObject.getAxle4GbWeight();
+        assertEquals(testCertificate.getPlateData().getAxles().getAxle4().getWeights().getGbWeight(), axle4GbWeight);
+    }
 
     @Test
     public void verifyAxle1EecWeight() {
@@ -236,17 +236,17 @@ public class MinistryPlateTest {
         assertEquals(testCertificate.getPlateData().getAxles().getAxle2().getWeights().getEecWeight(), axle2EecWeight);
     }
 
-//    @Test
-//    public void verifyAxle3EecWeight() {
-//        String axle3EecWeight = certificatePageObject.getAxle3EecWeight();
-//        assertEquals(testCertificate.getPlateData().getAxles().getAxle3().getWeights().getEecWeight(), axle3EecWeight);
-//    }
+    @Test
+    public void verifyAxle3EecWeight() {
+        String axle3EecWeight = certificatePageObject.getAxle3EecWeight();
+        assertEquals(testCertificate.getPlateData().getAxles().getAxle3().getWeights().getEecWeight(), axle3EecWeight);
+    }
 
-//    @Test
-//    public void verifyAxle4EecWeight() {
-//        String axle4EecWeight = certificatePageObject.getAxle4EecWeight();
-//        assertEquals(testCertificate.getPlateData().getAxles().getAxle4().getWeights().getEecWeight(), axle4EecWeight);
-//    }
+    @Test
+    public void verifyAxle4EecWeight() {
+        String axle4EecWeight = certificatePageObject.getAxle4EecWeight();
+        assertEquals(testCertificate.getPlateData().getAxles().getAxle4().getWeights().getEecWeight(), axle4EecWeight);
+    }
 
     @Test
     public void verifyAxle1DesignWeight() {

@@ -64,32 +64,16 @@ public class CertificatePageObject extends BasePageObject {
         return getElementById(LOCATION_OF_THE_TEST_ID.getSelector()).text();
     }
 
-    public String getInspectionAuthority() {
-        return getElementById(INSPECTION_AUTHORITY.getSelector()).text();
-    }
-
     public String getTestingOrganisationAndInspectorsName() {
         return getElementById(TESTING_ORG_AND_INSP_NAME_ID.getSelector()).text();
-    }
-
-    public String getTestStationId() {
-        return getElementById(TEST_STATION_ID.getSelector()).text();
     }
 
     public String getTestNumber() {
         return getElementById(MOT_TEST_NUMBER_ID.getSelector()).text();
     }
 
-    public String getIssuerInfo() {
-        return getElementById(ISSUER_INFO_ID.getSelector()).text();
-    }
-
     public String getEarliestDateOfTheNextTest() {
         return getElementById(EARLIEST_DATE_OF_THE_NEXT_TEST.getSelector()).text();
-    }
-
-    public Element getWatermark() {
-        return getElement(WATERMARK_SELECTOR.getSelector());
     }
 
     public String getRegistrationNumber() {
@@ -104,41 +88,14 @@ public class CertificatePageObject extends BasePageObject {
         return getElementById(MODEL_ID.getSelector()).text();
     }
 
-    public String getIssuedDate() {
-        return getElementById(ISSUED_DATE_ID.getSelector()).text();
-    }
-
-    public Element getLogo() {
-        return getElementById(DVSA_LOGO_ID.getSelector());
-    }
-
-    public Element getWelshLogo() {
-        return getElementById(DVSA_LOGO_WELSH_ID.getSelector());
-    }
-
-    public String getDefects() {
-        return getElementById(DEFECTS_ID.getSelector()).text();
-    }
-
     public String getSignatureImageSrc() {
         return getElementById(CVS_SIGNATURE_FIRST_PAGE.getSelector()).attr("src");
-    }
-
-    public String getChassisNumber() {
-        return getElementById(CHASSISNUMBER_ID.getSelector()).text();
     }
 
     public String getApplicantDetailsName() {
         return getElementById(APPLICANT_DETAILS_NAME_ID.getSelector()).text();
     }
-
-    public String getApplicantDetailsStreet() { return getElementById(APPLICANT_DETAILS_STREET_ID.getSelector()).text(); }
-
-    public String getVehicleType() { return getElementById(VEHICLE_TYPE_ID.getSelector()).text(); }
     public String getAdrVehicleType() { return getElementById(ADR_VEHICLE_TYPE_ID.getSelector()).text(); }
-
-
-    public String getFormattedPermittedDangerousGoods() { return getElementById(FORMATTED_PERMITTED_DANGEROUS_GOODS_ID.getSelector()).text(); }
 
     public String getWeight() { return getElementById(WEIGHT_ID.getSelector()).text(); }
 
@@ -153,16 +110,6 @@ public class CertificatePageObject extends BasePageObject {
     public String getSpecialProvisions() { return getElementById(SPECIAL_PROVISIONS_ID.getSelector()).text(); }
 
     public String getTankCode() { return getElementById(TANK_CODE_ID.getSelector()).text(); }
-
-    public String getStatement() { return getElementById(STATEMENT_ID.getSelector()).text(); }
-
-    public String getProductList() { return getElementById(PRODUCT_LIST_ID.getSelector()).text(); }
-
-    public String getNotes() { return getElementById(NOTES_ID.getSelector()).text(); }
-
-    public String getTestTypeDate() { return getElementById(TEST_TYPE_DATE_ID.getSelector()).text(); }
-
-    public String getAtfNameAtfPNumber() { return getElementById(ATF_NAME_ATF_P_NUMBER_ID.getSelector()).text(); }
 
     public String getCertTitle() {return getElementById(CERT_TITLE.getSelector()).text();}
     public String getDgvw() {return getElementById(DGVW.getSelector()).text();}
@@ -302,11 +249,11 @@ public class CertificatePageObject extends BasePageObject {
     }
 
     public String getAxle3GbWeight() {
-        return getElementById(AXLE2_GB_WEIGHT.getSelector()).text();
+        return getElementById(AXLE3_GB_WEIGHT.getSelector()).text();
     }
 
     public String getAxle4GbWeight() {
-        return getElementById(AXLE2_GB_WEIGHT.getSelector()).text();
+        return getElementById(AXLE4_GB_WEIGHT.getSelector()).text();
     }
 
     public String getAxle1EecWeight() {
@@ -318,11 +265,11 @@ public class CertificatePageObject extends BasePageObject {
     }
 
     public String getAxle3EecWeight() {
-        return getElementById(AXLE2_EEC_WEIGHT.getSelector()).text();
+        return getElementById(AXLE3_EEC_WEIGHT.getSelector()).text();
     }
 
     public String getAxle4EecWeight() {
-        return getElementById(AXLE2_EEC_WEIGHT.getSelector()).text();
+        return getElementById(AXLE4_EEC_WEIGHT.getSelector()).text();
     }
 
     public String getAxle1DesignWeight() {
@@ -409,10 +356,6 @@ public class CertificatePageObject extends BasePageObject {
 
     public String getFooterTestNumber() {
         return getElementById(FOOTER_TEST_NUMBER.getSelector()).text();
-    }
-
-    public String getFooterDatePopulated() {
-        return getElementById(FOOTER_DATE_POPULATED.getSelector()).text();
     }
 
     public String getRunningHeaderLeft() {
