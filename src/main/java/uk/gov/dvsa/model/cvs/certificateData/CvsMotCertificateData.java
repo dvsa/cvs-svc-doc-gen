@@ -98,6 +98,9 @@ public class CvsMotCertificateData  {
     @JsonProperty("IsTrailer")
     private boolean isTrailer;
 
+    @JsonProperty("Recalls")
+    private Recalls recalls;
+
     public String getSeatBeltTested() {
         return seatBeltTested;
     }
@@ -376,6 +379,13 @@ public class CvsMotCertificateData  {
 
     public CvsMotCertificateData setIsTrailer(boolean isTrailerValue) {
         this.isTrailer = isTrailerValue;
+        return this;
+    }
+
+    public Recalls getRecalls() {return recalls;}
+
+    public CvsMotCertificateData setRecalls(Recalls recalls) {
+        this.recalls = recalls;
         return this;
     }
 }

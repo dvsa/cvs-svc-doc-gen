@@ -10,7 +10,6 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.cvs.CvsMotCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
 import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
@@ -42,10 +41,11 @@ public class VTG30WTests {
     @Test
     public void verifyTitle() throws IOException {
         assertTrue(pdfParser.getRawText(pdfReader, 1).contains(CERT_NAME));
+        assertTrue(pdfParser.getRawText(pdfReader, 1).contains("Mae gan y cerbyd hwn wedi cael ei alw'n ôl"));
     }
 
     @Test
-    public void verifySinglePageWithInvaidXMLCharacter() throws Exception {
+    public void verifySinglePageWithInvalidXMLCharacter() throws Exception {
         this.testCertificate = CvsCertificateTestDataProvider.getVTG30WHavingInvalidXMLCharacter();
         pdfParser.getRawText(pdfReader, 1);
     }

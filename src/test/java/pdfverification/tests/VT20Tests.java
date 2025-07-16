@@ -10,9 +10,7 @@ import pdfverification.service.PDFParser;
 import uk.gov.dvsa.model.mot.MotCertificate;
 import uk.gov.dvsa.service.HtmlGenerator;
 import uk.gov.dvsa.service.PDFGenerationService;
-
 import java.io.IOException;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -40,7 +38,7 @@ public class VT20Tests {
         pdfData = pdfGenerationService.generate(htmlGenerator.generate(testCertificate));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void verifySinglePage() throws Exception {
         PdfReader reader = pdfParser.readPdf(pdfData);
 
