@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData;
 import uk.gov.dvsa.model.cvs.certificateData.Signature;
-import uk.gov.dvsa.model.mot.certificateData.MotCertificateData;
 
 public abstract class CvsMotCertificate extends Document {
 

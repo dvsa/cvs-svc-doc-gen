@@ -14,7 +14,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh.TESTING_ORGANISATION_WELSH;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 public class VTG5AWTest {
 
@@ -109,5 +109,13 @@ public class VTG5AWTest {
     public void verifyTrailerNumber() {
         String trlNo = certificatePageObject.getTrn();
         assertEquals(vtg5AW.getData().getTrn(), trlNo);
+    }
+
+    @Test
+    public void verifyRecallsWelsh() {
+        String titleText = certificatePageObject.getRecallsHeader();
+        String contentText = certificatePageObject.getRecallsBody();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
     }
 }

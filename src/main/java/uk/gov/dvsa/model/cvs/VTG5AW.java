@@ -1,7 +1,6 @@
 package uk.gov.dvsa.model.cvs;
 
 import uk.gov.dvsa.model.Document;
-import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh;
 
 public class VTG5AW extends CvsMotCertificate {
@@ -20,7 +19,7 @@ public class VTG5AW extends CvsMotCertificate {
     }
 
     public String getVersionNumberPass() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getRegOrIdHeadingWelsh() { return "Rhif adnabod";  }
