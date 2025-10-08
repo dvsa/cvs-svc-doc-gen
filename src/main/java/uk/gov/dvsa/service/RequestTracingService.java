@@ -1,6 +1,6 @@
 package uk.gov.dvsa.service;
 
-import uk.gov.dvsa.model.mot.CurrentTracingInformation;
+import uk.gov.dvsa.model.CurrentTracingInformation;
 
 import java.util.UUID;
 

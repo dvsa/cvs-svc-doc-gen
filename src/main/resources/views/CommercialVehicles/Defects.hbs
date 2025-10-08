@@ -1,0 +1,39 @@
+{{~> views/CommercialVehicles/Defect
+    showDefectTitle=dangerous.defectsIsFirst
+    subTitle="Do not drive until repaired (dangerous defects)"
+    defects=dangerous.defects
+    defectsExists=dangerous.defectsExist
+    defectType="Dangerous"
+}}
+
+{{~> views/CommercialVehicles/Defect
+    showDefectTitle=major.defectsIsFirst
+    subTitle="Repair immediately (major defects)"
+    defects=major.defects
+    defectsExists=major.defectsExist
+    defectType="Major"
+}}
+
+{{~> views/CommercialVehicles/Defect
+    showDefectTitle=minor.defectsIsFirst
+    subTitle="Repair as soon as possible (minor defects)"
+    defects=minor.defects
+    defectsExists=minor.defectsExist
+    defectType="Minor"
+}}
+
+{{~> views/CommercialVehicles/Defect
+    showDefectTitle=advisory.defectsIsFirst
+    subTitle="Monitor and repair if necessary (advisories)"
+    defects=advisory.defects
+    defectsExists=advisory.defectsExist
+    defectType="Advisory"
+}}
+
+{{~> views/CommercialVehicles/Defect
+    showDefectTitle=pRS.defectsIsFirst
+    subTitle="Defects rectified at time of test"
+    defects=pRS.defects
+    defectsExists=pRS.defectsExist
+    defectType="PRS"
+}}

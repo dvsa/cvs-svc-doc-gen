@@ -2,7 +2,7 @@ package htmlverification.tests;
 
 import com.github.jknack.handlebars.Handlebars;
 import htmlverification.framework.page_object.CertificatePageObject;
-import htmlverification.service.CertificateTestDataProvider;
+import htmlverification.service.CvsCertificateTestDataProvider;
 import org.junit.Before;
 import org.junit.Test;
 import uk.gov.dvsa.model.cvs.TrailerIntoService;
@@ -25,7 +25,7 @@ public class TrailerIntoServiceTest {
 
     @Before
     public void setup() throws IOException {
-        model = CertificateTestDataProvider.getTrailerIntoService(3);
+        model = CvsCertificateTestDataProvider.getTrailerIntoService(3);
         String certHtml = htmlGenerator.generate(model).get(0);
         dom = new CertificatePageObject(certHtml);
     }

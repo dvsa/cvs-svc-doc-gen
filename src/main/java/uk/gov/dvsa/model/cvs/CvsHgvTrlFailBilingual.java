@@ -15,11 +15,11 @@ public class CvsHgvTrlFailBilingual extends VTG30W {
     }
 
     public String getVersionNumberFail() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getVersionNumberFailWelsh() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getRegOrIdHeading() {

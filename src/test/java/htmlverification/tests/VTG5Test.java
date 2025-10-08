@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 public class VTG5Test {
 
@@ -122,5 +122,13 @@ public class VTG5Test {
     public void verifyMotTestNumber() {
         String testNumber = certificatePageObject.getTestNumber();
         assertEquals(vtg5.getData().getTestNumber(), testNumber);
+    }
+
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObject.getRecallsHeader();
+        String contentText = certificatePageObject.getRecallsBody();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
     }
 }
