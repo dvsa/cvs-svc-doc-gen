@@ -11,7 +11,7 @@ import uk.gov.dvsa.service.HtmlGenerator;
 import static org.junit.Assert.assertEquals;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData.PASS_WITH_DEFECTS_HEADER;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh.PASS_WITH_DEFECTS_HEADER_WELSH;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 import java.io.IOException;
 import java.util.List;
@@ -151,5 +151,21 @@ public class CvsTrlPassBilingualTest {
 
         assertEquals("12.10.2018", expiryDate);
         assertEquals("12.10.2018", expiryDate2);
+    }
+
+    @Test
+    public void verifyRecallsWelsh() {
+        String titleText = certificatePageObjectVTG5AW.getRecallsHeader();
+        String contentText = certificatePageObjectVTG5AW.getRecallsBody();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
+    }
+
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObjectVTG5A.getRecallsHeader();
+        String contentText = certificatePageObjectVTG5A.getRecallsBody();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
     }
 }

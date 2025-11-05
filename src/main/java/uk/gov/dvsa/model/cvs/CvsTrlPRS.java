@@ -15,11 +15,11 @@ public class CvsTrlPRS extends CvsMotFailCertificate {
     }
 
     public String getVersionNumberPass() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getVersionNumberFail() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getRegOrIdHeading() { return "Identification number";  }
