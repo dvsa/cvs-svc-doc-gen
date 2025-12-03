@@ -190,7 +190,7 @@
                 <!-- /heading-info -->
             </div>
             <div class="header__right">
-                <img src="{{root}}/assets/images/dvsa_crest.png" alt="DVSA Crown" class="header__logo" id="logo"/>
+                <img src="{{root}}/assets/images/dvsa-crest-king.png" alt="DVSA Crown" class="header__logo" id="logo"/>
             </div>
             <div class="clearfix"></div>
             <!-- header__three-columns -->
@@ -267,6 +267,11 @@
             </div>
         </div>
         <!-- /results -->
+        <!-- recalls -->
+        {{#if failData.recalls.hasRecall}}
+            {{~> views/CommercialVehicles/recalls manufacturer=failData.recalls.manufacturer}}
+        {{/if}}
+        <!-- /recalls -->
         <!-- test-information -->
         <div class="test-information">
             <div class="test-information__wrapper">

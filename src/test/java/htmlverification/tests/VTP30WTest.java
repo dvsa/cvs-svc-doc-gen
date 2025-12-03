@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 public class VTP30WTest {
     protected HtmlGenerator htmlGenerator;
@@ -116,5 +116,13 @@ public class VTP30WTest {
         String actual = certificatePageObject.getElement("#mileage").text();
         String expected = "22,341 milltiroedd";
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void verifyRecalls() {
+        String titleText = certificatePageObject.getRecallsHeader();
+        String contentText = certificatePageObject.getRecallsBody();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
     }
 }

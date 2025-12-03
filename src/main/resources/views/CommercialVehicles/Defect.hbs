@@ -1,0 +1,19 @@
+{{#if defectsExists}}
+  <div class="one-section">
+    {{#if showDefectTitle}}
+      <div class="defects-header">
+        <b class="sub-title-text" id="defectsHeader">
+          Defects added during test:
+        </b>
+      </div>
+    {{/if}}
+    <b class="standard-text-medium defects-type-header">
+      {{subTitle}}
+    </b>
+    <ul>
+      {{#each defects}}
+        <li class="standard-text" id="defect{{defectType}}_{{@index}}">{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}

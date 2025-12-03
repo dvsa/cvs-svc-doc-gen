@@ -6,26 +6,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.TrailerIntoService;
-import uk.gov.dvsa.model.mot.VT30;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RequestParserTest {
     private RequestParser parser = new RequestParser();
-
-    @Test
-    public void parseMotRequest() throws IOException {
-        Map<String, Object> input = readLambdaInput("/lambdaInput.json");
-
-        Document document = parser.parseRequest(input);
-
-        assertEquals(document.getDocumentName(), "MOT/VT30");
-        assertEquals(((VT30)document).getData().getTestNumber(), "POC123");
-        assertEquals(((VT30)document).getData().getDateOfTheTest(), LocalDate.of(2017, 11, 20));
-    }
 
     @Test
     public void parseTrailerIntoServiceRequest() throws IOException {
