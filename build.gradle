@@ -79,7 +79,7 @@ repositories {
 
 dependencies {
     implementation group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.1.0'
-    implementation group: "com.github.jknack", name: "handlebars", version: "4.2.0"
+    implementation group: "com.github.jknack", name: "handlebars", version: "4.5.0"
     implementation group: 'org.xhtmlrenderer', name: 'flying-saucer-pdf-openpdf', version: '9.1.20'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.0'
     implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.15.0'
@@ -117,11 +117,6 @@ task buildManifest(type: Copy) {
 
 tasks.test {
     environment "LAMBDA_TASK_ROOT", "./src/main/resources"
-    jvmArgs = [
-        '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-        '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED'
-    ]
 }
 
 tasks.compileTestJava {
