@@ -1,10 +1,7 @@
 package uk.gov.dvsa.model.cvs;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.gov.dvsa.model.Document;
 import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateData;
-import uk.gov.dvsa.model.mot.MotCertificate;
-import uk.gov.dvsa.model.mot.certificateData.MotCertificateData;
 
 public class VTP20 extends CvsMotCertificate {
 
@@ -22,7 +19,7 @@ public class VTP20 extends CvsMotCertificate {
     }
 
     public String getVersionNumberPass() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getRegOrIdHeading() { return "Registration number";  }
