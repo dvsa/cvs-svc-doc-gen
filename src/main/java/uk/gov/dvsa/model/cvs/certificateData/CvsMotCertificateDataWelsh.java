@@ -1,9 +1,6 @@
 package uk.gov.dvsa.model.cvs.certificateData;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import uk.gov.dvsa.model.mot.certificateData.FormattedOdometerReading;
-import uk.gov.dvsa.model.mot.results.DefectsList;
-import uk.gov.dvsa.model.mot.results.Summary;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,17 +1,8 @@
-buildscript {
-    repositories {
-      mavenCentral()
-    }
-    dependencies {
-        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0'
-    }
-}
-
 plugins {
-    id 'com.adarshr.test-logger' version '1.1.2'
-    id 'com.github.johnrengelman.shadow' version '5.1.0'
-    id 'org.ajoberstar.grgit' version '2.2.1'
-    id 'org.sonarqube' version '3.0'
+    id 'com.adarshr.test-logger' version '4.0.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'org.ajoberstar.grgit' version '5.2.1'
+    id 'org.sonarqube' version '4.4.1.3373'
 }
 
 apply plugin: 'java'
@@ -36,14 +27,22 @@ version "${version}"
 
 mainClassName = "uk.dvsa.mot.PdfGenerator"
 
-sourceCompatibility = 11
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.11"
+}
 
 jacocoTestReport {
     group = "Reporting"
     reports {
-        xml.enabled true
-        csv.enabled false
-        html.destination file("${buildDir}/reports/coverage")
+        xml.required = true
+        csv.required = false
+        html.outputLocation = file("${buildDir}/reports/coverage")
         // html.destination file("./reports/coverage")
     }
 }
@@ -51,6 +50,20 @@ jacocoTestReport {
 
 testlogger {
     theme 'mocha'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 2000
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showStandardStreams false
+    showPassedStandardStreams false
+    showSkippedStandardStreams false
+    showFailedStandardStreams true
 }
 
 idea {
@@ -65,28 +78,28 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.1.0'
-    compile group: "com.github.jknack", name: "handlebars", version: "4.2.0"
-    compile group: 'org.xhtmlrenderer', name: 'flying-saucer-pdf-openpdf', version: '9.1.20'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.4.1'
-    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.14.0'
-    compile group: 'com.amazonaws', name: 'aws-lambda-java-log4j2', version: '1.5.1'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.22.1'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.22.1'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.22.1'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
-    compile fileTree(dir: 'jars', include: '*.jar')
-    testCompile group: 'junit', name: 'junit', version: '4.13.1'
-    testCompile group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
-    testCompile group: 'commons-io', name: 'commons-io', version: '2.7'
-    testCompile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.12'
+    implementation group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.1.0'
+    implementation group: "com.github.jknack", name: "handlebars", version: "4.5.0"
+    implementation group: 'org.xhtmlrenderer', name: 'flying-saucer-pdf-openpdf', version: '9.1.20'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.0'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.15.0'
+    implementation group: 'com.amazonaws', name: 'aws-lambda-java-log4j2', version: '1.5.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.22.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.22.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.22.1'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    implementation fileTree(dir: 'jars', include: '*.jar')
+    testImplementation group: 'junit', name: 'junit', version: '4.13.1'
+    testImplementation group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
+    testImplementation group: 'commons-io', name: 'commons-io', version: '2.14.0'
+    testImplementation group: 'com.itextpdf', name: 'itextpdf', version: '5.5.12'
 }
 
 task buildZip(type: Zip) {
     from compileJava
     from processResources
     into('lib') {
-        from configurations.runtime
+        from configurations.runtimeClasspath
     }
 }
 
@@ -100,6 +113,14 @@ task buildManifest(type: Copy) {
     println "Branch name: " + branchName
 
     expand(gitCommitId: commitId, gitBranch: branchName)
+}
+
+tasks.test {
+    environment "LAMBDA_TASK_ROOT", "./src/main/resources"
+}
+
+tasks.compileTestJava {
+    dependsOn buildManifest
 }
 
 buildZip.dependsOn buildManifest

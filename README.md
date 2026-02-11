@@ -8,6 +8,7 @@ You will need to install the following DVSA packages to make sure you have the s
 
 - [git-secrets](https://github.com/awslabs/git-secrets)
 - [repo-security-scanner](https://github.com/UKHomeOffice/repo-security-scanner)
+- Java 21
 
 ## Installation:
 
@@ -32,3 +33,7 @@ Debugging Applications:
 ### Architeture
 
 Documentation for this service can be found [here](https://wiki.dvsacloud.uk/display/MP/Document+Generation+Service+Contract).
+
+### Unit tests
+
+To execute the unit tests, run: `./gradlew clean test`
