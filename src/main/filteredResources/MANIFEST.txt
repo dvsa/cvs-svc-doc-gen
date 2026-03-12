@@ -1,2 +1,0 @@
-Git-Commit-Id: ${gitCommitId}
-Git-Branch: ${gitBranch}

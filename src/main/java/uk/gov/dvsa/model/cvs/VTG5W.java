@@ -19,7 +19,7 @@ public class VTG5W extends CvsMotCertificate {
     }
 
     public String getVersionNumberPass() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getRegOrIdHeadingWelsh() {
