@@ -388,7 +388,9 @@
                             <div>Nifer y gwregysau diogelwch a osodwyd</div>
                         </div>
                         <div class="seat-belt-information__two-columns-two">
-                            <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltTested}}</div>
+                            <div class="seat-belt-information__padding-left seat-belt-information__height"><br/>
+                                {{#if (eq data.seatBeltTested "Yes")}}Do{{else}}Naddo{{/if}}
+                            </div>
                             <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltPreviousCheckDate}}</div>
                             <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltNumber}}</div>
                         </div>
