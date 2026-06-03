@@ -38,6 +38,9 @@ public class RwtCertificateData {
     @JsonProperty("IsTrailer")
     private  boolean isTrailer;
 
+    @JsonProperty("DesignTrainWeightRequired")
+    private String designTrainWeightRequired;
+
     public int getDgvw() {
         return dgvw;
     }
@@ -135,4 +138,9 @@ public class RwtCertificateData {
         return this;
     }
 
+    public String getDesignTrainWeightRequired() { return designTrainWeightRequired; }
+    public RwtCertificateData setDesignTrainWeightRequired(String designTrainWeightRequired) {
+        this.designTrainWeightRequired = designTrainWeightRequired;
+        return this;
+    }
 }
