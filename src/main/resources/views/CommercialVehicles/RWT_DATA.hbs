@@ -34,7 +34,7 @@
     <li><p>For the brake performance test, if no accurate vehicle weights are known, the HGV Annual Test requirements are based on estimated design weights of a vehicle of that arrangement and number of axles.</p>
         <div>
             <span class="padding-right"><b>Weights used for Brake Testing:</b></span><label for="dgvw">DGVW</label> <span id="dgvw" class="border">{{rwtData.dgvw}} kg</span>
-            <label for="weight2">{{#if rwtData.isTrailer}} DTAW {{else}} DGTW {{/if}} </label> <span id="weight2" class="border">{{#if (eq designTrainWeightRequired "N/A")}}N/A{{else}}{{rwtData.weight2}} kg{{/if}}</span>
+            <label for="weight2">{{#if rwtData.isTrailer}} DTAW {{else}} DGTW {{/if}} </label> <span id="weight2" class="border">{{#if (eq rwtData.designTrainWeightRequired "N/A")}}N/A{{else}}{{rwtData.weight2}} kg{{/if}}</span>
         </div>
     </li>
     <li> {{#if rwtData.hasDefects}}
