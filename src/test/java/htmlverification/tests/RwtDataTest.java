@@ -54,6 +54,16 @@ public class RwtDataTest {
     }
 
     @Test
+    public void verifyWeight2WhenDesignTrainWeightRequiredIsNA() {
+        testCertificate.getRwtData().setDesignTrainWeightRequired("N/A");
+        List<String> certHtml = htmlGenerator.generate(testCertificate);
+        CertificatePageObject pageObjectWithNaWeight2 = new CertificatePageObject(certHtml.get(0));
+
+        String weight2 = pageObjectWithNaWeight2.getWeight2();
+        assertEquals("N/A", weight2);
+    }
+
+    @Test
     public void verifyVehicleNumber() {
         String vehicleNumber = certificatePageObject.getVehicleNumber();
         assertEquals(testCertificate.getRwtData().getVehicleNumber(), vehicleNumber);
