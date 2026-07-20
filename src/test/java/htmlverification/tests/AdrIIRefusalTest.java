@@ -13,13 +13,13 @@ import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class AdrRefusalTest {
+public class AdrIIRefusalTest {
 
     protected HtmlGenerator htmlGenerator;
     protected AdrIIRefusalCertificate testCertificate;
     protected CertificatePageObject certificatePageObject;
 
-    public AdrRefusalTest() {
+    public AdrIIRefusalTest() {
         this.htmlGenerator = new HtmlGenerator(new Handlebars());
     }
 
