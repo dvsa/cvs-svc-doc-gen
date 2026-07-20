@@ -25,6 +25,7 @@ public enum CertificateTypes {
     CVS_TRL_PRS_BILINGUAL("CVS/TRL_PRS_BILINGUAL"),
     RWT_DATA("CVS/RWT"),
     ADR_PASS("CVS/ADR_PASS"),
+    ADR_II("CVS/ADR_II"), // ADR II - Notification of Refusal of a Certificate of Approval
     VTG6_VTG7("CVS/VTG6_VTG7"), // plates
 
     TRAILER_INTO_SERVICE("CVS/TrailerIntoService"),

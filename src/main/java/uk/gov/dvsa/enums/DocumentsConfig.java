@@ -36,6 +36,8 @@ public enum DocumentsConfig {
             new String[]{CertificateTemplates.VTG30W.getCertificateTemplateName()}),
     ADR_PASS(CertificateTypes.ADR_PASS.getCertificateType(), AdrPassCertificate.class,
             new String[]{CertificateTemplates.ADR_PASS.getCertificateTemplateName()}),
+    ADR_II(CertificateTypes.ADR_II.getCertificateType(), AdrIIRefusalCertificate.class,
+            new String[]{CertificateTemplates.ADR_II.getCertificateTemplateName()}),
 
     VTG6_VTG7(CertificateTypes.VTG6_VTG7.getCertificateType(), MinistryPlate.class,
             new String[]{CertificateTemplates.VTG6_VTG7.getCertificateTemplateName()}),

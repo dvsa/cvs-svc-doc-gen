@@ -1,0 +1,224 @@
+@page {
+    size: 21.01cm 29.7cm;
+    margin: 1.4cm 1.4cm 1.2cm 1.4cm;
+    @bottom-left {
+        content: element(footer-left);
+    }
+    @bottom-right {
+        content: element(footer-right);
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 11pt;
+    color: #000;
+}
+
+p {
+    margin: 0;
+}
+
+/* Footers (repeat on every page) */
+.footer-left {
+    position: running(footer-left);
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.footer-right {
+    position: running(footer-right);
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+/* Page 2 starts on a fresh sheet */
+.page--notes {
+    page-break-before: always;
+}
+
+/* Header */
+.header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.header-logo {
+    display: table-cell;
+    width: 28%;
+    vertical-align: top;
+}
+
+.header-title {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    padding-top: 6px;
+}
+
+.title-main {
+    font-weight: bold;
+    font-size: 13pt;
+    line-height: 1.2;
+}
+
+.title-sub {
+    font-weight: bold;
+    font-size: 11pt;
+    padding-top: 6px;
+}
+
+.header-rule {
+    border: none;
+    border-top: 3px solid #000;
+    margin: 6px 0 14px 0;
+}
+
+/* Fields */
+.field-row {
+    margin-bottom: 8px;
+}
+
+.field-block {
+    margin-bottom: 8px;
+}
+
+.field-label {
+    font-size: 11pt;
+}
+
+.field-block .field-label {
+    margin-bottom: 4px;
+}
+
+.field-box {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    min-height: 16pt;
+    vertical-align: middle;
+    padding: 3px 5px;
+}
+
+.field-box--vrm {
+    width: 48%;
+    margin-left: 8px;
+}
+
+.field-box--vin {
+    display: block;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.field-box--test {
+    width: 34%;
+    margin-left: 8px;
+}
+
+/* Intro + reasons */
+.intro {
+    margin-top: 14px;
+    line-height: 1.35;
+}
+
+.reason {
+    margin-top: 10px;
+    line-height: 1.35;
+    padding-left: 18px;
+    text-indent: -18px;
+}
+
+.reason-num {
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+/* Free-text notes box */
+.notes-box {
+    border: 1px solid #000;
+    margin-top: 14px;
+    height: 11cm;
+    padding: 6px;
+    white-space: pre-wrap;
+    line-height: 1.35;
+}
+
+/* Signature / date */
+.signature-row {
+    margin-top: 16px;
+}
+
+.sig-label {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.sig-label--date {
+    margin-left: 24px;
+}
+
+.field-box--sig {
+    width: 40%;
+    margin-left: 8px;
+    min-height: 22pt;
+}
+
+.signature-image {
+    max-height: 20pt;
+    width: auto;
+}
+
+.field-box--date {
+    width: 22%;
+    margin-left: 8px;
+    min-height: 22pt;
+}
+
+/* Page 2 - static notes */
+.notes-title {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 14px 0;
+}
+
+.notes-list {
+    padding-left: 20px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.notes-list > li {
+    margin-bottom: 8px;
+}
+
+.notes-sublist {
+    list-style-type: lower-alpha;
+    padding-left: 20px;
+    margin-top: 6px;
+}
+
+.notes-sublist > li {
+    margin-bottom: 6px;
+}
+
+.link {
+    color: #005ea5;
+    font-weight: bold;
+}
+
+.privacy {
+    margin-top: 34px;
+    line-height: 1.4;
+}
+
+.privacy p {
+    margin-bottom: 8px;
+}

@@ -77,6 +77,32 @@ public class CvsCertificateTestDataProvider {
         return adrPassCertificate;
     }
 
+    public static AdrIIRefusalCertificate getAdrRefusal() {
+        AdrIIRefusalCertificate certificate = new AdrIIRefusalCertificate();
+        certificate.setDocumentName(CertificateTypes.ADR_II.getCertificateType());
+
+        AdrIIRefusalCertificateData data = new AdrIIRefusalCertificateData()
+                .setVrm("GX07 AZL")
+                .setVin("SHSRD78407U002165")
+                .setTestNumber("1234567890")
+                .setFailureReasonRoadworthiness(true)
+                .setFailureReasonSpecialRequirements(true)
+                .setNotes("Item 1: Nearside rear brake actuator seized, chamber requires replacement.\n"
+                        + "Item 2: Electrical bonding between chassis and tank barrel incomplete.\n"
+                        + "Item 3: Fire extinguisher out of date and pressure gauge reading in the red.\n"
+                        + "Supporting ADR documentation for the tank plate was not available at the time of test.")
+                .setDate("20/07/2026");
+
+        Signature signature = new Signature()
+                .setImageData("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")
+                .setImageType("png");
+
+        certificate.setAdrData(data);
+        certificate.setSignature(signature);
+
+        return certificate;
+    }
+
     public static TrailerIntoService getTrailerIntoService(int paragraphId) {
         TrailerIntoService model = new TrailerIntoService();
         model.setDocumentName(CertificateTypes.TRAILER_INTO_SERVICE.getCertificateType());
