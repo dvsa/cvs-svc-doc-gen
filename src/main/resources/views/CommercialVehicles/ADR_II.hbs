@@ -8,13 +8,19 @@
 </head>
 <body>
 
-<div class="footer-left">ADR II / DVSA0526</div>
-<div class="footer-right">TBA 2026</div>
+<div class="footer">
+    <table class="footer-table">
+        <tr>
+            <td class="footer-left">ADR II / DVSA0526</td>
+            <td class="footer-right">TBA 2026</td>
+        </tr>
+    </table>
+</div>
 
 <div class="page">
     <div class="header">
         <div class="header-logo">
-            <img src="{{root}}/assets/images/dvsa-crest-king.png" alt="DVSA logo" width="120"/>
+            <img src="{{root}}/assets/images/dvsa-crest-king.png" alt="DVSA logo" width="140"/>
         </div>
         <div class="header-title">
             <p class="title-main">INTERNATIONAL CARRIAGE OF<br/>DANGEROUS GOODS BY ROAD (ADR)</p>
@@ -24,13 +30,13 @@
 
     <hr class="header-rule"/>
 
-    <div class="field-row">
+    <div class="field-row field-row--split">
         <span class="field-label">Vehicle Registration Mark / Trailer I.D.</span>
         <span class="field-box field-box--vrm" id="vrm">{{adrData.vrm}}</span>
     </div>
 
     <div class="field-block">
-        <p class="field-label">Vehicle Identification Number (VIN) &#9660;</p>
+        <p class="field-label">Vehicle Identification Number (VIN) <span class="vin-arrow"></span></p>
         <span class="field-box field-box--vin" id="vin">{{adrData.vin}}</span>
     </div>
 
@@ -39,30 +45,34 @@
         <span class="field-box field-box--test" id="testNumber">{{adrData.testNumber}}</span>
     </div>
 
-    <p class="intro">The above vehicle/trailer has been examined for compliance with the requirements of Part 9 of
-        the European Agreement concerning the International Carriage of Dangerous Goods by Road. A Certificate of
-        Approval cannot be issued for the following reasons:</p>
+    <p class="intro">
+        The above vehicle/trailer has been examined for compliance with the requirements of Part 9 of<br/>
+        the European Agreement concerning the International Carriage of Dangerous Goods by<br/>
+        Road. A Certificate of Approval cannot be issued for the following reasons:
+    </p>
 
     {{#if adrData.failureReasonRoadworthiness}}
-        <p class="reason" id="reason-roadworthiness"><span class="reason-num">1.</span> It does not meet the required
-            roadworthiness standard (refer to the Major and/or Dangerous deficiencies on the HGV Annual Test failure
-            document).
+        <p class="reason" id="reason-roadworthiness">
+            <span class="reason-num">1.</span> It does not meet the required roadworthiness standard (refer to the Major and/or Dangerous<br/>
+            deficiencies on the HGV Annual Test failure document).
         </p>
     {{/if}}
     {{#if adrData.failureReasonSpecialRequirements}}
-        <p class="reason" id="reason-special-requirements"><span class="reason-num">2.</span> It does not comply with
-            the special requirements of Part 9 for the following reason(s):
+        <p class="reason" id="reason-special-requirements">
+            <span class="reason-num">2.</span>It does not comply with the special requirements of Part 9 for the following reason(s):
         </p>
     {{/if}}
 
     <div class="notes-box" id="notes">{{#if adrData.hasNotes}}{{adrData.notes}}{{/if}}</div>
 
-    <div class="signature-row">
-        <span class="sig-label">Signature :</span>
-        <span class="field-box field-box--sig"><img id="signature" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/></span>
-        <span class="sig-label sig-label--date">Date :</span>
-        <span class="field-box field-box--date" id="date">{{adrData.date}}</span>
-    </div>
+    <table class="signature-row">
+        <tr>
+            <td class="sig-cell-label">Signature :</td>
+            <td class="sig-cell-box"><span class="field-box field-box--sig"><img id="signature" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/></span></td>
+            <td class="sig-cell-label sig-cell-label--date">Date :</td>
+            <td class="sig-cell-box"><span class="field-box field-box--date" id="date">{{adrData.date}}</span></td>
+        </tr>
+    </table>
 </div>
 
 <div class="page page--notes">
@@ -80,8 +90,9 @@
                     from the date of issue of this notice.</li>
                 <li>In any other circumstances, on an application for a full test appointment booked through DVSA,
                     Swansea on completion of application form ADRIII or ADRIII(S), and on payment of the fee
-                    appropriate to a full examination of the vehicle. Visit:
-                    <span class="link">www.gov.uk/government/publications/application-for-adr-road-vehicle-certification-adr-iii</span></li>
+                    appropriate to a full examination of the vehicle. Visit:<br/>
+                    <span class="link">www.gov.uk/government/publications/application-for-adr-road-vehicle-certification-adr-iii</span>
+                </li>
             </ol>
         </li>
         <li>Please ensure this Notification of Refusal is presented at the time of retest.</li>

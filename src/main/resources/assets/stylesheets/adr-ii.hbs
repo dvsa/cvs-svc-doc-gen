@@ -1,11 +1,8 @@
 @page {
     size: 21.01cm 29.7cm;
     margin: 1.4cm 1.4cm 1.2cm 1.4cm;
-    @bottom-left {
-        content: element(footer-left);
-    }
-    @bottom-right {
-        content: element(footer-right);
+    @bottom-center {
+        content: element(footer);
     }
 }
 
@@ -24,15 +21,26 @@ p {
     margin: 0;
 }
 
-/* Footers (repeat on every page) */
+/* Footer (repeats on every page) */
+.footer {
+    position: running(footer);
+    border-top: 1px solid #999;
+    padding-top: 4px;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
 .footer-left {
-    position: running(footer-left);
+    text-align: left;
     font-weight: bold;
     font-size: 10pt;
 }
 
 .footer-right {
-    position: running(footer-right);
+    text-align: right;
     font-weight: bold;
     font-size: 10pt;
 }
@@ -71,7 +79,7 @@ p {
 .title-sub {
     font-weight: bold;
     font-size: 11pt;
-    padding-top: 6px;
+    padding-top: 16px;
 }
 
 .header-rule {
@@ -83,6 +91,17 @@ p {
 /* Fields */
 .field-row {
     margin-bottom: 8px;
+}
+
+.field-row--split {
+    display: table;
+    width: 100%;
+}
+
+.field-row--split .field-label {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
 .field-block {
@@ -97,6 +116,17 @@ p {
     margin-bottom: 4px;
 }
 
+.vin-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
 .field-box {
     display: inline-block;
     box-sizing: border-box;
@@ -107,8 +137,8 @@ p {
 }
 
 .field-box--vrm {
-    width: 48%;
-    margin-left: 8px;
+    display: table-cell;
+    width: 52%;
 }
 
 .field-box--vin {
@@ -144,7 +174,7 @@ p {
 .notes-box {
     border: 1px solid #000;
     margin-top: 14px;
-    height: 11cm;
+    height: 13.5cm;
     padding: 6px;
     white-space: pre-wrap;
     line-height: 1.35;
@@ -152,33 +182,41 @@ p {
 
 /* Signature / date */
 .signature-row {
-    margin-top: 16px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
 }
 
-.sig-label {
+.sig-cell-label {
     font-weight: bold;
     font-size: 12pt;
+    white-space: nowrap;
+    width: 1%;
+    padding-right: 8px;
+    vertical-align: middle;
 }
 
-.sig-label--date {
-    margin-left: 24px;
+.sig-cell-label--date {
+    padding-left: 28px;
 }
 
-.field-box--sig {
-    width: 40%;
-    margin-left: 8px;
-    min-height: 22pt;
+.sig-cell-box {
+    vertical-align: middle;
+}
+
+.field-box--sig,
+.field-box--date {
+    display: block;
+    width: 100%;
+    height: 26pt;
+    line-height: 26pt;
+    padding: 0 5px;
 }
 
 .signature-image {
-    max-height: 20pt;
+    height: 20pt;
     width: auto;
-}
-
-.field-box--date {
-    width: 22%;
-    margin-left: 8px;
-    min-height: 22pt;
+    vertical-align: middle;
 }
 
 /* Page 2 - static notes */
