@@ -48,7 +48,7 @@ public class AdrIIRefusalTest {
     @Test
     public void verifyNotes() {
         assertTrue(certificatePageObject.getTextByElementId("notes")
-                .contains("Nearside rear brake actuator seized"));
+                .contains("Lorem ipsum dolor sit amet"));
     }
 
     @Test
