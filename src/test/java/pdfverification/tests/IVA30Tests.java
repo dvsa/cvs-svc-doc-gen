@@ -16,7 +16,7 @@ import java.io.IOException;
 public class IVA30Tests {
     private static final String CERT_NAME = "INDIVIDUAL VEHICLE APPROVAL (IVA)";
     private static final String FOOTER_DOC_NAME = "IVA30VTA (DVSA0842)";
-    private static final String FOOTER_VERSION_DATE = "Version 1.3 May 2025";
+    private static final String FOOTER_VERSION_DATE = "Version 1.4 September 2026";
     private PDFGenerationService pdfGenerationService;
     private HtmlGenerator htmlGenerator;
     private PDFParser pdfParser;
