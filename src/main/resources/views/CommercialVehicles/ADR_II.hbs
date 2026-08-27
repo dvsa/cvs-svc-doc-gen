@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>ADR II - Notification of Refusal of a Certificate of Approval</title>
+    <style type="text/css" media="print, screen">
+        {{~> assets/stylesheets/adr-ii this}}
+    </style>
+</head>
+<body>
+
+<div class="footer">
+    <table class="footer-table">
+        <tr>
+            <td class="footer-left">ADR II / DVSA0526</td>
+            <td class="footer-right">TBA 2026</td>
+        </tr>
+    </table>
+</div>
+
+<div class="page">
+    <div class="header">
+        <div class="header-logo">
+            <img src="{{root}}/assets/images/dvsa-crest-king.png" alt="DVSA logo" width="140"/>
+        </div>
+        <div class="header-title">
+            <p class="title-main">INTERNATIONAL CARRIAGE OF<br/>DANGEROUS GOODS BY ROAD (ADR)</p>
+            <p class="title-sub">NOTIFICATION OF REFUSAL OF A CERTIFICATE OF APPROVAL</p>
+        </div>
+    </div>
+
+    <hr class="header-rule"/>
+
+    <div class="field-row field-row--split">
+        <span class="field-label">Vehicle Registration Mark / Trailer I.D.</span>
+        <span class="field-box field-box--vrm" id="vrm">{{adrData.vrm}}</span>
+    </div>
+
+    <div class="field-block">
+        <p class="field-label">Vehicle Identification Number (VIN) <span class="vin-arrow"></span></p>
+        <span class="field-box field-box--vin" id="vin">{{adrData.vin}}</span>
+    </div>
+
+    <div class="field-row">
+        <span class="field-label">Test Number</span>
+        <span class="field-box field-box--test" id="testNumber">{{adrData.testNumber}}</span>
+    </div>
+
+    <p class="intro">
+        The above vehicle/trailer has been examined for compliance with the requirements of Part 9 of<br/>
+        the European Agreement concerning the International Carriage of Dangerous Goods by<br/>
+        Road. A Certificate of Approval cannot be issued for the following reasons:
+    </p>
+
+    {{#if adrData.failureReasonRoadworthiness}}
+        <p class="reason" id="reason-roadworthiness">
+            <span class="reason-num">1.</span> It does not meet the required roadworthiness standard (refer to the Major and/or Dangerous<br/>
+            deficiencies on the HGV Annual Test failure document).
+        </p>
+    {{/if}}
+    {{#if adrData.failureReasonSpecialRequirements}}
+        <p class="reason" id="reason-special-requirements">
+            <span class="reason-num">2.</span>It does not comply with the special requirements of Part 9 for the following reason(s):
+        </p>
+    {{/if}}
+
+    <div class="notes-box" id="notes">{{#if adrData.hasNotes}}{{adrData.notes}}{{/if}}</div>
+
+    <table class="signature-row">
+        <tr>
+            <td class="sig-cell-label">Signature :</td>
+            <td class="sig-cell-box"><span class="field-box field-box--sig"><img id="signature" class="signature-image" src="{{signature.formattedImageData}}" alt="signature"/></span></td>
+            <td class="sig-cell-label sig-cell-label--date">Date :</td>
+            <td class="sig-cell-box"><span class="field-box field-box--date" id="date">{{adrData.date}}</span></td>
+        </tr>
+    </table>
+</div>
+
+<div class="page page--notes">
+    <h2 class="notes-title">NOTES</h2>
+
+    <ol class="notes-list">
+        <li>When all listed items have been addressed, the vehicle may be submitted for retest as follows:
+            <ol class="notes-sublist">
+                <li>Within 14 days of the date of issue and on payment of the applicable fee, except that no fee will
+                    be payable for a first retest carried out on the same day as the original test or on the next
+                    working day.</li>
+                <li>No fee will be payable for an ADR retest where the refusal resulted from either a failure to meet
+                    the required roadworthiness standard or from a failure to provide the necessary supporting
+                    documentation. Where applicable, all supporting documentation must be presented within 14 days
+                    from the date of issue of this notice.</li>
+                <li>In any other circumstances, on an application for a full test appointment booked through DVSA,
+                    Swansea on completion of application form ADRIII or ADRIII(S), and on payment of the fee
+                    appropriate to a full examination of the vehicle. Visit:<br/>
+                    <span class="link">www.gov.uk/government/publications/application-for-adr-road-vehicle-certification-adr-iii</span>
+                </li>
+            </ol>
+        </li>
+        <li>Please ensure this Notification of Refusal is presented at the time of retest.</li>
+        <li>Arrangements for retests and payment are made directly with the ATF, who will offer the customer a slot to
+            return their vehicle for retest.</li>
+        <li>A new VTG15 must be presented each time the vehicle is presented for examination.</li>
+    </ol>
+
+    <div class="privacy">
+        <p>We collect, use and store your personal data so that we can correctly carry out an ADR retest on your
+            vehicle.</p>
+        <p>We may share your personal data if we have a lawful reason. For example, as part of a criminal
+            investigation or to prevent fraud.</p>
+        <p>Find out more at <span class="link">www.gov.uk/dvsa/privacy</span>.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -10,7 +10,7 @@ import uk.gov.dvsa.model.cvs.certificateData.CvsMotCertificateDataWelsh;
 import uk.gov.dvsa.service.HtmlGenerator;
 
 import static org.junit.Assert.assertEquals;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 import java.io.IOException;
 import java.util.List;
@@ -154,5 +154,13 @@ public class VTP20WTest {
         String actual = certificatePageObject.getElement("#no_data_message").text();
         String expected = "Dim data ar gael";
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void verifyRecallsWelsh() {
+        String titleText = certificatePageObject.getRecallsHeader();
+        String contentText = certificatePageObject.getRecallsBody();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
     }
 }

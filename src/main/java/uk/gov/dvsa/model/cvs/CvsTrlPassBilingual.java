@@ -15,11 +15,11 @@ public class CvsTrlPassBilingual extends VTG5AW {
     }
 
     public String getVersionNumberPass() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getVersionNumberPassWelsh() {
-        return "1.0";
+        return "1.1";
     }
 
     public String getRegOrIdHeading() {

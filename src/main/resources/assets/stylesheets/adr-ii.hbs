@@ -1,0 +1,262 @@
+@page {
+    size: 21.01cm 29.7cm;
+    margin: 1.4cm 1.4cm 1.2cm 1.4cm;
+    @bottom-center {
+        content: element(footer);
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 11pt;
+    color: #000;
+}
+
+p {
+    margin: 0;
+}
+
+/* Footer (repeats on every page) */
+.footer {
+    position: running(footer);
+    border-top: 1px solid #999;
+    padding-top: 4px;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.footer-left {
+    text-align: left;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.footer-right {
+    text-align: right;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+/* Page 2 starts on a fresh sheet */
+.page--notes {
+    page-break-before: always;
+}
+
+/* Header */
+.header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.header-logo {
+    display: table-cell;
+    width: 28%;
+    vertical-align: top;
+}
+
+.header-title {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    padding-top: 6px;
+}
+
+.title-main {
+    font-weight: bold;
+    font-size: 13pt;
+    line-height: 1.2;
+}
+
+.title-sub {
+    font-weight: bold;
+    font-size: 11pt;
+    padding-top: 16px;
+}
+
+.header-rule {
+    border: none;
+    border-top: 3px solid #000;
+    margin: 6px 0 14px 0;
+}
+
+/* Fields */
+.field-row {
+    margin-bottom: 8px;
+}
+
+.field-row--split {
+    display: table;
+    width: 100%;
+}
+
+.field-row--split .field-label {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.field-block {
+    margin-bottom: 8px;
+}
+
+.field-label {
+    font-size: 11pt;
+}
+
+.field-block .field-label {
+    margin-bottom: 4px;
+}
+
+.vin-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+.field-box {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    min-height: 16pt;
+    vertical-align: middle;
+    padding: 3px 5px;
+}
+
+.field-box--vrm {
+    display: table-cell;
+    width: 52%;
+}
+
+.field-box--vin {
+    display: block;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.field-box--test {
+    width: 34%;
+    margin-left: 8px;
+}
+
+/* Intro + reasons */
+.intro {
+    margin-top: 14px;
+    line-height: 1.35;
+}
+
+.reason {
+    margin-top: 10px;
+    line-height: 1.35;
+    padding-left: 18px;
+    text-indent: -18px;
+}
+
+.reason-num {
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+/* Free-text notes box */
+.notes-box {
+    border: 1px solid #000;
+    margin-top: 14px;
+    height: 13.5cm;
+    padding: 6px;
+    white-space: pre-wrap;
+    line-height: 1.35;
+}
+
+/* Signature / date */
+.signature-row {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.sig-cell-label {
+    font-weight: bold;
+    font-size: 12pt;
+    white-space: nowrap;
+    width: 1%;
+    padding-right: 8px;
+    vertical-align: middle;
+}
+
+.sig-cell-label--date {
+    padding-left: 28px;
+}
+
+.sig-cell-box {
+    vertical-align: middle;
+}
+
+.field-box--sig,
+.field-box--date {
+    display: block;
+    width: 100%;
+    height: 26pt;
+    line-height: 26pt;
+    padding: 0 5px;
+}
+
+.signature-image {
+    height: 20pt;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Page 2 - static notes */
+.notes-title {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 14px 0;
+}
+
+.notes-list {
+    padding-left: 20px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.notes-list > li {
+    margin-bottom: 8px;
+}
+
+.notes-sublist {
+    list-style-type: lower-alpha;
+    padding-left: 20px;
+    margin-top: 6px;
+}
+
+.notes-sublist > li {
+    margin-bottom: 6px;
+}
+
+.link {
+    color: #005ea5;
+    font-weight: bold;
+}
+
+.privacy {
+    margin-top: 34px;
+    line-height: 1.4;
+}
+
+.privacy p {
+    margin-bottom: 8px;
+}

@@ -14,7 +14,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateData.FAILED_SUMMARY_HEADER;
 import static uk.gov.dvsa.model.cvs.certificateData.CvsMotFailCertificateDataWelsh.FAILED_SUMMARY_HEADER_WELSH;
-import static uk.gov.dvsa.model.mot.results.Summary.EU_NUMBER_SUMMARY_HEADER;
+import static uk.gov.dvsa.model.cvs.certificateData.Summary.EU_NUMBER_SUMMARY_HEADER;
 
 public class CvsHgvTrlFailBilingualTest {
 
@@ -171,5 +171,21 @@ public class CvsHgvTrlFailBilingualTest {
 
         assertEquals(testCertificate.getFailData().getTestNumber(), testNumber);
         assertEquals(testCertificate.getFailData().getTestNumber(), testNumber2);
+    }
+
+    @Test
+    public void verifyRecallsWelsh() {
+        String titleText = certificatePageObjectVTG30W.getRecallsHeader();
+        String contentText = certificatePageObjectVTG30W.getRecallsBody();
+        assertEquals("Mae gan y cerbyd hwn wedi cael ei alw'n ôl", titleText);
+        assertEquals("Cysylltwch â'ch agosaf Aston Martin deliwr i gael gwybodaeth ac i drefnu atgyweiriad am ddim.", contentText);
+    }
+
+    @Test
+    public void verifyRecallsEnglish() {
+        String titleText = certificatePageObjectVTG30.getRecallsHeader();
+        String contentText = certificatePageObjectVTG30.getRecallsBody();
+        assertEquals("This vehicle has an outstanding recall", titleText);
+        assertEquals("Contact your nearest Aston Martin dealership for information and to arrange a free repair.", contentText);
     }
 }

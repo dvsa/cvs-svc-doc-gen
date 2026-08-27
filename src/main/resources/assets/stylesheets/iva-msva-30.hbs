@@ -114,7 +114,8 @@ p { margin:5px; }
 
 p,
 div,
-span {
+span,
+h1 {
 font-family: "Calibri", sans-serif;
 }
 
@@ -141,18 +142,15 @@ text-align: center-left;
 width:100%;
 }
 
-.separate-page{
-page-break-after: always;
-}
-
-#back-page{
-page-break-after: avoid;
-}
-
 .section-border {
 border-style: solid;
 border-color: black;
 margin-bottom: 5px;
+}
+
+#iva30-template .section-border {
+border: 1px solid black;
+box-sizing: border-box;
 }
 /* section title border */
 .section-title-border {
@@ -165,6 +163,10 @@ text-align: center;
 margin-top: -1px;
 margin-left: -1px;
 width: 100.3%;
+}
+
+#defect-section {
+page-break-inside: auto;
 }
 
 #cert-subtitle{
@@ -209,6 +211,7 @@ padding-bottom: 0.25em;
 width: 50%;
 vertical-align: middle;
 font-size: 92%;
+font-family: "Calibri", sans-serif;
 }
 
 .no-border-cell{
@@ -226,6 +229,11 @@ text-transform:uppercase;
 
 .required-standard-list {
 list-style-type: none;
+}
+
+.required-standard-list-item {
+page-break-inside: avoid;
+margin-bottom: 20px;
 }
 
 .required-standard-section {
@@ -284,6 +292,22 @@ margin: 0px;
 margin-top: 0px;
 padding-top: 0px;
 list-style-type: none;
+}
+
+#re-examination-section > .section-text-wrapper > p {
+margin-bottom: 12px;
+}
+
+#re-examination-section > .section-text-wrapper > p:last-of-type {
+margin-bottom: 0;
+}
+
+#re-examination-section .refusal-list > p:first-child {
+margin-bottom: 12px;
+}
+
+#re-examination-section .refusal-list > p {
+margin-left: 5px;
 }
 
 /* END */

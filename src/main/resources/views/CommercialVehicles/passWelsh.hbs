@@ -167,7 +167,7 @@
                 <!-- /heading-info -->
             </div>
             <div class="header__right">
-                <img src="{{root}}/assets/images/dvsa-crest-welsh-v2.png" alt="DVSA Crown" class="header__logo" id="logo"/>
+                <img src="{{root}}/assets/images/dvsa-crest-king-welsh.png" alt="DVSA Crown" class="header__logo" id="logo"/>
             </div>
             <div class="clearfix"></div>
             <!-- header__three-columns -->
@@ -270,6 +270,11 @@
             </div>
         </div>
         <!-- /results -->
+        <!-- recalls -->
+        {{#if data.recalls.hasRecall}}
+            {{~> views/CommercialVehicles/recallsWelsh manufacturer=data.recalls.manufacturer}}
+        {{/if}}
+        <!-- /recalls -->
         <!-- test-information -->
         <div class="test-information">
             <div class="test-information__wrapper">
@@ -383,7 +388,9 @@
                             <div>Nifer y gwregysau diogelwch a osodwyd</div>
                         </div>
                         <div class="seat-belt-information__two-columns-two">
-                            <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltTested}}</div>
+                            <div class="seat-belt-information__padding-left seat-belt-information__height"><br/>
+                                {{#if (eq data.seatBeltTested "Yes")}}Do{{else}}Naddo{{/if}}
+                            </div>
                             <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltPreviousCheckDate}}</div>
                             <div class="seat-belt-information__padding-left seat-belt-information__height">{{data.seatBeltNumber}}</div>
                         </div>
@@ -404,7 +411,7 @@
                     <p class="test-information__message">
                         Os nad yw unrhyw fanylion yn gywir, cysylltwch â DVSA drwy e-bost ar <br/><a
                             class="test-information__message-link"
-                            href="mailto:test.errors@dvsa.gov.uk">test.errors@dvsa.gov.uk</a> neu drwy ffonio 0300 1239000.
+                            href="mailto:MYVT@dvsa.gov.uk">MYVT@dvsa.gov.uk</a> neu drwy ffonio 0300 1239000.
                     </p>
                     <p class="test-information__message">
                         Derbynnwch nodyn atgoffa MOT blynyddol am ddim trwy danysgrifio

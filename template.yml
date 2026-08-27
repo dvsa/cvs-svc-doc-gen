@@ -12,7 +12,7 @@ Resources:
     Properties:
       Timeout: 30
       Handler: uk.gov.dvsa.PdfGenerator
-      Runtime: java8
+      Runtime: java21
       CodeUri: ./build/libs/certificate-generation-service-1.0-SNAPSHOT-all.jar
       Events:
         Api:

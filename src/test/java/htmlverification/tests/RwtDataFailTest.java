@@ -2,7 +2,7 @@ package htmlverification.tests;
 
 import com.github.jknack.handlebars.Handlebars;
 import htmlverification.framework.page_object.CertificatePageObject;
-import htmlverification.service.CertificateTestDataProvider;
+import htmlverification.service.CvsCertificateTestDataProvider;
 import org.junit.Before;
 import org.junit.Test;
 import org.xhtmlrenderer.pdf.ITextRenderer;
@@ -26,7 +26,7 @@ public class RwtDataFailTest {
 
     @Before
     public void setup() throws IOException {
-        testCertificate = CertificateTestDataProvider.getRwtDataFail();
+        testCertificate = CvsCertificateTestDataProvider.getRwtDataFail();
         List<String> certHtml = htmlGenerator.generate(testCertificate);
         certificatePageObject = new CertificatePageObject(certHtml.get(0));
         new PDFGenerationService(new ITextRenderer()).generate(certHtml);
@@ -51,6 +51,16 @@ public class RwtDataFailTest {
         String weight2 = certificatePageObject.getWeight2();
         String actualWeight2 = testCertificate.getRwtData().getWeight2() +" kg";
         assertEquals(actualWeight2, weight2);
+    }
+
+    @Test
+    public void verifyWeight2WhenDesignTrainWeightRequiredIsNA() {
+        testCertificate.getRwtData().setDesignTrainWeightRequired("N/A");
+        List<String> certHtml = htmlGenerator.generate(testCertificate);
+        CertificatePageObject pageObjectWithNaWeight2 = new CertificatePageObject(certHtml.get(0));
+
+        String weight2 = pageObjectWithNaWeight2.getWeight2();
+        assertEquals("N/A", weight2);
     }
 
     @Test
