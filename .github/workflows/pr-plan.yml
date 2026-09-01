@@ -15,12 +15,12 @@ jobs:
     runs-on: X64
     steps:
       - uses: actions/checkout@v6
-      - uses: aws-actions/configure-aws-credentials@v4
+      - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.CVS_MGMT_AWS_ROLE }}
           aws-region: ${{ secrets.DVSA_AWS_REGION }}
           role-session-name: 'cvs-svc-doc-gen'
-      - uses: aws-actions/aws-secretsmanager-get-secrets@v1
+      - uses: aws-actions/aws-secretsmanager-get-secrets@v3
         with:
           secret-ids: sonarqube-gha
           parse-json-secrets: true
