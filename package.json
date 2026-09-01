@@ -1,4 +1,5 @@
 {
+  "name": "cvs-svc-doc-gen",
   "devDependencies": {
     "husky": "^3.0.9"
   },
